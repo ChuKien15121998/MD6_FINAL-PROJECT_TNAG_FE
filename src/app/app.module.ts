@@ -10,21 +10,22 @@ import {NavbarComponent} from "./share/navbar/navbar.component";
 import {FooterComponent} from "./share/footer/footer.component";
 import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
+import {CreateFoodComponent} from "./merchant/create-food/create-food.component";
+import { HomeMerchantComponent } from './merchant/home-merchant/home-merchant.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    FoodListComponent,
     NavbarComponent,
     FooterComponent,
-    EditMerchantComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
