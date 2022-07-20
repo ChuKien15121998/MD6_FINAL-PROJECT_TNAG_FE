@@ -1,5 +1,7 @@
 export const environment = {
-    firebaseConfig : {
+  //API LOCAL
+  API_LOCAL: 'http://localhost:8080/',
+  firebaseConfig: {
     apiKey: "AIzaSyDNc_vCQuuTkX8eUPPcqyK0LlWJCRcgLFI",
     authDomain: "final-project-f1d55.firebaseapp.com",
     projectId: "final-project-f1d55",
