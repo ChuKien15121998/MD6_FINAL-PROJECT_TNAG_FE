@@ -22,8 +22,9 @@ export class CustomerRegisterComponent implements OnInit {
 
   listAddressCate : AddressCategory[] = [];
 
-  categoryControl = new FormControl('',
-    Validators.required);
+  categoryControl = new FormControl('',[
+    Validators.required
+  ]);
 
   signUpFormCustomer?: SignUpFormCustomer;
 
@@ -36,7 +37,6 @@ export class CustomerRegisterComponent implements OnInit {
   success: any = {
     message: "yes"
   }
-
 
   constructor(private authService: AuthService,
               private router: Router) { }
