@@ -12,4 +12,11 @@ export class MerchantRegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  createAvatar($event: string) {
+    
+  }
+
+  createBanner($event: string) {
+    
+  }
 }
