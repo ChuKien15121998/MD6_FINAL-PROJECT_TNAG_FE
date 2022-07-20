@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { ChangeAvatar } from 'src/app/model/ChangeAvatar';
-import { AuthService } from 'src/app/service/auth/auth.service';
-import { TokenService } from 'src/app/service/token/token.service';
+import {ChangeAvatar} from "../../model/ChangeAvatar";
+import {AuthService} from "../../service/auth/auth.service";
+import {TokenService} from "../../service/token/token.service";
 import {MerchantService} from "../../service/merchant/merchant.service";
+import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-edit-merchant-banner',
-  templateUrl: './edit-merchant-banner.component.html',
-  styleUrls: ['./edit-merchant-banner.component.css']
+  selector: 'app-edit-merchant-avatar',
+  templateUrl: './edit-merchant-avatar.component.html',
+  styleUrls: ['./edit-merchant-avatar.component.css']
 })
-export class EditMerchantBannerComponent implements OnInit {
-
+export class EditMerchantAvatarComponent implements OnInit {
   form: any = {};
   // @ts-ignore
   changeAvagtar: ChangeAvatar;
@@ -22,12 +21,10 @@ export class EditMerchantBannerComponent implements OnInit {
     message: 'yes'
   };
   status = 'Please choose an image and click upload';
-
   constructor(private authService: AuthService,
               private tokenService: TokenService,
               private merchantService: MerchantService,
-              private router: Router) {
-  }
+              private router: Router) { }
   merchant: any;
   ngOnInit(): void {
     this.merchant = {
@@ -39,6 +36,12 @@ export class EditMerchantBannerComponent implements OnInit {
     }
     this.getMerchant(1);
   }
+
+  onUploadAvatar($event: any) {
+    // @ts-ignore
+    document.getElementById("merchant-avatar-edit").hidden = true;
+    this.form.avatar = $event;
+  }
   getMerchant(id: any) {
     this.merchantService.findById(id).subscribe((data) => {
       this.merchant = data;
@@ -47,7 +50,9 @@ export class EditMerchantBannerComponent implements OnInit {
 
   onSubmit() {
     this.changeAvagtar = new ChangeAvatar(this.form.avatar);
+
     this.merchantService.changeAvatar(this.changeAvagtar).subscribe(data =>{
+      console.log("data lay duoc la gi",data)
       if(JSON.stringify(data)==JSON.stringify(this.error)){
         this.status = 'Please upload Avatar!'
       }
@@ -59,9 +64,5 @@ export class EditMerchantBannerComponent implements OnInit {
     }, error =>{
       alert('Change avatar Failed!')
     })
-  }
-
-  onUploadAvatar($event: any) {
-    this.form.avatar = $event;
   }
 }

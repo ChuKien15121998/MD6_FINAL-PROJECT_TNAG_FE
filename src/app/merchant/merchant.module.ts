@@ -6,13 +6,14 @@ import {HomeMerchantComponent} from "./home-merchant/home-merchant.component";
 import {FoodListComponent} from "./food-list/food-list.component";
 import {EditMerchantComponent} from "./edit-merchant/edit-merchant.component";
 import {CreateFoodComponent} from "./create-food/create-food.component";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { EditFoodComponent } from './edit-food/edit-food.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import {AppModule} from "../app.module";
 import {UploadImageComponent} from "../upload/upload-image/upload-image.component";
 import { DetailMerchantComponent } from './detail-merchant/detail-merchant.component';
 import { EditMerchantBannerComponent } from './edit-merchant-banner/edit-merchant-banner.component';
+import { EditMerchantAvatarComponent } from './edit-merchant-avatar/edit-merchant-avatar.component';
 
 
 @NgModule({
@@ -25,8 +26,10 @@ import { EditMerchantBannerComponent } from './edit-merchant-banner/edit-merchan
     UploadImageComponent,
     DetailMerchantComponent,
     EditMerchantBannerComponent,
+    EditMerchantAvatarComponent,
   ],
   imports: [
+    FormsModule,
     CommonModule,
     MerchantRoutingModule,
     ReactiveFormsModule,
