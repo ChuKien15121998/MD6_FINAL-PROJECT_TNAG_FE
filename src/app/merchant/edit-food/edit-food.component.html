@@ -40,6 +40,11 @@
                   </select>
                 </div>
                 <div>
+                  <label for="price2">Đổi ảnh món ăn</label>
+                  <div style="margin-bottom: 10px; margin-top: 10px">
+                    <img [src]="showImage" style="width: 300px; height: auto">
+                  </div>
+                  <app-upload-image (giveURLtoCreate)="editImage($event)"></app-upload-image>
                 </div>
                 <button class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Cập nhật thông tin</button>
                 <!--                <a href="index.html"-->

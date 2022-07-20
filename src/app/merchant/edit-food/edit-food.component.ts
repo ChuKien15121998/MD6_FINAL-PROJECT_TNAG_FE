@@ -28,6 +28,7 @@ export class EditFoodComponent implements OnInit {
               private activateRoute: ActivatedRoute) { }
   obj: any;
   defaultCategory: any;
+  showImage: any;
   listCategory: FoodCategory[] = [];
   ngOnInit(): void {
     this.foodCategoryService.findAll().subscribe((data) => {
@@ -36,10 +37,8 @@ export class EditFoodComponent implements OnInit {
     this.activateRoute.paramMap.subscribe((paraMap: ParamMap) => {
       const id = paraMap.get('id');
       this.foodService.findById(id).subscribe((data) => {
-        console.log("detail====",data)
         this.defaultCategory = data.foodCategory.id
-        console.log("id la bn ", id)
-        console.log("defaultCategory====",data.foodCategory.id)
+        this.showImage = data.image;
         // this.form.setValue(data.value)
         this.form = new FormGroup( {
           id: new FormControl(data.id),
@@ -53,12 +52,15 @@ export class EditFoodComponent implements OnInit {
       })
     });
   }
+  editImage($event: string) {
+this.form.value.image = $event
+  }
   update() {
     console.log(this.form.value);
     this.obj = {
       id: this.form.value.id,
       name: this.form.value.name,
-      image: this.form.value.image,
+      image:this.form.value.image,
       description: this.form.value.description,
       price: this.form.value.price,
       priceDiscount: this.form.value.priceDiscount,
@@ -66,11 +68,13 @@ export class EditFoodComponent implements OnInit {
         id: this.form.value.foodCategoryId
       },
     }
+    console.log("co tao duoc obj khong",this.obj)
     this.foodService.update( this.obj.id,this.obj).subscribe(()=>{
       alert('Thành công');
     }, error => {
       alert('Lỗi');
     })
   }
+
 
 }
