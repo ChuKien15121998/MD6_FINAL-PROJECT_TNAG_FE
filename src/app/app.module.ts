@@ -13,6 +13,7 @@ import { CustomerRegisterComponent } from './auth/customer-register/customer-reg
 import {MerchantManagementComponent} from "./admin/merchant-management/merchant-management.component";
 import { MerchantLoginComponent } from './auth/merchant-login/merchant-login.component';
 import { CustomerLoginComponent } from './auth/customer-login/customer-login.component';
+import {FooterComponent} from "./share/footer/footer.component";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CustomerLoginComponent } from './auth/customer-login/customer-login.com
     CustomerRegisterComponent,
     MerchantManagementComponent,
     MerchantLoginComponent,
-    CustomerLoginComponent
+    CustomerLoginComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
