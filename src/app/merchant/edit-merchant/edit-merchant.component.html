@@ -8,31 +8,37 @@
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5">
               <h3 class="login-heading mb-4">Cập nhật thông tin cửa hàng</h3>
-              <form>
-                <div class="form-label-group">
-                  <input type="text" id="inputName" class="form-control"
+              <form [formGroup]="form" (submit)="update()">
+                <div hidden class="form-label-group">
+                  <input type="text" id="inputId" formControlName = "id" class="form-control"
                          placeholder="">
                   <label for="inputName">Tên cửa hàng</label>
                 </div>
                 <div class="form-label-group">
-                  <input type="text" id="phonenumber" class="form-control"
+                  <input type="text" id="inputName" formControlName = "name" class="form-control"
+                         placeholder="">
+                  <label for="inputName">Tên cửa hàng</label>
+                </div>
+                <div class="form-label-group">
+                  <input type="text" id="phonenumber" formControlName = "phoneNumber" class="form-control"
                          placeholder="">
                   <label for="phonenumber">Số điện thoại</label>
                 </div>
                 <div class="form-label-group mb-4">
-                  <input type="time" id="openTime" class="form-control" placeholder="">
+                  <input type="time" id="openTime" formControlName = "openTime" class="form-control" placeholder="">
                   <label for="openTime">Giờ mở cửa</label>
                 </div>
                 <div class="form-label-group mb-4">
-                  <input type="time" id="closeTime" class="form-control" placeholder="">
+                  <input type="time" id="closeTime" formControlName = "closeTime" class="form-control" placeholder="">
                   <label for="closeTime">Giờ đóng cửa</label>
                 </div>
                 <div class="form-label-group mb-4">
-                  <input type="text" id="address" class="form-control" placeholder="">
+                  <input type="text" id="address" formControlName = "address" class="form-control" placeholder="">
                   <label for="address">Địa chỉ</label>
                 </div>
-                <a href="index.html"
-                   class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Cập nhật thông tin</a>
+                <button class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Cập nhật thông tin</button>
+<!--                <a href="index.html"-->
+<!--                   class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Cập nhật thông tin</a>-->
                 <div class="text-center pt-3">
                    <a class="font-weight-bold" routerLink="">Quay trở lại trang chủ</a>
                 </div>

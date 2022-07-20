@@ -2,6 +2,8 @@ export interface Merchant {
   id?: number;
   name?: string;
   phoneNumber?: string;
+  avatar?: string;
+  imageBanner?: string;
   openTime?: string;
   closeTime?: string;
   address?: string;
