@@ -13,22 +13,31 @@ import { CustomerRegisterComponent } from './auth/customer-register/customer-reg
 import {MerchantManagementComponent} from "./admin/merchant-management/merchant-management.component";
 import { MerchantLoginComponent } from './auth/merchant-login/merchant-login.component';
 import { CustomerLoginComponent } from './auth/customer-login/customer-login.component';
+import {NavbarComponent} from "./share/navbar/navbar.component";
 import {FooterComponent} from "./share/footer/footer.component";
+import {HttpClientModule} from "@angular/common/http";
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
+
     AppComponent,
     HomeComponent,
+    NavbarComponent,
+    MerchantManagementComponent,
+    FooterComponent,
     MerchantRegisterComponent,
     UploadImageComponent,
     CustomerRegisterComponent,
-    MerchantManagementComponent,
     MerchantLoginComponent,
     CustomerLoginComponent,
     FooterComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
+    AppRoutingModule,
+    NgxPaginationModule,
     AppRoutingModule,
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
