@@ -12,7 +12,6 @@ export class FoodListComponent implements OnInit {
   listFoodMerchant: any;
   listMerchant: any;
   merchant: any;
-  merchant_name: any;
 
   constructor(private  httpClient: HttpClient,
               private foodMerchantService: FoodMerchantService,
