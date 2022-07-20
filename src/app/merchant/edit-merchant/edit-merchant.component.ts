@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import {MerchantService} from "../../service/merchant.service";
+import {MerchantService} from "../../service/merchant/merchant.service";
 
 @Component({
   selector: 'app-edit-merchant',

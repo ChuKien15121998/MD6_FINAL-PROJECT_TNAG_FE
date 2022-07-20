@@ -1,5 +1,5 @@
 export interface Merchant {
-  id?: string;
+  id?: number;
   name?: string;
   phoneNumber?: string;
   avatar?: string;
@@ -7,4 +7,8 @@ export interface Merchant {
   openTime?: string;
   closeTime?: string;
   address?: string;
+  goldPartner?: boolean;
+  isAccept?: boolean;
+  isActive?: boolean;
+  userId?: number;
 }
