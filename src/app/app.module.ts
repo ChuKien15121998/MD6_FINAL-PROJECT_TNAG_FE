@@ -8,24 +8,36 @@ import {EditMerchantComponent} from "./merchant/edit-merchant/edit-merchant.comp
 import {NavbarComponent} from "./share/navbar/navbar.component";
 import {FooterComponent} from "./share/footer/footer.component";
 import {HttpClientModule} from "@angular/common/http";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {CreateFoodComponent} from "./merchant/create-food/create-food.component";
+import { HomeMerchantComponent } from './merchant/home-merchant/home-merchant.component';
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import {AngularFireModule} from "@angular/fire/compat";
+import {environment} from "../environments/environment.prod";
+import {UploadImageComponent} from "./upload/upload-image/upload-image.component";
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    FoodListComponent,
     NavbarComponent,
     FooterComponent,
-    EditMerchantComponent
+
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    AngularFireStorageModule,
+    NgxPaginationModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
   ],
   providers: [],
+  exports: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

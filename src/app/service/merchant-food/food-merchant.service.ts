@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Food} from "../../model/food";
+import {Merchant} from "../../model/merchant";
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +19,16 @@ export class FoodMerchantService {
 
   create(food: Food, id_merchant: number): Observable<any> {
     return this.httpClient.post(this.API + '/' + id_merchant, food)
+  }
+
+  delete(id: number): Observable<any> {
+    // @ts-ignore
+    return this.httpClient.put(this.API + '/delete-food/' + id)
+  }
+  findById(id: any): Observable<any> {
+    return this.httpClient.get(this.API + '/food-id/' + id)
+  }
+  update(id: any, food: Food): Observable<any> {
+    return this.httpClient.put(this.API + '/update-food/'+id, food);
   }
 }

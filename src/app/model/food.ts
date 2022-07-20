@@ -1,3 +1,4 @@
+import {FoodCategory} from "./foodCategory";
 
 
 export interface Food {
@@ -10,6 +11,6 @@ export interface Food {
   recommend?: boolean;
   sold?: number;
   isDelete?: boolean;
-  foodCategory?: number;
+  foodCategory?: FoodCategory;
   merchant?: number;
 }

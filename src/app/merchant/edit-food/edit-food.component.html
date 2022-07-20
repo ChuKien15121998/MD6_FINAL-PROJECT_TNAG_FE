@@ -1,0 +1,71 @@
+<body class="bg-white">
+<div class="container-fluid">
+  <div class="row no-gutter">
+    <div class="col-md-12 col-lg-12">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5">
+              <h3 class="login-heading mb-4">Cập nhật món ăn</h3>
+              <form [formGroup]="form" (submit)="update()">
+                <div hidden class="form-label-group">
+                  <input type="text" id="inputId" formControlName = "id" class="form-control"
+                         placeholder="">
+                  <label for="inputName"></label>
+                </div>
+                <div class="form-label-group">
+                  <input type="text" id="inputName" formControlName = "name" class="form-control"
+                         placeholder="">
+                  <label for="inputName">Tên món ăn</label>
+                </div>
+                <div class="form-label-group">
+                  <input type="text" id="phonenumber" formControlName = "description" class="form-control"
+                         placeholder="">
+                  <label for="phonenumber">Mô tả</label>
+                </div>
+                <div class="form-label-group mb-4">
+                  <input type="number" id="price" formControlName = "price" class="form-control" placeholder="">
+                  <label for="price">Giá</label>
+                </div>
+                <div class="form-label-group mb-4">
+                  <input type="number" id="price2" formControlName = "priceDiscount" class="form-control" placeholder="">
+                  <label for="price2">Giá khuyến mại</label>
+                </div>
+                <div class="form-label-group mb-4">
+                  <label>Lựa chọn loại món ăn</label> <br><br><br>
+                  <select formControlName="foodCategoryId" class="form-control">
+                    <option [defaultSelected]="defaultCategory" *ngFor="let itemCategory of listCategory" [value]="itemCategory.id">
+                      <p>{{itemCategory.nameCategory}}</p>
+                    </option>
+                  </select>
+                </div>
+                <div>
+                  <label for="price2">Đổi ảnh món ăn</label>
+                  <div style="margin-bottom: 10px; margin-top: 10px">
+                    <img id="food-image" [src]="showImage" style="width: 300px; height: auto">
+                  </div>
+                  <app-upload-image (giveURLtoCreate)="editImage($event)"></app-upload-image>
+                </div>
+                <button class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Cập nhật thông tin</button>
+                <!--                <a href="index.html"-->
+                <!--                   class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Cập nhật thông tin</a>-->
+                <div class="text-center pt-3">
+                  <a class="font-weight-bold" routerLink="">Quay trở lại trang chủ</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="vendor/jquery/jquery-3.3.1.slim.min.js" type="text/javascript"></script>
+
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+
+<script src="vendor/select2/js/select2.min.js" type="text/javascript"></script>
+
+<script src="js/custom.js" type="text/javascript"></script>
+</body>

@@ -1,0 +1,45 @@
+<div class="login d-flex align-items-center py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5">
+        <h3 class="login-heading mb-4">Thêm món ăn</h3>
+        <form [formGroup]="form">
+          <div class="form-label-group">
+            <input formControlName="name" type="text" id="ptext3" class="form-control" >
+            <label for="ptext3">Tên món</label>
+          </div>
+          <div class="form-label-group">
+            <input formControlName="description" type="text" id="inputPassword" class="form-control">
+            <label for="inputPassword">Mô tả</label>
+          </div>
+          <div class="form-label-group mb-4">
+            <input formControlName="price" type="number" id="ptext" class="form-control">
+            <label for="ptext">Giá</label>
+          </div>
+          <div class="form-label-group mb-4">
+            <input formControlName="priceDiscount" type="number" id="ptext2"  class="form-control">
+            <label for="ptext2">Giá khuyến mại</label>
+          </div>
+          <div class="form-label-group mb-4">
+            <label>Lựa chọn loại món ăn</label> <br><br><br>
+            <select formControlName="foodCategoryId" class="form-control">
+              <option *ngFor="let itemCategory of listCategory" [value]="itemCategory.id">
+                <p>{{itemCategory.nameCategory}}</p>
+              </option>
+            </select>
+          </div>
+          <div class="form-label-group mb-4">
+
+            <app-upload-image (giveURLtoCreate)="uploadImage($event)"></app-upload-image>
+          </div>
+          <a (click)="createFood()" class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Khởi tạo</a>
+          <a href="index.html" class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2" routerLink="">Trang chủ</a>
+          <div class="text-center pt-3">
+            Bạn đã có tài khoản? <a class="font-weight-bold" href="login.html" >Khởi tạo</a>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import {MerchantService} from "../../service/merchant/merchant.service";
+import { MerchantService } from 'src/app/service/merchant/merchant.service';
+
 
 @Component({
   selector: 'app-edit-merchant',
@@ -25,11 +26,13 @@ export class EditMerchantComponent implements OnInit {
               private merchantService: MerchantService,
               private activateRoute: ActivatedRoute) { }
   obj: any;
+  merchant: any;
   ngOnInit(): void {
     this.activateRoute.paramMap.subscribe((paraMap: ParamMap) => {
       // const id = paraMap.get('id');
-      const id = 3;
+      const id = 1;
       this.merchantService.getById(id).subscribe((data) => {
+        this.merchant = data;
         console.log("detail====",data)
         // this.form.setValue(data.value)
         this.form = new FormGroup( {
@@ -45,6 +48,22 @@ export class EditMerchantComponent implements OnInit {
       })
     });
   }
+  editBanner($event: string) {
+    // @ts-ignore
+    document.getElementById("merchant-banner-edit").hidden = true;
+    // @ts-ignore
+    document.getElementById("merchant-banner-edit-label").hidden = true;
+    this.form.value.imageBanner = $event;
+  }
+
+  editAvatar($event: string) {
+    // @ts-ignore
+    document.getElementById("merchant-avatar-edit").hidden = true;
+    // @ts-ignore
+    document.getElementById("merchant-avatar-edit-label").hidden = true;
+    this.form.value.avatar = $event;
+    this.merchant.avatar = this.form.value.avatar;
+  }
   update() {
     console.log(this.form.value);
     this.obj = {
@@ -59,6 +78,7 @@ export class EditMerchantComponent implements OnInit {
     }
     this.merchantService.update( this.obj.id,this.obj).subscribe(()=>{
       alert('Thành công');
+      window.location.reload();
     }, error => {
       alert('Lỗi');
     })
