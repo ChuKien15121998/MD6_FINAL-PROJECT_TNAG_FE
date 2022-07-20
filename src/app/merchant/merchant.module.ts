@@ -7,6 +7,10 @@ import {FoodListComponent} from "./food-list/food-list.component";
 import {EditMerchantComponent} from "./edit-merchant/edit-merchant.component";
 import {CreateFoodComponent} from "./create-food/create-food.component";
 import {ReactiveFormsModule} from "@angular/forms";
+import { EditFoodComponent } from './edit-food/edit-food.component';
+import {NgxPaginationModule} from "ngx-pagination";
+import {AppModule} from "../app.module";
+import {UploadImageComponent} from "../upload/upload-image/upload-image.component";
 
 
 @NgModule({
@@ -14,12 +18,18 @@ import {ReactiveFormsModule} from "@angular/forms";
     HomeMerchantComponent,
     FoodListComponent,
     EditMerchantComponent,
-    CreateFoodComponent
+    CreateFoodComponent,
+    EditFoodComponent,
+    UploadImageComponent,
   ],
   imports: [
     CommonModule,
     MerchantRoutingModule,
     ReactiveFormsModule,
+    NgxPaginationModule,
+  ],
+  exports: [
+    UploadImageComponent
   ]
 })
 export class MerchantModule { }

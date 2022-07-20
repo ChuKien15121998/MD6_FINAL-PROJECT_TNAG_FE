@@ -1,5 +1,5 @@
-
-<button id="btn-create-food" type="button" class="btn btn-sm btn-primary btn-lg"  routerLink="create-food">CREATE</button>
+<button id="btn-create-food" type="button" class="btn btn-sm btn-primary btn-lg" routerLink="create-food">CREATE
+</button>
 <br><br>
 <div class="tab-content" id="myTabContent">
 
@@ -7,7 +7,7 @@
        aria-labelledby="orders-tab">
 
     <div>
-      <div *ngFor="let item of listFoodMerchant">
+      <div *ngFor="let item of listFoodMerchant | paginate: {itemsPerPage: 5, currentPage: p}">
 
         <div class="bg-white card mb-4 order-list shadow-sm">
           <div class="gold-members p-4">
@@ -15,7 +15,8 @@
               <div class="media">
                 <img class="mr-4" src="{{item.image}}" alt="Generic placeholder image">
                 <div class="media-body">
-                  <span class="float-right text-info">Delivered on Mon, Nov {{merchant.openTime}} AM - {{merchant.closeTime}} PM <i class="icofont-check-circled text-success"></i></span>
+                  <span class="float-right text-info">Delivered on Mon, Nov {{merchant.openTime}}
+                    AM - {{merchant.closeTime}} PM <i class="icofont-check-circled text-success"></i></span>
                   <h6 class="mb-2">
                     <a href="detail.html" class="text-black">{{item.name}}
                     </a>
@@ -28,9 +29,9 @@
                   </p>
                   <hr>
                   <div class="float-right">
-                    <a class="btn btn-sm btn-outline-primary" href="#"><i
+                    <a class="btn btn-sm btn-outline-primary" routerLink="edit-food/{{item.id}}"><i
                       class="icofont-headphone-alt"></i> EDIT</a>
-                    <a class="btn btn-sm btn-primary" href="detail.html"><i
+                    <a (click)="deleteFood(item.id)" class="btn btn-sm btn-primary"><i
                       class="icofont-refresh"></i> DELETE</a>
                   </div>
                 </div>
@@ -39,6 +40,8 @@
           </div>
         </div>
       </div>
+      <pagination-controls class="btn btn-sm btn-outline-primary" class="myPagination" (pageChange)="p = $event">
+      </pagination-controls>
     </div>
 
   </div>

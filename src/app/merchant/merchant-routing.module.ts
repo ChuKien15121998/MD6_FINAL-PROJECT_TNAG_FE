@@ -4,6 +4,7 @@ import {FoodListComponent} from "./food-list/food-list.component";
 import {CreateFoodComponent} from "./create-food/create-food.component";
 import {EditMerchantComponent} from "./edit-merchant/edit-merchant.component";
 import {HomeMerchantComponent} from "./home-merchant/home-merchant.component";
+import {EditFoodComponent} from "./edit-food/edit-food.component";
 
 const routes: Routes = [
 
@@ -21,7 +22,11 @@ const routes: Routes = [
         component: CreateFoodComponent,
       },
       {
-        path: 'edit-merchant',
+        path: 'edit-food/:id',
+        component: EditFoodComponent,
+      },
+      {
+        path: 'edit-merchant/:id',
         component: EditMerchantComponent,
       },
     ]

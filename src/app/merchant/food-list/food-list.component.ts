@@ -13,6 +13,7 @@ export class FoodListComponent implements OnInit {
   listMerchant: any;
   merchant: any;
   merchant_name: any;
+  p: any;
 
   constructor(private  httpClient: HttpClient,
               private foodMerchantService: FoodMerchantService,
@@ -47,6 +48,16 @@ export class FoodListComponent implements OnInit {
       console.log('check data ------>> ', data)
       console.log('check thang list food ==>> ', this.listFoodMerchant)
     })
+  }
+
+  deleteFood(id: number) {
+    this.foodMerchantService.delete(id).subscribe((data) => {
+      console.log('check thang vua xoa ----->', data)
+      console.log('check thu id ----->> ', id)
+      alert('xoa thanh cong!!')
+      this.findAllByMerchant(1)
+    })
+
   }
 
 }

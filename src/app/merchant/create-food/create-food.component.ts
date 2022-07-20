@@ -14,6 +14,7 @@ export class CreateFoodComponent implements OnInit {
   listCategory: any;
   obj: any;
 
+
   form = new FormGroup({
     name: new FormControl(''),
     description: new FormControl(''),
@@ -45,6 +46,11 @@ export class CreateFoodComponent implements OnInit {
 
   }
 
+  // @ts-ignore
+  uploadImage($event) {
+this.form.value.image = $event;
+  }
+
   createFood() {
     this.obj = {
       name: this.form.value.name,
@@ -64,5 +70,6 @@ export class CreateFoodComponent implements OnInit {
     })
     console.log('check obj --------==>> ', this.obj)
   }
+
 
 }
