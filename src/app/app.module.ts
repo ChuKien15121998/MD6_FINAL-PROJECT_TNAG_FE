@@ -11,6 +11,8 @@ import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment.prod";
 import {CustomerRegisterComponent} from './auth/customer-register/customer-register.component';
 import {MerchantManagementComponent} from "./admin/merchant-management/merchant-management.component";
+import { MerchantLoginComponent } from './auth/merchant-login/merchant-login.component';
+import { CustomerLoginComponent } from './auth/customer-login/customer-login.component';
 import {NavbarComponent} from "./share/navbar/navbar.component";
 import {FooterComponent} from "./share/footer/footer.component";
 import {HttpClientModule} from "@angular/common/http";
@@ -18,6 +20,7 @@ import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
+
     AppComponent,
     HomeComponent,
     NavbarComponent,
@@ -25,7 +28,10 @@ import {NgxPaginationModule} from "ngx-pagination";
     FooterComponent,
     MerchantRegisterComponent,
     UploadImageComponent,
-    CustomerRegisterComponent
+    CustomerRegisterComponent,
+    MerchantLoginComponent,
+    CustomerLoginComponent,
+    FooterComponent
   ],
   imports: [
     FormsModule,
