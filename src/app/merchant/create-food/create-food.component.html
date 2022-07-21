@@ -3,22 +3,47 @@
     <div class="row">
       <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5">
         <h3 class="login-heading mb-4">Thêm món ăn</h3>
+        <div>
+          <div>
+            <p *ngIf="mess" style="color: red">{{mess}}</p>
+          </div>
+        </div>
         <form [formGroup]="form">
           <div class="form-label-group">
             <input formControlName="name" type="text" id="ptext3" class="form-control" >
             <label for="ptext3">Tên món</label>
+            <div *ngIf="!name?.valid && name?.touched">
+              <div [hidden]="!name?.errors?.['required']">
+                <p style="color: red">Foodname is required</p>
+              </div>
+            </div>
           </div>
           <div class="form-label-group">
             <input formControlName="description" type="text" id="inputPassword" class="form-control">
             <label for="inputPassword">Mô tả</label>
+            <div *ngIf="!description?.valid && description?.touched">
+              <div [hidden]="!description?.errors?.['required']">
+                <p style="color: red">Description is required</p>
+              </div>
+            </div>
           </div>
           <div class="form-label-group mb-4">
             <input formControlName="price" type="number" id="ptext" class="form-control">
             <label for="ptext">Giá</label>
+            <div *ngIf="!price?.valid && price?.touched">
+              <div [hidden]="!price?.errors?.['required']">
+                <p style="color: red">Price is required</p>
+              </div>
+            </div>
           </div>
           <div class="form-label-group mb-4">
             <input formControlName="priceDiscount" type="number" id="ptext2"  class="form-control">
             <label for="ptext2">Giá khuyến mại</label>
+            <div *ngIf="!priceDiscount?.valid && priceDiscount?.touched">
+              <div [hidden]="!priceDiscount?.errors?.['required']">
+                <p style="color: red">PriceDiscount is required</p>
+              </div>
+            </div>
           </div>
           <div class="form-label-group mb-4">
             <label>Lựa chọn loại món ăn</label> <br><br><br>
@@ -27,6 +52,11 @@
                 <p>{{itemCategory.nameCategory}}</p>
               </option>
             </select>
+            <div *ngIf="!foodCategoryId?.valid && foodCategoryId?.touched">
+              <div [hidden]="!foodCategoryId?.errors?.['required']">
+                <p style="color: red">FoodCategory is required</p>
+              </div>
+            </div>
           </div>
           <div class="form-label-group mb-4">
 

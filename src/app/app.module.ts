@@ -15,6 +15,7 @@ import {NavbarComponent} from "./share/navbar/navbar.component";
 import {FooterComponent} from "./share/footer/footer.component";
 import {HttpClientModule} from "@angular/common/http";
 import {NgxPaginationModule} from "ngx-pagination";
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {NgxPaginationModule} from "ngx-pagination";
     MerchantManagementComponent,
     FooterComponent,
     MerchantRegisterComponent,
-    CustomerRegisterComponent
+    CustomerRegisterComponent,
+    LoginComponent
   ],
   imports: [
     FormsModule,
