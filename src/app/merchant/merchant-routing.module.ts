@@ -7,6 +7,7 @@ import {HomeMerchantComponent} from "./home-merchant/home-merchant.component";
 import {EditFoodComponent} from "./edit-food/edit-food.component";
 import {EditMerchantBannerComponent} from "./edit-merchant-banner/edit-merchant-banner.component";
 import {EditMerchantAvatarComponent} from "./edit-merchant-avatar/edit-merchant-avatar.component";
+import {DetailFoodComponent} from "../homeshow/detail-food/detail-food.component";
 
 const routes: Routes = [
 

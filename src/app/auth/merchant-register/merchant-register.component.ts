@@ -58,7 +58,7 @@ export class MerchantRegisterComponent implements OnInit {
       if (JSON.stringify(data) == JSON.stringify(this.success)) {
         this.status = 'Gửi yêu cầu đăng ký cửa hàng thành công!'
         // this.authService.setData(true);
-        // this.router.navigate(['login']);
+        // this.router.navigate(['customer-login']);
       }
     })
   }

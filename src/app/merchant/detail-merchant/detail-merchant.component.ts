@@ -15,21 +15,11 @@ merchant: any;
   ngOnInit(): void {
     this.merchant = {
       name: '', phoneNumber: '', avatar: '', imageBanner: '',
-      address: ''
-      , class: {
-        id: "1"
-      }
+      address: '',
     }
-      this.activateRoute.paramMap.subscribe((paraMap: ParamMap) => {
-        // const id = paraMap.get('id');
-        const id = 1;
-        this.getMerchant(id);
-      });
-  }
-  getMerchant(id: any) {
-    this.merchantService.findById(id).subscribe((data) => {
-      this.merchant = data;
-    })
+        this.merchantService.getCurrentMerchant().subscribe((data) => {
+          this.merchant = data;
+        });
   }
 
 }

@@ -1,4 +1,5 @@
 import {FoodCategory} from "./foodCategory";
+import {Merchant} from "./merchant";
 
 
 export interface Food {
@@ -12,5 +13,5 @@ export interface Food {
   sold?: number;
   isDelete?: boolean;
   foodCategory?: FoodCategory;
-  merchant?: number;
+  merchant?: Merchant;
 }

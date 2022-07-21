@@ -74,8 +74,8 @@ export class CustomerRegisterComponent implements OnInit {
       }
       if (JSON.stringify(data) == JSON.stringify(this.success)) {
         this.status = 'Đăng ký người dùng thành công!'
-        // this.authService.setData(true);
-        // this.router.navigate(['login']);
+        this.authService.setData(true);
+        this.router.navigate(['customer-login']);
       }
     })
   }

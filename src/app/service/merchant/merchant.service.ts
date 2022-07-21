@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Merchant} from "../../model/merchant";
+import { JwtResponse } from 'src/app/model/JwtResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -24,8 +25,8 @@ export class MerchantService {
     return this.httpClient.post(this.API, merchant);
   }
 
-  getById(id: any): Observable<any> {
-    return this.httpClient.get(this.API + `/${id}`);
+  getCurrentMerchant(): Observable<any> {
+    return this.httpClient.get(this.API + '/detail');
   }
 
   update(merchant: Merchant): Observable<any> {
@@ -42,6 +43,10 @@ export class MerchantService {
   changeAvatar(info: any):Observable<JwtResponse>{
     // @ts-ignore
     return this.httpClient.put<JwtResponse>(this.API + '/change-avatar', info);
+  }
+  changeBanner(info: any):Observable<JwtResponse>{
+    // @ts-ignore
+    return this.httpClient.put<JwtResponse>(this.API + '/change-banner', info);
   }
 
   updateGoldMerchant(id: number | undefined, status: any): Observable<any> {

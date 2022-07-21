@@ -13,12 +13,15 @@ export class FoodMerchantService {
   constructor(private httpClient: HttpClient) {
   }
 
-  findAll(id_merchant = 1): Observable<any> {
-    return this.httpClient.get(this.API + '/' + id_merchant);
+  findAll(): Observable<any> {
+    return this.httpClient.get(this.API + '/merchant');
+  }
+  findAllFood(): Observable<any> {
+    return this.httpClient.get(this.API);
   }
 
   create(food: Food, id_merchant: number): Observable<any> {
-    return this.httpClient.post(this.API + '/' + id_merchant, food)
+    return this.httpClient.post(this.API, food)
   }
 
   delete(id: number): Observable<any> {

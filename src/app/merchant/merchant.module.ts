@@ -14,7 +14,7 @@ import {UploadImageComponent} from "../upload/upload-image/upload-image.componen
 import { DetailMerchantComponent } from './detail-merchant/detail-merchant.component';
 import { EditMerchantBannerComponent } from './edit-merchant-banner/edit-merchant-banner.component';
 import { EditMerchantAvatarComponent } from './edit-merchant-avatar/edit-merchant-avatar.component';
-import { DetailFoodComponent } from './detail-food/detail-food.component';
+import { DetailFoodComponent } from '../homeshow/detail-food/detail-food.component';
 
 
 @NgModule({

@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { SignInForm } from 'src/app/model/SignInForm';
-import { AuthService } from 'src/app/service/auth/auth.service';
-import { TokenService } from 'src/app/service/token/token.service';
 import {FormControl, Validators} from "@angular/forms";
+import {SignInForm} from "../../model/SignInForm";
+import {AuthService} from "../../service/auth/auth.service";
+import {TokenService} from "../../service/token/token.service";
+import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-customer-login',
-  templateUrl: './customer-login.component.html',
-  styleUrls: ['./customer-login.component.css']
+  selector: 'app-merchant-login',
+  templateUrl: './merchant-login.component.html',
+  styleUrls: ['./merchant-login.component.css']
 })
-export class CustomerLoginComponent implements OnInit {
+export class MerchantLoginComponent implements OnInit {
   status = 'Please fill in the form to LOGIN -->';
   form: any = {};
   hide = true;
@@ -38,14 +38,14 @@ export class CustomerLoginComponent implements OnInit {
       this.form.password
     )
     console.log("co submit duoc signin form k", this.signInForm)
-    this.authService.signInCustomer(this.signInForm).subscribe(data => {
-      // console.log("signin form tra ve gi", data)
+    this.authService.signInMerchant(this.signInForm).subscribe(data => {
+      console.log("signin form tra ve gi", data)
       if (data.token != undefined) {
         this.tokenService.setToken(data.token);
         this.tokenService.setName(data.name);
         this.tokenService.setRoles(data.roles);
         this.tokenService.setAvatar(data.avatar);
-        this.router.navigate(['']).then(() => {
+        this.router.navigate(['merchant']).then(() => {
           window.location.reload();
         });
       } else {

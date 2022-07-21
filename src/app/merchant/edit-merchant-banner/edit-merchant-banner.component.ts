@@ -32,10 +32,7 @@ export class EditMerchantBannerComponent implements OnInit {
   ngOnInit(): void {
     this.merchant = {
       name: '', phoneNumber: '', avatar: '', imageBanner: '',
-      address: ''
-      , class: {
-        id: "1"
-      }
+      address: '',
     }
     this.getMerchant(1);
   }
@@ -47,7 +44,7 @@ export class EditMerchantBannerComponent implements OnInit {
 
   onSubmit() {
     this.changeAvagtar = new ChangeAvatar(this.form.avatar);
-    this.merchantService.changeAvatar(this.changeAvagtar).subscribe(data =>{
+    this.merchantService.changeBanner(this.changeAvagtar).subscribe(data =>{
       if(JSON.stringify(data)==JSON.stringify(this.error)){
         this.status = 'Please upload Avatar!'
       }
@@ -62,6 +59,8 @@ export class EditMerchantBannerComponent implements OnInit {
   }
 
   onUploadAvatar($event: any) {
+    // @ts-ignore
+    document.getElementById("merchant-banner-edit").hidden = true;
     this.form.avatar = $event;
   }
 }

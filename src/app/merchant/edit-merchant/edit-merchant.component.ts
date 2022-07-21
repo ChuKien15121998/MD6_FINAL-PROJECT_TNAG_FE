@@ -28,10 +28,8 @@ export class EditMerchantComponent implements OnInit {
   obj: any;
   merchant: any;
   ngOnInit(): void {
-    this.activateRoute.paramMap.subscribe((paraMap: ParamMap) => {
-      // const id = paraMap.get('id');
-      const id = 1;
-      this.merchantService.getById(id).subscribe((data) => {
+
+      this.merchantService.getCurrentMerchant().subscribe((data) => {
         this.merchant = data;
         console.log("detail====",data)
         // this.form.setValue(data.value)
@@ -46,7 +44,6 @@ export class EditMerchantComponent implements OnInit {
           address: new FormControl(data.address)
         })
       })
-    });
   }
   // editBanner($event: string) {
   //   // @ts-ignore

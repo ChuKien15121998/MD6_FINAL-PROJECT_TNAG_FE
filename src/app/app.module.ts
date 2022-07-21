@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {HomeComponent} from './home/home.component';
+import {HomeComponent} from './homeshow/home/home.component';
 import {MerchantRegisterComponent} from './auth/merchant-register/merchant-register.component';
 import {UploadImageComponent} from "./upload/upload-image/upload-image.component";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
@@ -15,31 +15,33 @@ import {NavbarComponent} from "./share/navbar/navbar.component";
 import {FooterComponent} from "./share/footer/footer.component";
 import {HttpClientModule} from "@angular/common/http";
 import {NgxPaginationModule} from "ngx-pagination";
-import { LoginComponent } from './auth/login/login.component';
+import { CustomerLoginComponent } from './auth/customer-login/customer-login.component';
+import { MerchantLoginComponent } from './auth/merchant-login/merchant-login.component';
+import { httpInterceptorProviders } from "./security/auth.interceptor";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     NavbarComponent,
     MerchantManagementComponent,
     FooterComponent,
     MerchantRegisterComponent,
     CustomerRegisterComponent,
-    LoginComponent
+    HomeComponent,
+    CustomerLoginComponent,
+    MerchantLoginComponent,
   ],
   imports: [
     FormsModule,
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule,
     ReactiveFormsModule,
     NgxPaginationModule,
     AppRoutingModule,
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

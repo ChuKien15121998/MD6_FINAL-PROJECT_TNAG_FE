@@ -21,7 +21,7 @@ export class FoodListComponent implements OnInit {
 
   ngOnInit(): void {
     this.findAllMerchant();
-    this.findAllByMerchant(1);
+    this.findAllByMerchant();
   }
 
   checkMerchant() {
@@ -33,18 +33,16 @@ export class FoodListComponent implements OnInit {
   }
 
   findAllMerchant() {
-    this.merchantService.findById(1).subscribe((data) => {
+    this.merchantService.getCurrentMerchant().subscribe((data) => {
       this.merchant = data;
       console.log('check listMerchant ------>> ', data)
-      console.log('check NAME ======>> ', this.merchant.name)
-      console.log('check Data name --->> ', data.name)
 
     })
   }
 
-  findAllByMerchant(id = 1) {
-    this.foodMerchantService.findAll(id).subscribe((data) => {
-      this.listFoodMerchant = data['content'];
+  findAllByMerchant() {
+    this.foodMerchantService.findAll().subscribe((data) => {
+      this.listFoodMerchant = data;
       console.log('check data ------>> ', data)
       console.log('check thang list food ==>> ', this.listFoodMerchant)
     })
@@ -55,7 +53,7 @@ export class FoodListComponent implements OnInit {
       console.log('check thang vua xoa ----->', data)
       console.log('check thu id ----->> ', id)
       alert('xoa thanh cong!!')
-      this.findAllByMerchant(1)
+      this.findAllByMerchant()
     })
 
   }

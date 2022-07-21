@@ -62,7 +62,7 @@ export class EditMerchantAvatarComponent implements OnInit {
         window.location.reload();
       }
     }, error =>{
-      alert('Change avatar Failed!')
+      this.status = "Change Avatar Fail!";
     })
   }
 }
