@@ -17,6 +17,7 @@ import {NavbarComponent} from "./share/navbar/navbar.component";
 import {FooterComponent} from "./share/footer/footer.component";
 import {HttpClientModule} from "@angular/common/http";
 import {NgxPaginationModule} from "ngx-pagination";
+import { NotAllowMerchantListComponent } from './admin/not-allow-merchant-list/not-allow-merchant-list.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {NgxPaginationModule} from "ngx-pagination";
     CustomerRegisterComponent,
     MerchantLoginComponent,
     CustomerLoginComponent,
-    FooterComponent
+    FooterComponent,
+    NotAllowMerchantListComponent
   ],
   imports: [
     HttpClientModule,
