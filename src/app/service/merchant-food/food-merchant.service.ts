@@ -35,6 +35,6 @@ export class FoodMerchantService {
   }
 
   searchByFoodName(name: string, id: number): Observable<any> {
-    return this.httpClient.get(this.API + '/' + id + '/search-by-food-name' + '?name=' + name )
+    return this.httpClient.get(this.API + '/' + id + '/search-by-food-name' + '?name=' + name);
   }
 }
