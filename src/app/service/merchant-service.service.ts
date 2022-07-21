@@ -20,4 +20,5 @@ export class MerchantServiceService {
   updateGoldMerchant(id: number | undefined, status: any): Observable<any> {
     return this.httpClient.get(this.API+`/change-gold-status`+`/${id}`+`/${status}`);
   }
+
 }
