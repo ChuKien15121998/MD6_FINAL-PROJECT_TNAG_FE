@@ -1,0 +1,50 @@
+
+<div class="container-fluid">
+  <div class="row no-gutter">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5">
+              <h3 class="login-heading mb-4">Wellcome back!</h3>
+              <form>
+                <div class="form-label-group">
+                  <input type="email" id="inputEmail" class="form-control"
+                         placeholder="Email address">
+                  <label for="inputEmail">Email</label>
+                </div>
+                <div class="form-label-group">
+                  <input type="password" id="inputPassword" class="form-control"
+                         placeholder="Password">
+                  <label for="inputPassword">Password</label>
+                </div>
+                <div class="custom-control custom-checkbox mb-3">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Nhớ mật khẩu</label>
+                </div>
+                <a href="index.html"
+                   class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Đăng nhập</a>
+                <div class="text-center pt-3 dropdown show">
+                  Bạn chưa có tài khoản?
+<!--                  <a class="font-weight-bold" routerLink="register">Đăng ký ngay</a>-->
+                  <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Đăng ký ngay
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" routerLink="/register-customer">Đăng ký làm người dùng</a>
+                    <a class="dropdown-item" routerLink="/register-merchant">Đăng ký làm người bán</a>
+                  </div>
+                </div>
+
+              </form>
+              <hr class="my-4">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
