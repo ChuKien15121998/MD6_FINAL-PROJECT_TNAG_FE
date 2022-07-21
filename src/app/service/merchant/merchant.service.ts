@@ -28,11 +28,23 @@ export class MerchantService {
     return this.httpClient.get(this.API + `/${id}`);
   }
 
-  update(id: any, merchant: Merchant): Observable<any> {
-    return this.httpClient.put(this.API + `/${id}`, merchant);
+  update(merchant: Merchant): Observable<any> {
+    return this.httpClient.put(this.API + '/change-profile', merchant);
   }
 
   delete(id: any): Observable<any> {
     return this.httpClient.delete(this.API + `/${id}`);
+  }
+  updateActiveMerchant(id: number | undefined, status: any): Observable<any> {
+    return this.httpClient.get(this.API+'/change-status'+`/${id}`+`/${status}`);
+  }
+  // @ts-ignore
+  changeAvatar(info: any):Observable<JwtResponse>{
+    // @ts-ignore
+    return this.httpClient.put<JwtResponse>(this.API + '/change-avatar', info);
+  }
+
+  updateGoldMerchant(id: number | undefined, status: any): Observable<any> {
+    return this.httpClient.get(this.API+`/change-gold-status`+`/${id}`+`/${status}`);
   }
 }

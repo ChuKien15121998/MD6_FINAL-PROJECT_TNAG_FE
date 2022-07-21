@@ -1,29 +1,41 @@
 <body class="bg-white">
 <div class="container-fluid">
   <div class="row no-gutter">
-    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
-    <div class="col-md-8 col-lg-6">
+    <div class="col-md-12 col-lg-12">
       <div class="login d-flex align-items-center py-5">
         <div class="container">
           <div class="row">
-            <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5">
+            <div class="col-md-12 col-lg-12 mx-auto pl-5 pr-5">
               <h3 class="login-heading mb-4">Cập nhật thông tin cửa hàng</h3>
               <form [formGroup]="form" (submit)="update()">
-                <div hidden class="form-label-group">
-                  <input type="text" id="inputId" formControlName = "id" class="form-control"
-                         placeholder="">
-                  <label for="inputName">Tên cửa hàng</label>
-                </div>
+<!--                <div class="col-md-6 col-lg-6" id="merchant-banner-edit">-->
+<!--                  <img style="width: auto; height: 100px" src="{{merchant.imageBanner}}" alt=""> </div>-->
+<!--                  <div class="form-label-group">-->
+<!--                    <label id="merchant-banner-edit-label" for="inputName">Thay đổi banner cửa hàng</label>-->
+<!--                    <app-upload-image (giveURLtoCreate)="editBanner($event)"></app-upload-image>-->
+<!--                  </div>-->
+<!--                <div class="col-md-6 col-lg-6" id="merchant-avatar-edit">-->
+<!--                  <img style="width: auto; height: 100px" src="{{merchant.avatar}}" alt=""></div>-->
+<!--                  <div class="form-label-group">-->
+<!--                    <label id="merchant-avatar-edit-label" for="inputName">Thay đổi ảnh đại diện cửa hàng</label>-->
+<!--                    <app-upload-image (giveURLtoCreate)="editAvatar($event)"></app-upload-image>-->
+<!--                  </div>-->
+
+<!--                <div hidden class="form-label-group">-->
+<!--                  <input type="text" id="inputId" formControlName = "id" class="form-control"-->
+<!--                         placeholder="">-->
+<!--                  <label for="inputName">Tên cửa hàng</label>-->
+<!--                </div>-->
                 <div class="form-label-group">
                   <input type="text" id="inputName" formControlName = "name" class="form-control"
                          placeholder="">
                   <label for="inputName">Tên cửa hàng</label>
                 </div>
-                <div class="form-label-group">
-                  <input type="text" id="phonenumber" formControlName = "phoneNumber" class="form-control"
-                         placeholder="">
-                  <label for="phonenumber">Số điện thoại</label>
-                </div>
+<!--                <div class="form-label-group">-->
+<!--                  <input type="text" id="phonenumber" formControlName = "phoneNumber" class="form-control"-->
+<!--                         placeholder="">-->
+<!--                  <label for="phonenumber">Số điện thoại</label>-->
+<!--                </div>-->
                 <div class="form-label-group mb-4">
                   <input type="time" id="openTime" formControlName = "openTime" class="form-control" placeholder="">
                   <label for="openTime">Giờ mở cửa</label>
@@ -37,11 +49,12 @@
                   <label for="address">Địa chỉ</label>
                 </div>
                 <button class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Cập nhật thông tin</button>
+                <a routerLink="" class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Trang chủ</a>
 <!--                <a href="index.html"-->
 <!--                   class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Cập nhật thông tin</a>-->
-                <div class="text-center pt-3">
-                   <a class="font-weight-bold" routerLink="">Quay trở lại trang chủ</a>
-                </div>
+<!--                <div class="text-center pt-3">-->
+<!--                   <a class="font-weight-bold">Quay trở lại trang chủ</a>-->
+<!--                </div>-->
               </form>
             </div>
           </div>
@@ -59,3 +72,5 @@
 
 <script src="js/custom.js" type="text/javascript"></script>
 </body>
+
+

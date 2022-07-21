@@ -53,6 +53,8 @@ export class EditFoodComponent implements OnInit {
     });
   }
   editImage($event: string) {
+    // @ts-ignore
+    document.getElementById("food-image").hidden = true;
 this.form.value.image = $event
   }
   update() {

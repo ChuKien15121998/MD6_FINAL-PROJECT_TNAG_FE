@@ -12,7 +12,7 @@ export class UploadImageComponent implements OnInit {
   // @ts-ignore
   ref: AngularFireStorageReference;
   // @ts-ignore
-  downloadURL: string;
+  downloadURL: string
   checkUploadAvatar = false;
   @Output()
   giveURLtoCreate = new EventEmitter<string>();

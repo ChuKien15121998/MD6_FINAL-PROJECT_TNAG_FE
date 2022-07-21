@@ -5,6 +5,8 @@ import {CreateFoodComponent} from "./create-food/create-food.component";
 import {EditMerchantComponent} from "./edit-merchant/edit-merchant.component";
 import {HomeMerchantComponent} from "./home-merchant/home-merchant.component";
 import {EditFoodComponent} from "./edit-food/edit-food.component";
+import {EditMerchantBannerComponent} from "./edit-merchant-banner/edit-merchant-banner.component";
+import {EditMerchantAvatarComponent} from "./edit-merchant-avatar/edit-merchant-avatar.component";
 
 const routes: Routes = [
 
@@ -26,8 +28,16 @@ const routes: Routes = [
         component: EditFoodComponent,
       },
       {
-        path: 'edit-merchant/:id',
+        path: 'edit-merchant',
         component: EditMerchantComponent,
+      },
+      {
+        path: 'edit-merchant-banner',
+        component: EditMerchantBannerComponent,
+      },
+      {
+        path: 'edit-merchant-avatar',
+        component: EditMerchantAvatarComponent,
       },
     ]
   },
