@@ -8,7 +8,12 @@ import {CustomerLoginComponent} from "./auth/customer-login/customer-login.compo
 import {MerchantRegisterComponent} from "./auth/merchant-register/merchant-register.component";
 import {CustomerRegisterComponent} from "./auth/customer-register/customer-register.component";
 import {MerchantLoginComponent} from "./auth/merchant-login/merchant-login.component";
+// @ts-ignore
 import {DetailFoodComponent} from "./homeshow/detail-food/detail-food.component";
+import {MerchantManagementComponent} from "./admin/merchant-management/merchant-management.component";
+import {
+  DetailMerchantManagementComponent
+} from "./admin/detail-merchant-management/detail-merchant-management.component";
 
 
 const routes: Routes = [
@@ -20,6 +25,14 @@ const routes: Routes = [
       path: 'customer-login',
       component: CustomerLoginComponent,
     },
+  {
+    path:'detail-merchant/:id',
+    component: DetailMerchantManagementComponent,
+  },
+  {
+    path: 'admin',
+    component: MerchantManagementComponent,
+  },
   {
     path: 'detail-food/:id',
     component: DetailFoodComponent,

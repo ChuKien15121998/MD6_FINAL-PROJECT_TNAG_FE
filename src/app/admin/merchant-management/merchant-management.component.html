@@ -13,13 +13,11 @@
                       <div class="osahan-user-media-body">
                         <h6 class="mb-2">Nguyễn Khắc Bún</h6>
                         <p class="mb-1">+91 85680-79956</p>
-                        <p><a href="https://thaotrinh.info/cdn-cgi/l/email-protection"
-                              class="__cf_email__"
-                              data-cfemail="6f060e02001c0e070e012f08020e0603410c0002">[email&#160;protected]</a>
+                        <p>Admin
                         </p>
-                        <p class="mb-0 text-black font-weight-bold"><a class="text-primary mr-3"
-                                                                       data-toggle="modal" data-target="#edit-profile-modal" href="#"><i
-                          class="icofont-ui-edit"></i>  Sửa</a></p>
+<!--                        <p class="mb-0 text-black font-weight-bold"><a class="text-primary mr-3"-->
+<!--                                                                       data-toggle="modal" data-target="#edit-profile-modal" href="#"><i-->
+<!--                          class="icofont-ui-edit"></i>  Sửa</a></p>-->
                       </div>
                     </div>
                   </div>
@@ -64,7 +62,7 @@
                         </a>
                         <div class="media-body" >
                           <h6 class="mb-2">
-                            <a href="detail.html" class="text-black">Tên cửa hàng: {{item.name}}
+                            <a routerLink="/detail-merchant/{{item.id}}" class="text-black">Tên cửa hàng: {{item.name}}
                             </a>
                           </h6>
                           <p class="text-gray mb-1"><i class="icofont-location-arrow"></i> Địa chỉ: {{item.address}}

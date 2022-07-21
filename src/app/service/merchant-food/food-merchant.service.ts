@@ -16,6 +16,9 @@ export class FoodMerchantService {
   findAll(): Observable<any> {
     return this.httpClient.get(this.API + '/merchant');
   }
+  findAllByMerchant(id:any): Observable<any> {
+    return this.httpClient.get(this.API + '/' + id);
+  }
   findAllFood(): Observable<any> {
     return this.httpClient.get(this.API);
   }

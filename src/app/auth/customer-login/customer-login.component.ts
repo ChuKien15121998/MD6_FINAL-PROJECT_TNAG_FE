@@ -38,6 +38,7 @@ export class CustomerLoginComponent implements OnInit {
       this.form.password
     )
     console.log("co submit duoc signin form k", this.signInForm)
+
     this.authService.signInCustomer(this.signInForm).subscribe(data => {
       // console.log("signin form tra ve gi", data)
       if (data.token != undefined) {
@@ -45,9 +46,17 @@ export class CustomerLoginComponent implements OnInit {
         this.tokenService.setName(data.name);
         this.tokenService.setRoles(data.roles);
         this.tokenService.setAvatar(data.avatar);
-        this.router.navigate(['']).then(() => {
-          window.location.reload();
-        });
+        if(JSON.stringify(this.tokenService.getRoles())==JSON.stringify(["ADMIN"])){
+          this.router.navigate(['admin']).then(() => {
+            window.location.reload();
+          });
+        }else {
+          this.router.navigate(['']).then(() => {
+            window.location.reload();
+          });
+        }
+
+
       } else {
         this.isLogin = true;
         this.status = 'Login Failed! Please try again!'

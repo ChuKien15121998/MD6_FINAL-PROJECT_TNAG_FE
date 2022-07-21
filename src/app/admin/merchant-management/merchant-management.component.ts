@@ -32,10 +32,10 @@ export class MerchantManagementComponent implements OnInit {
   }
   changeIsActive(id: any, status: any) {
     // merchant.isActive = !merchant.isActive;
-    // console.log(merchant)
     this.merchantService.updateActiveMerchant(id, status).subscribe
-    (data => {
+    ((data) => {
       this.findAll()
+      // window.location.reload();
     }, error => {
       console.log(error)
     })
@@ -46,7 +46,8 @@ export class MerchantManagementComponent implements OnInit {
     // console.log(merchant)
     this.merchantService.updateGoldMerchant(id, status1).subscribe
     (data => {
-      this.findAll()
+      // this.findAll()
+      window.location.reload();
     }, error => {
       console.log(error)
     })

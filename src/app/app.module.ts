@@ -18,6 +18,7 @@ import {NgxPaginationModule} from "ngx-pagination";
 import { CustomerLoginComponent } from './auth/customer-login/customer-login.component';
 import { MerchantLoginComponent } from './auth/merchant-login/merchant-login.component';
 import { httpInterceptorProviders } from "./security/auth.interceptor";
+import { DetailMerchantManagementComponent } from './admin/detail-merchant-management/detail-merchant-management.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { httpInterceptorProviders } from "./security/auth.interceptor";
     HomeComponent,
     CustomerLoginComponent,
     MerchantLoginComponent,
+    DetailMerchantManagementComponent,
   ],
   imports: [
     FormsModule,

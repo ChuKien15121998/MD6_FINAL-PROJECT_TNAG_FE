@@ -24,6 +24,7 @@ export class NavbarComponent implements OnInit {
       this.avatar = this.tokenService.getAvatar();
       this.isLogin = true;
       if(JSON.stringify(this.tokenService.getRoles())==JSON.stringify(this.admin)){
+        console.log("co check duoc role k")
         this.isCheckAdmin = true;
       }else if (JSON.stringify(this.tokenService.getRoles())==JSON.stringify(this.merchant)){
         this.isMerchant = true;
