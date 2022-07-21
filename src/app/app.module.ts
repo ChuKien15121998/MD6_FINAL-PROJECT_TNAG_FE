@@ -24,7 +24,6 @@ import {NgxPaginationModule} from "ngx-pagination";
     MerchantManagementComponent,
     FooterComponent,
     MerchantRegisterComponent,
-    UploadImageComponent,
     CustomerRegisterComponent
   ],
   imports: [
