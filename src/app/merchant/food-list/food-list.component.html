@@ -1,22 +1,34 @@
-<button id="btn-create-food" type="button" class="btn btn-sm btn-primary btn-lg" routerLink="create-food">CREATE
-</button>
-<br><br>
+
+<br>
 <div class="tab-content" id="myTabContent">
 
   <div class="tab-pane fade show active" id="orders" role="tabpanel"
        aria-labelledby="orders-tab">
-    <div class="col-sm">
-    <form [formGroup]="form">
-      <div class="input-group rounded">
-        <input (input)="searchByFoodName()" formControlName="name" type="search" class="form-control rounded"
-               placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
-        <span class="input-group-text border-0" id="search-food">
+
+
+    <!----------------------------------->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <button id="btn-create-food" type="button" class="btn btn-sm btn-primary btn-lg" routerLink="create-food">THÊM MỚI
+          </button>
+        </div>
+        <div class="col-sm">
+
+          <form [formGroup]="form">
+            <div class="input-group rounded">
+              <input (input)="searchByFoodName()" formControlName="name" type="search" class="form-control rounded"
+                     placeholder="Tìm kiếm" aria-label="Search" aria-describedby="search-addon"/>
+              <span class="input-group-text border-0" id="search-food">
             <i class="fas fa-search"></i>
           </span>
+            </div>
+          </form>
+        </div>
       </div>
-    </form>
     </div>
     <br><br>
+    <!----------------------------------->
 
     <div>
       <div *ngFor="let item of listFoodMerchant | paginate: {itemsPerPage: 5, currentPage: p}">
@@ -27,7 +39,7 @@
               <div class="media">
                 <img class="mr-4" src="{{item.image}}" alt="Generic placeholder image">
                 <div class="media-body">
-                  <span class="float-right text-info">Delivered on Mon, Sun {{merchant.openTime}}
+                  <span class="float-right text-info">Giao hàng từ thứ 2 đến thứ 6 | {{merchant.openTime}}
                     AM - {{merchant.closeTime}} PM <i class="icofont-check-circled text-success"></i></span>
                   <h6 class="mb-2">
                     <a href="detail.html" class="text-black">{{item.name}}
@@ -35,19 +47,19 @@
                   </h6>
                   <p class="text-gray mb-1"><i class="icofont-location-arrow"></i> {{merchant.address}}
                   </p>
-                  <p class="text-gray mb-3"><i class="icofont-list"></i> SOLD
+                  <p class="text-gray mb-3"><i class="icofont-list"></i> ĐÃ BÁN
                     {{item.sold}} <br>
                     <i class="fa fa-dollar"></i>
 <!--                    <i class="material-symbols-outlined ml-2"></i>-->
-                    PRICE {{item.price}} VND</p>
+                    GIÁ {{item.price}} vnđ</p>
                   <p class="text-dark">{{item.description}}
                   </p>
                   <hr>
                   <div class="float-right">
                     <a class="btn btn-sm btn-outline-primary" routerLink="edit-food/{{item.id}}"><i
-                      ></i> EDIT</a>
+                      ></i> SỬA </a>
                     <a (click)="deleteFood(item.id)" routerLink="/merchant" class="btn btn-sm btn-primary"><i
-                      ></i> DELETE</a>
+                      ></i> XÓA </a>
                   </div>
                 </div>
               </div>
