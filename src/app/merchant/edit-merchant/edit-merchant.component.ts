@@ -21,6 +21,7 @@ export class EditMerchantComponent implements OnInit {
     closeTime: new FormControl(''),
     address: new FormControl('')
   })
+ mess: any;
 
   constructor(private httpClient: HttpClient,
               private merchantService: MerchantService,
@@ -74,10 +75,12 @@ export class EditMerchantComponent implements OnInit {
       address: this.form.value.address,
     }
     this.merchantService.update(this.obj).subscribe(()=>{
-      alert('Thành công');
+      // alert('Thành công');
+      this.mess = "Sửa thông tin thành công"
       window.location.reload();
     }, error => {
-      alert('Lỗi');
+      // alert('Lỗi');
+      this.mess = "Sửa thông tin lỗi"
     })
   }
 

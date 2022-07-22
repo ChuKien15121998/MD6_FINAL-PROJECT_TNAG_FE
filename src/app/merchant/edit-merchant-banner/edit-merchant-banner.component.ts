@@ -21,7 +21,7 @@ export class EditMerchantBannerComponent implements OnInit {
   success: any = {
     message: 'yes'
   };
-  status = 'Please choose an image and click upload';
+  status = 'Chọn ảnh';
 
   constructor(private authService: AuthService,
               private tokenService: TokenService,
@@ -46,15 +46,15 @@ export class EditMerchantBannerComponent implements OnInit {
     this.changeAvagtar = new ChangeAvatar(this.form.avatar);
     this.merchantService.changeBanner(this.changeAvagtar).subscribe(data =>{
       if(JSON.stringify(data)==JSON.stringify(this.error)){
-        this.status = 'Please upload Avatar!'
+        this.status = 'Gửi ảnh lên!'
       }
       if(JSON.stringify(data)==JSON.stringify(this.success)){
-        this.status = "Change Avatar success!";
+        this.status = "Thay banner nhà hàng thành công!";
         this.tokenService.setAvatar(this.form.avatar);
         window.location.reload();
       }
     }, error =>{
-      this.status = "Change Avatar Fail!";
+      this.status = "Thay banner nhà hàng không thành công!";
     })
   }
 

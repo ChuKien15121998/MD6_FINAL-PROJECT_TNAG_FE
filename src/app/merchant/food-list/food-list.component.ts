@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {FoodMerchantService} from "../../service/merchant-food/food-merchant.service";
 import {MerchantService} from "../../service/merchant/merchant.service";
+import {FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-food-list',
@@ -14,6 +15,10 @@ export class FoodListComponent implements OnInit {
   merchant: any;
   merchant_name: any;
   p: any;
+  form = new FormGroup({
+    name: new FormControl('')
+  })
+
 
   constructor(private  httpClient: HttpClient,
               private foodMerchantService: FoodMerchantService,
@@ -55,6 +60,24 @@ export class FoodListComponent implements OnInit {
       alert('xoa thanh cong!!')
       this.findAllByMerchant()
     })
+
+  }
+  searchByFoodName() {
+    let name_food: any;
+    name_food = this.form.value.name;
+    if (name_food != '') {
+      this.foodMerchantService.searchByFoodName(name_food,1).subscribe((data) => {
+        console.log('check list sau khi search ---> ', data['content'])
+        this.listFoodMerchant = data['content'];
+      }, error => {
+        alert('loi');
+      })
+    } else {
+      this.foodMerchantService.findAll().subscribe((data) => {
+        console.log('check data else ----->> ', data);
+        this.listFoodMerchant = data['content'];
+      })
+    }
 
   }
 

@@ -35,4 +35,9 @@ export class NavbarComponent implements OnInit {
   }
   constructor(private tokenService: TokenService) {
   }
+
+  logout() {
+    window.sessionStorage.clear()
+    this.isLogin = false;
+  }
 }

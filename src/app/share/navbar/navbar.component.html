@@ -6,6 +6,8 @@
                                                                          style="width: 50px; height: 50px; border-radius: 50%" src="https://firebasestorage.googleapis.com/v0/b/fir-470c3.appspot.com/o/z3578349206972_f4eb9fa8a74840c95635b0f81642e08d.jpg?alt=media&token=02cfb780-a065-4f28-819e-8b1d5a432be5"></a>
     <a *ngIf="isLogin&&isCheckAdmin" class="navbar-brand" routerLink="/admin"><img alt="logo"
                                                                         style="width: 50px; height: 50px; border-radius: 50%" src="https://firebasestorage.googleapis.com/v0/b/fir-470c3.appspot.com/o/z3578349206972_f4eb9fa8a74840c95635b0f81642e08d.jpg?alt=media&token=02cfb780-a065-4f28-819e-8b1d5a432be5"></a>
+    <a *ngIf="!isLogin" class="navbar-brand" routerLink=""><img alt="logo"
+                                                                                   style="width: 50px; height: 50px; border-radius: 50%" src="https://firebasestorage.googleapis.com/v0/b/fir-470c3.appspot.com/o/z3578349206972_f4eb9fa8a74840c95635b0f81642e08d.jpg?alt=media&token=02cfb780-a065-4f28-819e-8b1d5a432be5"></a>
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
@@ -40,13 +42,18 @@
           <a *ngIf="!isLogin" class="nav-link" routerLink="register-customer">Đăng ký <span class="sr-only">(current)</span></a>
         </li>
         <li>
-          <a *ngIf="isLogin&&isUser"  class="docs-button" routerLink="user-account" aria-label="Angular Material">
+          <a *ngIf="isLogin&&isUser"  class="docs-button" aria-label="Angular Material">
             <span>{{name}}</span></a>
         </li>
+
         <li>
 <!--          <a *ngIf="isLogin&&isUser" class="docs-button" routerLink="user-account" aria-label="Angular Material">-->
             <img *ngIf="isLogin&&isUser" class="img-fluid mr-3 float-left" alt="osahan" style="border-radius: 50%" width="50px" height="50px" src="{{avatar}}">
 <!--            <span>{{avatar}}</span></a>-->
+        </li>
+        <li>
+          <a *ngIf="isLogin" (click)="logout()" routerLink="" class="docs-button" aria-label="Angular Material">
+            <span>Logout</span></a>
         </li>
 <!--        <li class="nav-item dropdown dropdown-cart">-->
 <!--          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"-->

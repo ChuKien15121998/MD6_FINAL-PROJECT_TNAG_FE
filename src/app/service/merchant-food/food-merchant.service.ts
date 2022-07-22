@@ -37,4 +37,7 @@ export class FoodMerchantService {
   update(id: any, food: Food): Observable<any> {
     return this.httpClient.put(this.API + '/update-food/'+id, food);
   }
+  searchByFoodName(name: string, id: number): Observable<any> {
+    return this.httpClient.get(this.API + '/' + id + '/search-by-food-name' + '?name=' + name);
+  }
 }

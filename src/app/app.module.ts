@@ -19,19 +19,25 @@ import { CustomerLoginComponent } from './auth/customer-login/customer-login.com
 import { MerchantLoginComponent } from './auth/merchant-login/merchant-login.component';
 import { httpInterceptorProviders } from "./security/auth.interceptor";
 import { DetailMerchantManagementComponent } from './admin/detail-merchant-management/detail-merchant-management.component';
+import { HomweUserComponent } from './user/homwe-user/homwe-user.component';
+import { EditUserComponent } from './user/edit-user/edit-user.component';
+import { DetailUserComponent } from './user/detail-user/detail-user.component';
+import { NotAllowMerchantListComponent } from './admin/not-allow-merchant-list/not-allow-merchant-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    MerchantManagementComponent,
     FooterComponent,
     MerchantRegisterComponent,
     CustomerRegisterComponent,
     HomeComponent,
+
     CustomerLoginComponent,
     MerchantLoginComponent,
-    DetailMerchantManagementComponent,
+    HomweUserComponent,
+    EditUserComponent,
+    DetailUserComponent,
   ],
   imports: [
     FormsModule,
@@ -42,6 +48,9 @@ import { DetailMerchantManagementComponent } from './admin/detail-merchant-manag
     AppRoutingModule,
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
+  ],
+  exports: [
+
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

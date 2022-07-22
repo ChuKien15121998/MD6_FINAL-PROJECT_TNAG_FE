@@ -33,9 +33,9 @@ export class MerchantManagementComponent implements OnInit {
   changeIsActive(id: any, status: any) {
     // merchant.isActive = !merchant.isActive;
     this.merchantService.updateActiveMerchant(id, status).subscribe
-    ((data) => {
-      this.findAll()
-      // window.location.reload();
+    (data => {
+      window.location.href = "http://localhost:4200/admin"
+      // this.findAll()
     }, error => {
       console.log(error)
     })
@@ -46,8 +46,9 @@ export class MerchantManagementComponent implements OnInit {
     // console.log(merchant)
     this.merchantService.updateGoldMerchant(id, status1).subscribe
     (data => {
+      window.location.href = "http://localhost:4200/admin"
       // this.findAll()
-      window.location.reload();
+      // window.location.reload();
     }, error => {
       console.log(error)
     })

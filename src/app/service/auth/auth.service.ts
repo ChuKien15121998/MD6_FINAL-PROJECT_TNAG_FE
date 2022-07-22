@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {environment} from "../../../environments/environment.prod";
 import {HttpClient} from "@angular/common/http";
 import {SignUpFormMerchant} from "../../model/SignUpFormMerchant";
-import {Observable} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import {SignUpFormCustomer} from "../../model/SignUpFormCustomer";
 import { SignInForm } from 'src/app/model/SignInForm';
 import { JwtResponse } from 'src/app/model/JwtResponse';
@@ -24,7 +24,8 @@ export class AuthService {
   private API_CHANGE_CUSTOMER_PROFILE = environment.API_LOCAL+'customers/change-profile';
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   signUpMerchant (signUpMerchant: SignUpFormMerchant): Observable<any> {
     return this.http.post<any>(this.API_SIGNUP_MERCHANT, signUpMerchant);

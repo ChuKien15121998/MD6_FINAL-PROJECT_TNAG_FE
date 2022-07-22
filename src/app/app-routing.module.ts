@@ -14,6 +14,9 @@ import {MerchantManagementComponent} from "./admin/merchant-management/merchant-
 import {
   DetailMerchantManagementComponent
 } from "./admin/detail-merchant-management/detail-merchant-management.component";
+import {RoleAuthGuard} from "./service/auth/role-auth.guard";
+import {AuthGuard} from "./service/auth/auth.guard";
+import {MerchantGuardGuard} from "./service/auth/merchant-guard.guard";
 
 
 const routes: Routes = [
@@ -25,14 +28,14 @@ const routes: Routes = [
       path: 'customer-login',
       component: CustomerLoginComponent,
     },
-  {
-    path:'detail-merchant/:id',
-    component: DetailMerchantManagementComponent,
-  },
-  {
-    path: 'admin',
-    component: MerchantManagementComponent,
-  },
+  // {
+  //   path:'detail-merchant/:id',
+  //   component: DetailMerchantManagementComponent,canActivate:[RoleAuthGuard]
+  // },
+  // {
+  //   path: 'admin',
+  //   component: MerchantManagementComponent,canActivate:[RoleAuthGuard]
+  // },
   {
     path: 'detail-food/:id',
     component: DetailFoodComponent,
@@ -51,8 +54,16 @@ const routes: Routes = [
       },
     // ]
   {
-    path: 'merchant',
+    path: 'merchant', canActivate: [MerchantGuardGuard],
     loadChildren: () => import('./merchant/merchant.module').then(module => module.MerchantModule)
+  },
+  {
+    path: 'user', canActivate: [AuthGuard],
+    loadChildren: () => import('./user/user.module').then(module => module.UserModule)
+  },
+  {
+    path: 'admin', canActivate: [RoleAuthGuard],
+    loadChildren: () => import('./admin/admin.module').then(module => module.AdminModule)
   },
 
 ];

@@ -29,6 +29,7 @@ export class EditFoodComponent implements OnInit {
   obj: any;
   defaultCategory: any;
   showImage: any;
+  mess: any;
   listCategory: FoodCategory[] = [];
   ngOnInit(): void {
     this.foodCategoryService.findAll().subscribe((data) => {
@@ -72,9 +73,9 @@ this.form.value.image = $event
     }
     console.log("co tao duoc obj khong",this.obj)
     this.foodService.update( this.obj.id,this.obj).subscribe(()=>{
-      alert('Thành công');
+      this.mess = "Sửa thông tin món thành công"
     }, error => {
-      alert('Lỗi');
+      this.mess = "Sửa thông tin lỗi"
     })
   }
 
