@@ -15,11 +15,13 @@ export class MerchantGuardGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     if(this.tokenService.getToken()){
-      if(JSON.stringify(this.tokenService.getRoles())==JSON.stringify(this.merchant)){
+      // console.log("role lay ra trong guard", this.tokenService.getRoles())
+      // console.log("kieu json",JSON.stringify(this.tokenService.getRoles()))
+      if(JSON.stringify(this.tokenService.getRoles()).includes(this.merchant)){
         // console.log('Goi dung la MERCHANT');
         return true;
       }else {
-        // console.log('**** Goi khong dung MERCHANT');
+        console.log('**** Goi khong dung MERCHANT');
         this.router.navigate([''])
         return false;
       }
