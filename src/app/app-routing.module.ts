@@ -32,7 +32,7 @@ const routes: Routes = [
   //   path:'detail-merchant/:id',
   //   component: DetailMerchantManagementComponent,canActivate:[RoleAuthGuard]
   // },
-  // {
+  // {a
   //   path: 'admin',
   //   component: MerchantManagementComponent,canActivate:[RoleAuthGuard]
   // },
