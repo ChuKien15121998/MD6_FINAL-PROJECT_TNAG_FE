@@ -17,7 +17,7 @@ export class MerchantService {
     return this.httpClient.get(this.API);
   }
 
-  findById(id: any): Observable<any> {
+  findById(id: number): Observable<any> {
     return this.httpClient.get(this.API + '/' + id)
   }
 

@@ -48,7 +48,7 @@ export class CustomerRegisterComponent implements OnInit {
   listAddressCategory() {
     this.authService.listAddressCategory().subscribe(listAddCate => {
       this.listAddressCate = listAddCate;
-      console.log("data =====>", this.listAddressCate)
+      // console.log("data =====>", this.listAddressCate)
     })
   }
 
@@ -58,14 +58,14 @@ export class CustomerRegisterComponent implements OnInit {
       this.form.username,
       this.form.phone,
       this.form.address,
-      this.form.addressCategory,
+      {id: this.form.addressCategory},
       this.form.password,
       this.form.confirmPassword
     )
     this.authService.signUpCustomer(this.signUpFormCustomer).subscribe(data => {
-      console.log("signupform =====>" , this.signUpFormCustomer);
-      console.log("id ====>", this.form.addressCategory);
-      console.log("data ======>", data)
+      // console.log("signupform =====>" , this.signUpFormCustomer);
+      // console.log("id ====>", this.form.addressCategory);
+      // console.log("data ======>", data)
       if (JSON.stringify(data) == JSON.stringify(this.error1)) {
         this.status = 'Mật khẩu không khớp! Vui lòng thử lại!'
       }

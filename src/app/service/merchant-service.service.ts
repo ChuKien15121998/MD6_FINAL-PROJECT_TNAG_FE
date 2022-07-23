@@ -13,9 +13,12 @@ export class MerchantServiceService {
     return this.httpClient.get(this.API)
   }
 
-  updateActiveMerchant(id: number | undefined, status: any): Observable<any> {
-    return this.httpClient.get(this.API+`/change-status`+`/${id}`+`/${status}`);
+  updateActiveMerchant(id: any): Observable<any> {
+    return this.httpClient.get(this.API+`/change-status`+`/${id}`);
   }
+  // updateActiveMerchant(id: any, status: any): Observable<any> {
+  //   return this.httpClient.get(this.API+`/change-status`+`/${id}`+`/${status}`);
+  // }
 
   updateGoldMerchant(id: number | undefined, status: any): Observable<any> {
     return this.httpClient.get(this.API+`/change-gold-status`+`/${id}`+`/${status}`);
