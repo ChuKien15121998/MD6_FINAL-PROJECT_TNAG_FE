@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MerchantServiceService} from "../../service/merchant-service.service";
 import {HttpClient} from "@angular/common/http";
 import {Merchant} from "../../model/merchant";
+import {MerchantService} from "../../service/merchant/merchant.service";
 
 @Component({
   selector: 'app-merchant-management',
@@ -14,7 +15,7 @@ export class MerchantManagementComponent implements OnInit {
   listMerchant: any;
 
   constructor(private httpClient: HttpClient,
-              private merchantService: MerchantServiceService) {
+              private merchantService: MerchantService) {
   }
 
   ngOnInit(): void {
@@ -32,10 +33,10 @@ export class MerchantManagementComponent implements OnInit {
   }
   changeIsActive(id: any, status: any) {
     // merchant.isActive = !merchant.isActive;
+    // console.log(merchant)
     this.merchantService.updateActiveMerchant(id, status).subscribe
     (data => {
-      window.location.href = "http://localhost:4200/admin"
-      // this.findAll()
+      this.findAll()
     }, error => {
       console.log(error)
     })
@@ -46,9 +47,7 @@ export class MerchantManagementComponent implements OnInit {
     // console.log(merchant)
     this.merchantService.updateGoldMerchant(id, status1).subscribe
     (data => {
-      window.location.href = "http://localhost:4200/admin"
-      // this.findAll()
-      // window.location.reload();
+      this.findAll()
     }, error => {
       console.log(error)
     })
