@@ -50,12 +50,12 @@ export class AuthService {
   changeAvatarCustomer(info: any):Observable<JwtResponse>{
     return this.http.put<JwtResponse>(this.API_CHANGE_CUSTOMER_AVATAR, info);
   }
-  changeProfileMerchant(info: any):Observable<JwtResponse>{
-    return this.http.put<JwtResponse>(this.API_CHANGE_MERCHANT_PROFILE, info);
-  }
-  changeProfileCustomer(info: any):Observable<JwtResponse>{
-    return this.http.put<JwtResponse>(this.API_CHANGE_CUSTOMER_PROFILE, info);
-  }
+  // changeProfileMerchant(info: any):Observable<JwtResponse>{
+  //   return this.http.put<JwtResponse>(this.API_CHANGE_MERCHANT_PROFILE, info);
+  // }
+  // changeProfileCustomer(info: any):Observable<JwtResponse>{
+  //   return this.http.put<JwtResponse>(this.API_CHANGE_CUSTOMER_PROFILE, info);
+  // }
 
 
   getData(): boolean {

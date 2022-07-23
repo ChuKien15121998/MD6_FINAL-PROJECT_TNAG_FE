@@ -11,13 +11,21 @@
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" routerLink="merchant">Kênh người bán <span class="sr-only"></span></a>
+          <a *ngIf="!isCheckAdmin" class="nav-link" routerLink="merchant">Kênh người bán <span class="sr-only"></span></a>
         </li>
         <li class="nav-item">
-          <a  *ngIf="!isLogin&&!isMerchant" class="nav-link" routerLink="register-merchant">Trở thành người bán <span class="sr-only"></span></a>
+          <a  *ngIf="(!isLogin&&!isMerchant&&!isCheckAdmin)||(isLogin&&!isMerchant&&!isCheckAdmin)" class="nav-link" routerLink="register-merchant">Trở thành người bán <span class="sr-only"></span></a>
+        </li>
+
+      </ul>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a *ngIf="(isLogin&&isUser&&!isMerchant)||(!isLogin)" routerLink="showlist-restaurant" class="nav-link">Nhà hàng <span class="sr-only"></span></a>
         </li>
         <li class="nav-item">
-          <a  *ngIf="isLogin&&!isMerchant" class="nav-link" routerLink="register-merchant">Trở thành người bán <span class="sr-only"></span></a>
+          <a *ngIf="(isLogin&&isUser&&!isMerchant)||(!isLogin)" routerLink="showlist-food" class="nav-link" >Món ăn <span class="sr-only"></span></a>
         </li>
 
       </ul>

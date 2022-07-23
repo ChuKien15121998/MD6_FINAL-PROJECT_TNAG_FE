@@ -19,6 +19,7 @@ import { OderMerchantComponent } from './oder-merchant/oder-merchant.component';
 import { OrderMerchantWaitConfirmComponent } from './order-merchant-wait-confirm/order-merchant-wait-confirm.component';
 import { OrderMerchantCompletedComponent } from './order-merchant-completed/order-merchant-completed.component';
 import { OrderMerchantCancelComponent } from './order-merchant-cancel/order-merchant-cancel.component';
+import { OrderMerchantDetailComponent } from './order-merchant-detail/order-merchant-detail.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { OrderMerchantCancelComponent } from './order-merchant-cancel/order-merc
     OrderMerchantWaitConfirmComponent,
     OrderMerchantCompletedComponent,
     OrderMerchantCancelComponent,
+    OrderMerchantDetailComponent,
   ],
   imports: [
     FormsModule,

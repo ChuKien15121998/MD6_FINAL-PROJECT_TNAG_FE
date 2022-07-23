@@ -17,6 +17,8 @@ import {
 import {RoleAuthGuard} from "./service/auth/role-auth.guard";
 import {AuthGuard} from "./service/auth/auth.guard";
 import {MerchantGuardGuard} from "./service/auth/merchant-guard.guard";
+import {ShowlistFoodComponent} from "./homeshow/showlist-food/showlist-food.component";
+import {ShowlistRestaurantComponent} from "./homeshow/showlist-restaurant/showlist-restaurant.component";
 
 
 const routes: Routes = [
@@ -28,14 +30,6 @@ const routes: Routes = [
       path: 'customer-login',
       component: CustomerLoginComponent,
     },
-  // {
-  //   path:'detail-merchant/:id',
-  //   component: DetailMerchantManagementComponent,canActivate:[RoleAuthGuard]
-  // },
-  // {a
-  //   path: 'admin',
-  //   component: MerchantManagementComponent,canActivate:[RoleAuthGuard]
-  // },
   {
     path: 'detail-food/:id',
     component: DetailFoodComponent,
@@ -52,6 +46,14 @@ const routes: Routes = [
         path: 'register-customer',
         component: CustomerRegisterComponent,
       },
+  {
+    path: 'showlist-food',
+    component: ShowlistFoodComponent,
+  },
+  {
+    path: 'showlist-restaurant',
+    component: ShowlistRestaurantComponent,
+  },
     // ]
   {
     path: 'merchant', canActivate: [MerchantGuardGuard],

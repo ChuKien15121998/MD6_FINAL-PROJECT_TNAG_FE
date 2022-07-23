@@ -5,7 +5,8 @@ import {HomweUserComponent} from "./homwe-user/homwe-user.component";
 
 const routes: Routes = [
   {path: '',
-  component: HomweUserComponent,}
+  component: HomweUserComponent,
+  }
 ];
 
 @NgModule({

@@ -7,11 +7,11 @@ import {HomeMerchantComponent} from "./home-merchant/home-merchant.component";
 import {EditFoodComponent} from "./edit-food/edit-food.component";
 import {EditMerchantBannerComponent} from "./edit-merchant-banner/edit-merchant-banner.component";
 import {EditMerchantAvatarComponent} from "./edit-merchant-avatar/edit-merchant-avatar.component";
-import {DetailFoodComponent} from "../homeshow/detail-food/detail-food.component";
 import {OderMerchantComponent} from "./oder-merchant/oder-merchant.component";
 import {OrderMerchantWaitConfirmComponent} from "./order-merchant-wait-confirm/order-merchant-wait-confirm.component";
 import {OrderMerchantCompletedComponent} from "./order-merchant-completed/order-merchant-completed.component";
 import {OrderMerchantCancelComponent} from "./order-merchant-cancel/order-merchant-cancel.component";
+import {OrderMerchantDetailComponent} from "./order-merchant-detail/order-merchant-detail.component";
 
 const routes: Routes = [
 
@@ -49,15 +49,30 @@ const routes: Routes = [
         component: OderMerchantComponent,children:[
           {
             path: '',
-            component: OrderMerchantWaitConfirmComponent,
+            component: OrderMerchantWaitConfirmComponent,children:[
+              {
+                path:'order-merchant-detail',
+                component: OrderMerchantDetailComponent,
+              }
+            ]
           },
           {
             path:'order-merchant-completed',
-            component: OrderMerchantCompletedComponent,
+            component: OrderMerchantCompletedComponent,children:[
+              {
+                path:'order-merchant-detail',
+                component: OrderMerchantDetailComponent,
+              }
+            ]
           },
           {
             path: 'order-merchant-cancel',
-            component: OrderMerchantCancelComponent,
+            component: OrderMerchantCancelComponent,children:[
+              {
+                path:'order-merchant-detail',
+                component: OrderMerchantDetailComponent,
+              }
+            ]
           }
         ]
       }

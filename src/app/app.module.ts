@@ -23,6 +23,8 @@ import { HomweUserComponent } from './user/homwe-user/homwe-user.component';
 import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { DetailUserComponent } from './user/detail-user/detail-user.component';
 import { NotAllowMerchantListComponent } from './admin/not-allow-merchant-list/not-allow-merchant-list.component';
+import { ShowlistFoodComponent } from './homeshow/showlist-food/showlist-food.component';
+import { ShowlistRestaurantComponent } from './homeshow/showlist-restaurant/showlist-restaurant.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +34,10 @@ import { NotAllowMerchantListComponent } from './admin/not-allow-merchant-list/n
     MerchantRegisterComponent,
     CustomerRegisterComponent,
     HomeComponent,
-
     CustomerLoginComponent,
     MerchantLoginComponent,
-    HomweUserComponent,
-    EditUserComponent,
-    DetailUserComponent,
+    ShowlistFoodComponent,
+    ShowlistRestaurantComponent,
   ],
   imports: [
     FormsModule,
