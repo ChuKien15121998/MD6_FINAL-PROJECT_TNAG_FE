@@ -39,7 +39,7 @@
                 <div class="form-label-group">
                   <label>Loại địa chỉ</label> <br><br><br>
                   <select [formControl]="categoryControl" [(ngModel)]="form.addressCategory" id="inputType" class="form-control" required>
-                    <option *ngFor="let addressCate of listAddressCate" [value]="addressCate">{{addressCate.addressCategory}}</option>
+                    <option *ngFor="let addressCate of listAddressCate" [value]="addressCate.id">{{addressCate.addressCategory}}</option>
                   </select>
                   <ng-container *ngIf="(categoryControl.touched || f.submitted) && categoryControl.invalid">
                     <p *ngIf="categoryControl.hasError('required')" class="text-danger">Vui lòng chọn loại địa chỉ!</p>

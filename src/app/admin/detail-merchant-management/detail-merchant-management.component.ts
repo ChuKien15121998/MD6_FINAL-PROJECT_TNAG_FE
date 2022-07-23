@@ -34,8 +34,8 @@ export class DetailMerchantManagementComponent implements OnInit {
     });
     this.foodMerchantService.findAllByMerchant(this.id).subscribe((data) => {
       this.listFoodMerchant = data['content'];
-      console.log('check data ------>> ', data)
-      console.log('check thang list food ==>> ', this.listFoodMerchant)
+      // console.log('check data ------>> ', data)
+      // console.log('check thang list food ==>> ', this.listFoodMerchant)
     })
   }
   // findAllByMerchant() {
