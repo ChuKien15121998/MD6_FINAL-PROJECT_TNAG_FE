@@ -15,6 +15,10 @@ import { DetailMerchantComponent } from './detail-merchant/detail-merchant.compo
 import { EditMerchantBannerComponent } from './edit-merchant-banner/edit-merchant-banner.component';
 import { EditMerchantAvatarComponent } from './edit-merchant-avatar/edit-merchant-avatar.component';
 import { DetailFoodComponent } from '../homeshow/detail-food/detail-food.component';
+import { OderMerchantComponent } from './oder-merchant/oder-merchant.component';
+import { OrderMerchantWaitConfirmComponent } from './order-merchant-wait-confirm/order-merchant-wait-confirm.component';
+import { OrderMerchantCompletedComponent } from './order-merchant-completed/order-merchant-completed.component';
+import { OrderMerchantCancelComponent } from './order-merchant-cancel/order-merchant-cancel.component';
 
 
 @NgModule({
@@ -29,6 +33,10 @@ import { DetailFoodComponent } from '../homeshow/detail-food/detail-food.compone
     EditMerchantBannerComponent,
     EditMerchantAvatarComponent,
     DetailFoodComponent,
+    OderMerchantComponent,
+    OrderMerchantWaitConfirmComponent,
+    OrderMerchantCompletedComponent,
+    OrderMerchantCancelComponent,
   ],
   imports: [
     FormsModule,
