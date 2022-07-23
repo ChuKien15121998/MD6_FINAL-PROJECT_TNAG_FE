@@ -77,6 +77,7 @@ export class FoodListComponent implements OnInit {
         console.log('check data else ----->> ', data);
         this.listFoodMerchant = data['content'];
       })
+      this.findAllByMerchant();
     }
 
   }
