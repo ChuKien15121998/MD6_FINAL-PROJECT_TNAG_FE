@@ -22,6 +22,7 @@ export class AuthService {
   private API_CHANGE_CUSTOMER_AVATAR = environment.API_LOCAL + 'customerschange-avatar';
   private API_CHANGE_MERCHANT_PROFILE = environment.API_LOCAL+'merchants/change-profile';
   private API_CHANGE_CUSTOMER_PROFILE = environment.API_LOCAL+'customers/change-profile';
+  private API_GET_CURRENT_CUSTOMER = environment.API_LOCAL+'customers/detail';
 
 
   constructor(private http: HttpClient) {
@@ -53,9 +54,14 @@ export class AuthService {
   // changeProfileMerchant(info: any):Observable<JwtResponse>{
   //   return this.http.put<JwtResponse>(this.API_CHANGE_MERCHANT_PROFILE, info);
   // }
-  // changeProfileCustomer(info: any):Observable<JwtResponse>{
-  //   return this.http.put<JwtResponse>(this.API_CHANGE_CUSTOMER_PROFILE, info);
-  // }
+  changeProfileCustomer(info: any):Observable<JwtResponse>{
+    return this.http.put<JwtResponse>(this.API_CHANGE_CUSTOMER_PROFILE, info);
+  }
+
+  getCurrentUser(): Observable<JwtResponse> {
+    // @ts-ignore
+    return this.http.get(this.API);
+  }
 
 
   getData(): boolean {

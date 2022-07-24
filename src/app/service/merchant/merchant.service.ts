@@ -26,6 +26,7 @@ export class MerchantService {
   }
 
   getCurrentMerchant(): Observable<any> {
+    // @ts-ignore
     return this.httpClient.get(this.API + '/detail');
   }
 

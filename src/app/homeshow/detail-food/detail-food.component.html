@@ -1,4 +1,3 @@
-
 <section class="restaurant-detailed-banner">
   <div class="text-center">
     <img class="img-fluid cover" src="{{food.merchant.imageBanner}}">
@@ -11,13 +10,14 @@
             <img class="img-fluid mr-3 float-left" alt="osahan" src="{{food.merchant.avatar}}">
             <h2 class="text-white">{{food.merchant.name}}</h2>
             <p class="text-white mb-1"><i class="icofont-location-pin"></i> {{food.merchant.address}}
-              </p>
+            </p>
             <p class="text-white mb-0"><i class="icofont-food-cart"></i>{{food.merchant.phoneNumber}}</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="restaurant-detailed-header-right text-right">
-            <button class="btn btn-success" type="button"><i class="icofont-clock-time"></i> {{food.merchant.openTime}} - {{food.merchant.closeTime}}
+            <button class="btn btn-success" type="button"><i class="icofont-clock-time"></i> {{food.merchant.openTime}}
+              - {{food.merchant.closeTime}}
             </button>
           </div>
         </div>
@@ -80,57 +80,73 @@
                 <hr class="clearfix">
                 <p class="text-black mb-0"> {{food.description}}</p>
                 <hr class="clearfix">
-<!--                <div-->
-<!--                  class="owl-carousel owl-theme owl-carousel-five offers-interested-carousel mb-3">-->
-<!--                  <div class="item">-->
-<!--                    <div class="mall-category-item">-->
-<!--                      <a href="#">-->
-<!--                        <img class="img-fluid" src="img/list/1.png">-->
-<!--                        <h6>Burgers</h6>-->
-<!--                      </a>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                  <div class="item">-->
-<!--                    <div class="mall-category-item">-->
-<!--                      <a href="#">-->
-<!--                        <img class="img-fluid" src="img/list/2.png">-->
-<!--                        <h6>Sandwiches</h6>-->
-<!--                      </a>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                  <div class="item">-->
-<!--                    <div class="mall-category-item">-->
-<!--                      <a href="#">-->
-<!--                        <img class="img-fluid" src="img/list/3.png">-->
-<!--                        <h6>Soups</h6>-->
-<!--                      </a>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                  <div class="item">-->
-<!--                    <div class="mall-category-item">-->
-<!--                      <a href="#">-->
-<!--                        <img class="img-fluid" src="img/list/4.png">-->
-<!--                        <h6>Pizzas</h6>-->
-<!--                      </a>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                  <div class="item">-->
-<!--                    <div class="mall-category-item">-->
-<!--                      <a href="#">-->
-<!--                        <img class="img-fluid" src="img/list/5.png">-->
-<!--                        <h6>Pastas</h6>-->
-<!--                      </a>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                  <div class="item">-->
-<!--                    <div class="mall-category-item">-->
-<!--                      <a href="#">-->
-<!--                        <img class="img-fluid" src="img/list/6.png">-->
-<!--                        <h6>Chinese</h6>-->
-<!--                      </a>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                </div>-->
+                <div class="owl-theme owl-carousel-five offers-interested-carousel mb-3">
+                  <owl-carousel-o [options]="customOptions">
+                    <ng-template carouselSlide>
+                      <div>
+                        <a>
+                          <img class="img-fluid" src="../../../assets/template/img/list/1.png" alt="">
+                        </a>
+                      </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                      <div>
+                        <a>
+                          <img class="img-fluid" src="../../../assets/template/img/list/2.png" alt="">
+                        </a>
+                      </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                      <div>
+                        <a>
+                          <img class="img-fluid" src="../../../assets/template/img/list/3.png" alt="">
+                        </a>
+                      </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                      <div>
+                        <a>
+                          <img class="img-fluid" src="../../../assets/template/img/list/4.png" alt="">
+                        </a>
+                      </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                      <div>
+                        <a>
+                          <img class="img-fluid" src="../../../assets/template/img/list/5.png" alt="">
+                        </a>
+                      </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                      <div>
+                        <a>
+                          <img class="img-fluid" src="../../../assets/template/img/list/6.png" alt="">
+                        </a>
+                      </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                      <div>
+                        <a>
+                          <img class="img-fluid" src="../../../assets/template/img/list/7.png" alt="">
+                        </a>
+                      </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                      <div>
+                        <a>
+                          <img class="img-fluid" src="../../../assets/template/img/list/8.png" alt="">
+                        </a>
+                      </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                      <div>
+                        <a>
+                          <img class="img-fluid" src="../../../assets/template/img/list/9.png" alt="">
+                        </a>
+                      </div>
+                    </ng-template>
+                  </owl-carousel-o>
+                </div>
                 <div class="border-btn-main mb-4">
                   <a class="border-btn text-success mr-2"><i
                     class="icofont-check-circled"></i> Mua ngay</a>
@@ -141,8 +157,8 @@
         </div>
       </div>
       <div class="col-md-4">
-      <app-cart-detail-restaurant ></app-cart-detail-restaurant>
-    </div>
+        <app-cart-detail-restaurant></app-cart-detail-restaurant>
+      </div>
     </div>
   </div>
 </section>

@@ -20,6 +20,7 @@ import { OrderMerchantWaitConfirmComponent } from './order-merchant-wait-confirm
 import { OrderMerchantCompletedComponent } from './order-merchant-completed/order-merchant-completed.component';
 import { OrderMerchantCancelComponent } from './order-merchant-cancel/order-merchant-cancel.component';
 import { OrderMerchantDetailComponent } from './order-merchant-detail/order-merchant-detail.component';
+import {CarouselModule} from "ngx-owl-carousel-o";
 
 
 @NgModule({
@@ -40,14 +41,15 @@ import { OrderMerchantDetailComponent } from './order-merchant-detail/order-merc
     OrderMerchantCancelComponent,
     OrderMerchantDetailComponent,
   ],
-    imports: [
-        FormsModule,
-        CommonModule,
-        MerchantRoutingModule,
-        ReactiveFormsModule,
-        NgxPaginationModule,
-        AppModule,
-    ],
+  imports: [
+    FormsModule,
+    CommonModule,
+    MerchantRoutingModule,
+    ReactiveFormsModule,
+    NgxPaginationModule,
+    AppModule,
+    CarouselModule,
+  ],
   exports: [
     UploadImageComponent
   ]

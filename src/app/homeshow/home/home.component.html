@@ -32,8 +32,9 @@
           </div>
           <h6 class="mt-4 text-shadow text-white font-weight-normal">Ví dụ. Pizzas, Gà rán,
             Nem chua...</h6>
-          <div class="owl-carousel owl-carousel-category owl-theme">
-            <div class="item">
+          <div class="owl-carousel-category owl-theme">
+          <owl-carousel-o [options]="customOptions">
+            <ng-template carouselSlide>
               <div class="osahan-category-item">
                 <a href="#">
                   <img class="img-fluid" src="../../../assets/template/img/list/1.png" alt="">
@@ -41,8 +42,8 @@
                   <p>156</p>
                 </a>
               </div>
-            </div>
-            <div class="item">
+            </ng-template>
+            <ng-template carouselSlide>
               <div class="osahan-category-item">
                 <a href="#">
                   <img class="img-fluid" src="../../../assets/template/img/list/2.png" alt="">
@@ -50,8 +51,8 @@
                   <p>120</p>
                 </a>
               </div>
-            </div>
-            <div class="item">
+            </ng-template>
+            <ng-template carouselSlide>
               <div class="osahan-category-item">
                 <a href="#">
                   <img class="img-fluid" src="../../../assets/template/img/list/3.png" alt="">
@@ -59,8 +60,8 @@
                   <p>130</p>
                 </a>
               </div>
-            </div>
-            <div class="item">
+            </ng-template>
+            <ng-template carouselSlide>
               <div class="osahan-category-item">
                 <a href="#">
                   <img class="img-fluid" src="../../../assets/template/img/list/4.png" alt="">
@@ -68,8 +69,8 @@
                   <p>120</p>
                 </a>
               </div>
-            </div>
-            <div class="item">
+            </ng-template>
+            <ng-template carouselSlide>
               <div class="osahan-category-item">
                 <a href="#">
                   <img class="img-fluid" src="../../../assets/template/img/list/5.png" alt="">
@@ -77,8 +78,8 @@
                   <p>111</p>
                 </a>
               </div>
-            </div>
-            <div class="item">
+            </ng-template>
+            <ng-template carouselSlide>
               <div class="osahan-category-item">
                 <a href="#">
                   <img class="img-fluid" src="../../../assets/template/img/list/6.png" alt="">
@@ -86,8 +87,8 @@
                   <p>958</p>
                 </a>
               </div>
-            </div>
-            <div class="item">
+            </ng-template>
+            <ng-template carouselSlide>
               <div class="osahan-category-item">
                 <a href="#">
                   <img class="img-fluid" src="../../../assets/template/img/list/7.png" alt="">
@@ -95,8 +96,8 @@
                   <p>56</p>
                 </a>
               </div>
-            </div>
-            <div class="item">
+            </ng-template>
+            <ng-template carouselSlide>
               <div class="osahan-category-item">
                 <a href="#">
                   <img class="img-fluid" src="../../../assets/template/img/list/8.png" alt="">
@@ -104,8 +105,8 @@
                   <p>40</p>
                 </a>
               </div>
-            </div>
-            <div class="item">
+            </ng-template>
+            <ng-template carouselSlide>
               <div class="osahan-category-item">
                 <a href="#">
                   <img class="img-fluid" src="../../../assets/template/img/list/9.png" alt="">
@@ -113,7 +114,8 @@
                   <p>156</p>
                 </a>
               </div>
-            </div>
+            </ng-template>
+          </owl-carousel-o>
           </div>
         </div>
       </div>
@@ -155,8 +157,9 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <div class="owl-carousel owl-carousel-four owl-theme">
-          <div class="item">
+        <div class="owl-carousel-four owl-theme">
+          <owl-carousel-o [options]="customOptions">
+            <ng-template carouselSlide>
             <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
               <div class="list-card-image">
                 <div class="favourite-heart text-danger position-absolute"><a href="detail.html"><i
@@ -183,8 +186,8 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="item">
+            </ng-template>
+            <ng-template carouselSlide>
             <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
               <div class="list-card-image">
                 <div class="favourite-heart text-danger position-absolute"><a href="detail.html"><i
@@ -211,8 +214,8 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="item">
+            </ng-template>
+            <ng-template carouselSlide>
             <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
               <div class="list-card-image">
                 <div class="favourite-heart text-danger position-absolute"><a href="detail.html"><i
@@ -241,8 +244,8 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="item">
+            </ng-template>
+            <ng-template carouselSlide>
             <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
               <div class="list-card-image">
                 <div class="favourite-heart text-danger position-absolute"><a href="detail.html"><i
@@ -271,8 +274,8 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="item">
+            </ng-template>
+            <ng-template carouselSlide>
             <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
               <div class="list-card-image">
                 <div class="favourite-heart text-danger position-absolute"><a href="detail.html"><i
@@ -301,7 +304,8 @@
                 </div>
               </div>
             </div>
-          </div>
+            </ng-template>
+          </owl-carousel-o>
         </div>
       </div>
     </div>
@@ -315,14 +319,14 @@
     </div>
     <div class="row">
       <div *ngFor="let food of listFood" class="col-md-3 col-sm-6 mb-4">
-        <div class="list-card bg-white rounded overflow-hidden position-relative shadow-sm">
+        <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
           <div class="list-card-image">
-            <div class="favourite-heart text-danger position-absolute"><a href="#"><i
+            <div class="favourite-heart text-danger position-absolute"><a><i
               class="icofont-heart"></i></a></div>
             <div class="member-plan position-absolute"><span class="badge badge-dark"></span>
             </div>
             <a routerLink="detail-food/{{food.id}}">
-              <img src="{{food.image}}" class="img-fluid item-img">
+              <img src="{{food.image}}" style="height: 200px;width: 100%" class="img-fluid item-img">
             </a>
           </div>
           <div class="p-3 position-relative">

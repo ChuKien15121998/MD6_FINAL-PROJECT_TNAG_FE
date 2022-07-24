@@ -27,6 +27,7 @@ import { ShowlistFoodComponent } from './homeshow/showlist-food/showlist-food.co
 import { ShowlistRestaurantComponent } from './homeshow/showlist-restaurant/showlist-restaurant.component';
 import { DetailRestaurantComponent } from './homeshow/detail-restaurant/detail-restaurant.component';
 import { CartDetailRestaurantComponent } from './homeshow/cart-detail-restaurant/cart-detail-restaurant.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { CartDetailRestaurantComponent } from './homeshow/cart-detail-restaurant
     ReactiveFormsModule,
     NgxPaginationModule,
     AppRoutingModule,
+    CarouselModule,
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
   ],
