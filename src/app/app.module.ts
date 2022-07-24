@@ -18,11 +18,6 @@ import {NgxPaginationModule} from "ngx-pagination";
 import { CustomerLoginComponent } from './auth/customer-login/customer-login.component';
 import { MerchantLoginComponent } from './auth/merchant-login/merchant-login.component';
 import { httpInterceptorProviders } from "./security/auth.interceptor";
-import { DetailMerchantManagementComponent } from './admin/detail-merchant-management/detail-merchant-management.component';
-import { HomweUserComponent } from './user/homwe-user/homwe-user.component';
-import { EditUserComponent } from './user/edit-user/edit-user.component';
-import { DetailUserComponent } from './user/detail-user/detail-user.component';
-import { NotAllowMerchantListComponent } from './admin/not-allow-merchant-list/not-allow-merchant-list.component';
 import { ShowlistFoodComponent } from './homeshow/showlist-food/showlist-food.component';
 import { ShowlistRestaurantComponent } from './homeshow/showlist-restaurant/showlist-restaurant.component';
 import { DetailRestaurantComponent } from './homeshow/detail-restaurant/detail-restaurant.component';
@@ -55,11 +50,10 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
   ],
-    exports: [
-        CartDetailRestaurantComponent
-
-    ],
   providers: [httpInterceptorProviders],
+  exports: [
+    CartDetailRestaurantComponent,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

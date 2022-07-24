@@ -21,6 +21,7 @@ import { OrderMerchantCompletedComponent } from './order-merchant-completed/orde
 import { OrderMerchantCancelComponent } from './order-merchant-cancel/order-merchant-cancel.component';
 import { OrderMerchantDetailComponent } from './order-merchant-detail/order-merchant-detail.component';
 import {CarouselModule} from "ngx-owl-carousel-o";
+import {CartDetailRestaurantComponent} from "../homeshow/cart-detail-restaurant/cart-detail-restaurant.component";
 
 
 @NgModule({
@@ -47,8 +48,8 @@ import {CarouselModule} from "ngx-owl-carousel-o";
     MerchantRoutingModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    AppModule,
     CarouselModule,
+    AppModule,
   ],
   exports: [
     UploadImageComponent

@@ -60,7 +60,7 @@ export class AuthService {
 
   getCurrentUser(): Observable<JwtResponse> {
     // @ts-ignore
-    return this.http.get(this.API);
+    return this.http.get(this.API_GET_CURRENT_CUSTOMER);
   }
 
 

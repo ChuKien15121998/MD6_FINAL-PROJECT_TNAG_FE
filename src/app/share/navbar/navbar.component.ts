@@ -56,5 +56,6 @@ export class NavbarComponent implements OnInit {
   logout() {
     window.sessionStorage.clear()
     this.isLogin = false;
+    window.location.reload();
   }
 }
