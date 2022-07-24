@@ -25,6 +25,8 @@ import { DetailUserComponent } from './user/detail-user/detail-user.component';
 import { NotAllowMerchantListComponent } from './admin/not-allow-merchant-list/not-allow-merchant-list.component';
 import { ShowlistFoodComponent } from './homeshow/showlist-food/showlist-food.component';
 import { ShowlistRestaurantComponent } from './homeshow/showlist-restaurant/showlist-restaurant.component';
+import { DetailRestaurantComponent } from './homeshow/detail-restaurant/detail-restaurant.component';
+import { CartDetailRestaurantComponent } from './homeshow/cart-detail-restaurant/cart-detail-restaurant.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { ShowlistRestaurantComponent } from './homeshow/showlist-restaurant/show
     MerchantLoginComponent,
     ShowlistFoodComponent,
     ShowlistRestaurantComponent,
+    DetailRestaurantComponent,
+    CartDetailRestaurantComponent,
   ],
   imports: [
     FormsModule,
@@ -49,9 +53,10 @@ import { ShowlistRestaurantComponent } from './homeshow/showlist-restaurant/show
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
   ],
-  exports: [
+    exports: [
+        CartDetailRestaurantComponent
 
-  ],
+    ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })

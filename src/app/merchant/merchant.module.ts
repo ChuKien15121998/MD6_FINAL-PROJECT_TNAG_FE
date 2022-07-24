@@ -40,13 +40,14 @@ import { OrderMerchantDetailComponent } from './order-merchant-detail/order-merc
     OrderMerchantCancelComponent,
     OrderMerchantDetailComponent,
   ],
-  imports: [
-    FormsModule,
-    CommonModule,
-    MerchantRoutingModule,
-    ReactiveFormsModule,
-    NgxPaginationModule,
-  ],
+    imports: [
+        FormsModule,
+        CommonModule,
+        MerchantRoutingModule,
+        ReactiveFormsModule,
+        NgxPaginationModule,
+        AppModule,
+    ],
   exports: [
     UploadImageComponent
   ]

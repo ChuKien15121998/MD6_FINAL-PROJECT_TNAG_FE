@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {FoodListComponent} from "./merchant/food-list/food-list.component";
 import {HomeComponent} from "./homeshow/home/home.component";
 import {HomeMerchantComponent} from "./merchant/home-merchant/home-merchant.component";
@@ -10,42 +10,44 @@ import {CustomerRegisterComponent} from "./auth/customer-register/customer-regis
 import {MerchantLoginComponent} from "./auth/merchant-login/merchant-login.component";
 // @ts-ignore
 import {DetailFoodComponent} from "./homeshow/detail-food/detail-food.component";
-import {MerchantManagementComponent} from "./admin/merchant-management/merchant-management.component";
-import {
-  DetailMerchantManagementComponent
-} from "./admin/detail-merchant-management/detail-merchant-management.component";
 import {RoleAuthGuard} from "./service/auth/role-auth.guard";
 import {AuthGuard} from "./service/auth/auth.guard";
 import {MerchantGuardGuard} from "./service/auth/merchant-guard.guard";
 import {ShowlistFoodComponent} from "./homeshow/showlist-food/showlist-food.component";
 import {ShowlistRestaurantComponent} from "./homeshow/showlist-restaurant/showlist-restaurant.component";
+import {DetailMerchantComponent} from "./merchant/detail-merchant/detail-merchant.component";
+import {DetailRestaurantComponent} from "./homeshow/detail-restaurant/detail-restaurant.component";
 
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,},
-    // children: [
-    {
-      path: 'customer-login',
-      component: CustomerLoginComponent,
-    },
+    component: HomeComponent,
+  },
+  {
+    path: 'customer-login',
+    component: CustomerLoginComponent,
+  },
   {
     path: 'detail-food/:id',
     component: DetailFoodComponent,
   },
   {
+    path: 'detail-restaurant/:id',
+    component: DetailRestaurantComponent,
+  },
+  {
     path: 'merchant-login',
     component: MerchantLoginComponent,
   },
-      {
-        path: 'register-merchant',
-        component: MerchantRegisterComponent,
-      },
-      {
-        path: 'register-customer',
-        component: CustomerRegisterComponent,
-      },
+  {
+    path: 'register-merchant',
+    component: MerchantRegisterComponent,
+  },
+  {
+    path: 'register-customer',
+    component: CustomerRegisterComponent,
+  },
   {
     path: 'showlist-food',
     component: ShowlistFoodComponent,
@@ -54,7 +56,6 @@ const routes: Routes = [
     path: 'showlist-restaurant',
     component: ShowlistRestaurantComponent,
   },
-    // ]
   {
     path: 'merchant', canActivate: [MerchantGuardGuard],
     loadChildren: () => import('./merchant/merchant.module').then(module => module.MerchantModule)
@@ -74,4 +75,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

@@ -1,12 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import {TokenService} from 'src/app/service/token/token.service';
+import { Component, OnInit } from '@angular/core';
+import {TokenService} from "../../service/token/token.service";
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: 'app-cart-detail-restaurant',
+  templateUrl: './cart-detail-restaurant.component.html',
+  styleUrls: ['./cart-detail-restaurant.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class CartDetailRestaurantComponent implements OnInit {
   // @ts-ignore
   token: any;
   // @ts-ignore
@@ -20,9 +20,9 @@ export class NavbarComponent implements OnInit {
   isCheckAdmin = false;
   isMerchant = false;
   isUser = false;
+  constructor(private tokenService: TokenService) { }
 
   ngOnInit(): void {
-    // console.log('token ==> ', this.tokenService.getToken())
     if (this.tokenService.getToken()) {
       // console.log("token lay ra", this.tokenService.getRoles())
       this.name = this.tokenService.getName();
@@ -47,14 +47,6 @@ export class NavbarComponent implements OnInit {
         }
       }
     }
-    // console.log("check login hay chua", this.isLogin)
   }
 
-  constructor(private tokenService: TokenService) {
-  }
-
-  logout() {
-    window.sessionStorage.clear()
-    this.isLogin = false;
-  }
 }
