@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./merchant-login.component.css']
 })
 export class MerchantLoginComponent implements OnInit {
-  status = 'Please fill in the form to LOGIN -->';
+  status = 'Điền thôn tin đăng nhập';
   form: any = {};
   hide = true;
   isLogin = false;
@@ -39,7 +39,7 @@ export class MerchantLoginComponent implements OnInit {
     )
     // console.log("co submit duoc signin form k", this.signInForm)
     this.authService.signInMerchant(this.signInForm).subscribe(data => {
-      console.log("signin form tra ve gi", data)
+      // console.log("signin form tra ve gi", data)
       if (data.token != undefined) {
         this.tokenService.setToken(data.token);
         this.tokenService.setName(data.name);
