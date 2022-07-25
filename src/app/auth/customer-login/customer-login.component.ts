@@ -52,6 +52,7 @@ export class CustomerLoginComponent implements OnInit {
           });
         }else {
           this.router.navigate(['']).then(() => {
+            // console.log("login vao nhu nao", window.location, data)
             window.location.reload();
           });
         }

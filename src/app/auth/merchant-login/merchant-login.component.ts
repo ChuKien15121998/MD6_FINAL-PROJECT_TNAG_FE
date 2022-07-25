@@ -39,7 +39,7 @@ export class MerchantLoginComponent implements OnInit {
     )
     // console.log("co submit duoc signin form k", this.signInForm)
     this.authService.signInMerchant(this.signInForm).subscribe(data => {
-      // console.log("signin form tra ve gi", data)
+      console.log("signin form tra ve gi", data)
       if (data.token != undefined) {
         this.tokenService.setToken(data.token);
         this.tokenService.setName(data.name);
@@ -49,7 +49,9 @@ export class MerchantLoginComponent implements OnInit {
         console.log(JSON.stringify(this.merchant))
         if (JSON.stringify(data.roles).includes(JSON.stringify(this.merchant))){
           console.log("role nhan vao la gi", data.roles)
+          // this.router.navigate(['/merchant'])
           this.router.navigate(['merchant']).then(() => {
+            console.log("trang hien tai la gi", window.location)
             // window.location.reload();
             console.log("aaaaaaaaaaaaaa")
           });
