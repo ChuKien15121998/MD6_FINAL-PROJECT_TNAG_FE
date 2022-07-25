@@ -9,7 +9,6 @@ import { JwtResponse } from 'src/app/model/JwtResponse';
 })
 export class MerchantService {
   API = 'http://localhost:8080/merchants';
-
   constructor(private httpClient: HttpClient) {
   }
 

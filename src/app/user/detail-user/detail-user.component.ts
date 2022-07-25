@@ -18,7 +18,7 @@ customer: any;
     };
     this.authService.getCurrentUser().subscribe((data) => {
       this.customer = data;
-      // console.log("customer info", data)
+      console.log("customer info", data)
     });
   }
 

@@ -31,6 +31,10 @@ export class FoodMerchantService {
     // @ts-ignore
     return this.httpClient.put(this.API + '/delete-food/' + id)
   }
+  getListFoodImage(id: number): Observable<any> {
+    // @ts-ignore
+    return this.httpClient.put('http://localhost:8080/foodimage' + id)
+  }
   findById(id: any): Observable<any> {
     return this.httpClient.get(this.API + '/food-id/' + id)
   }

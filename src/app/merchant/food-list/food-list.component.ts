@@ -57,10 +57,9 @@ export class FoodListComponent implements OnInit {
     this.foodMerchantService.delete(id).subscribe((data) => {
       console.log('check thang vua xoa ----->', data)
       console.log('check thu id ----->> ', id)
-      alert('xoa thanh cong!!')
       this.findAllByMerchant()
     })
-
+    this.findAllByMerchant()
   }
   searchByFoodName() {
     let name_food: any;
@@ -77,6 +76,7 @@ export class FoodListComponent implements OnInit {
         console.log('check data else ----->> ', data);
         this.listFoodMerchant = data['content'];
       })
+      this.findAllByMerchant();
     }
 
   }

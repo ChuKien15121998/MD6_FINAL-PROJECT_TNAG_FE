@@ -9,7 +9,7 @@
           <div class="restaurant-detailed-header-left">
             <img class="img-fluid mr-3 float-left" alt="osahan" src="{{food.merchant.avatar}}">
             <h2 class="text-white">{{food.merchant.name}}</h2>
-            <p class="text-white mb-1"><i class="icofont-location-pin"></i> {{food.merchant.address}}
+            <p class="text-white mb-1"><i class="icofont-location-pin"></i>  {{food.merchant.address}}
             </p>
             <p class="text-white mb-0"><i class="icofont-food-cart"></i>{{food.merchant.phoneNumber}}</p>
           </div>
@@ -68,88 +68,85 @@
                 </p>
                 <p class="mb-2 text-black"><i class="icofont-phone-circle text-primary mr-2"></i>
                   {{food.merchant.phoneNumber}}</p>
-                <p class="mb-2 text-black"><i class="icofont-email text-primary mr-2"></i> <a
-                  href="https://thaotrinh.info/cdn-cgi/l/email-protection"
-                  class="__cf_email__"
+                <p class="mb-2 text-black"><i class="icofont-dollar text-primary mr-2"></i> <a
                   data-cfemail="97fef6faf8e4f6fff6f9d7f0faf6fefbb9f4f8fa">{{food.price}}</a>
                 </p>
                 <p class="mb-2 text-black"><i class="icofont-clock-time text-primary mr-2"></i>
-                  Today {{food.merchant.openTime}} – {{food.merchant.closeTime}}
-                  <span class="badge badge-success"> OPEN NOW </span>
+                  Hôm nay {{food.merchant.openTime}} – {{food.merchant.closeTime}}
+                  <span class="badge badge-success"> Đang mở cửa </span>
                 </p>
                 <hr class="clearfix">
                 <p class="text-black mb-0"> {{food.description}}</p>
                 <hr class="clearfix">
                 <div class="owl-theme owl-carousel-five offers-interested-carousel mb-3">
-                  <owl-carousel-o [options]="customOptions">
-                    <ng-template carouselSlide>
-                      <div>
-                        <a>
-                          <img class="img-fluid" src="../../../assets/template/img/list/1.png" alt="">
-                        </a>
-                      </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                      <div>
-                        <a>
-                          <img class="img-fluid" src="../../../assets/template/img/list/2.png" alt="">
-                        </a>
-                      </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                      <div>
-                        <a>
-                          <img class="img-fluid" src="../../../assets/template/img/list/3.png" alt="">
-                        </a>
-                      </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                      <div>
-                        <a>
-                          <img class="img-fluid" src="../../../assets/template/img/list/4.png" alt="">
-                        </a>
-                      </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                      <div>
-                        <a>
-                          <img class="img-fluid" src="../../../assets/template/img/list/5.png" alt="">
-                        </a>
-                      </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                      <div>
-                        <a>
-                          <img class="img-fluid" src="../../../assets/template/img/list/6.png" alt="">
-                        </a>
-                      </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                      <div>
-                        <a>
-                          <img class="img-fluid" src="../../../assets/template/img/list/7.png" alt="">
-                        </a>
-                      </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                      <div>
-                        <a>
-                          <img class="img-fluid" src="../../../assets/template/img/list/8.png" alt="">
-                        </a>
-                      </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                      <div>
-                        <a>
-                          <img class="img-fluid" src="../../../assets/template/img/list/9.png" alt="">
-                        </a>
-                      </div>
-                    </ng-template>
-                  </owl-carousel-o>
+<!--                  <owl-carousel-o [options]="customOptions">-->
+<!--                    <ng-template carouselSlide>-->
+<!--                      <div>-->
+<!--                        <a>-->
+<!--                          <img class="img-fluid" src="../../../assets/template/img/list/1.png" alt="">-->
+<!--                        </a>-->
+<!--                      </div>-->
+<!--                    </ng-template>-->
+<!--                    <ng-template carouselSlide>-->
+<!--                      <div>-->
+<!--                        <a>-->
+<!--                          <img class="img-fluid" src="../../../assets/template/img/list/2.png" alt="">-->
+<!--                        </a>-->
+<!--                      </div>-->
+<!--                    </ng-template>-->
+<!--                    <ng-template carouselSlide>-->
+<!--                      <div>-->
+<!--                        <a>-->
+<!--                          <img class="img-fluid" src="../../../assets/template/img/list/3.png" alt="">-->
+<!--                        </a>-->
+<!--                      </div>-->
+<!--                    </ng-template>-->
+<!--                    <ng-template carouselSlide>-->
+<!--                      <div>-->
+<!--                        <a>-->
+<!--                          <img class="img-fluid" src="../../../assets/template/img/list/4.png" alt="">-->
+<!--                        </a>-->
+<!--                      </div>-->
+<!--                    </ng-template>-->
+<!--                    <ng-template carouselSlide>-->
+<!--                      <div>-->
+<!--                        <a>-->
+<!--                          <img class="img-fluid" src="../../../assets/template/img/list/5.png" alt="">-->
+<!--                        </a>-->
+<!--                      </div>-->
+<!--                    </ng-template>-->
+<!--                    <ng-template carouselSlide>-->
+<!--                      <div>-->
+<!--                        <a>-->
+<!--                          <img class="img-fluid" src="../../../assets/template/img/list/6.png" alt="">-->
+<!--                        </a>-->
+<!--                      </div>-->
+<!--                    </ng-template>-->
+<!--                    <ng-template carouselSlide>-->
+<!--                      <div>-->
+<!--                        <a>-->
+<!--                          <img class="img-fluid" src="../../../assets/template/img/list/7.png" alt="">-->
+<!--                        </a>-->
+<!--                      </div>-->
+<!--                    </ng-template>-->
+<!--                    <ng-template carouselSlide>-->
+<!--                      <div>-->
+<!--                        <a>-->
+<!--                          <img class="img-fluid" src="../../../assets/template/img/list/8.png" alt="">-->
+<!--                        </a>-->
+<!--                      </div>-->
+<!--                    </ng-template>-->
+<!--                    <ng-template carouselSlide>-->
+<!--                      <div>-->
+<!--                        <a>-->
+<!--                          <img class="img-fluid" src="../../../assets/template/img/list/9.png" alt="">-->
+<!--                        </a>-->
+<!--                      </div>-->
+<!--                    </ng-template>-->
+<!--                  </owl-carousel-o>-->
                 </div>
                 <div class="border-btn-main mb-4">
-                  <a class="border-btn text-success mr-2"><i
-                    class="icofont-check-circled"></i> Mua ngay</a>
+                  <a (click)="addToCart()" class="border-btn text-success mr-2"> Mua ngay</a>
                 </div>
               </div>
             </div>
@@ -157,8 +154,44 @@
         </div>
       </div>
       <div class="col-md-4">
-        <app-cart-detail-restaurant></app-cart-detail-restaurant>
+<!--        <app-cart-detail-restaurant></app-cart-detail-restaurant>-->
 <!--          *ngIf="isLogin&&isUser&&!isMerchant&&!isCheckAdmin"-->
+        <div *ngIf="(isLogin&&isUser&&!isMerchant&&!isCheckAdmin)||(isLogin&&isUser&&isMerchant&&!isCheckAdmin)"
+             class="generator-bg rounded shadow-sm mb-4 p-4 osahan-cart-item">
+          <h5 class="mb-1 text-white">Danh sách đặt hàng</h5>
+          <p class="mb-4 text-white">{{count}} sản phẩm</p>
+          <div class="bg-white rounded shadow-sm mb-2">
+            <div *ngFor="let detail of cartDetail" class="gold-members p-2 border-bottom">
+               <span class="count-number float-right">
+                                    <button (click)="decreaseFromCart(detail.food.id)" class="btn btn-outline-secondary  btn-sm left dec"> <i
+                                      class="icofont-minus"></i> </button>
+                                    <input class="count-number-input" type="text" value="{{detail.quantity}}" readonly="">
+                                    <button (click)="increaseFromCart(detail.food.id)" class="btn btn-outline-secondary btn-sm right inc"> <i
+                                      class="icofont-plus"></i> </button>
+                                </span>
+              <p class="text-gray mb-0 float-right ml-2">{{detail.totalPrice}}</p>
+              <div class="media">
+                <div class="mr-2"><i class="icofont-ui-press text-danger food-item"></i></div>
+                <div class="media-body">
+                  <p class="mt-1 mb-0 text-black">{{detail.food.name}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mb-2 bg-white rounded p-2 clearfix">
+            <img class="img-fluid float-left" src="assets/template/img/wallet-icon.png">
+            <h6 class="font-weight-bold text-right mb-2">Tổng đơn: <span
+              class="text-danger">{{total}}</span> vnđ</h6>
+<!--            <h6 class="font-weight-bold text-right mb-2">Giảm giá: <span-->
+<!--              class="text-danger">0</span> vnđ</h6>-->
+            <h6 class="font-weight-bold text-right mb-2">Thanh toán: <span
+              class="text-danger">{{total}}</span> vnđ</h6>
+            <!-- <p class="seven-color mb-1 text-right">Extra charges may apply</p> -->
+<!--            <p class="text-black mb-0 text-right">Tiết kiệm 30.000 vnđ</p>-->
+          </div>
+          <a class="btn btn-success btn-block btn-lg">Thanh toán <i
+            class="icofont-long-arrow-right"></i></a>
+        </div>
       </div>
     </div>
   </div>
