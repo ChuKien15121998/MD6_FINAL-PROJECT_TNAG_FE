@@ -48,12 +48,12 @@ export class MerchantLoginComponent implements OnInit {
         // console.log("lay role",JSON.stringify(data.roles))
         console.log(JSON.stringify(this.merchant))
         if (JSON.stringify(data.roles).includes(JSON.stringify(this.merchant))){
-          console.log("role nhan vao la gi", data.roles)
+          // console.log("role nhan vao la gi", data.roles)
           // this.router.navigate(['/merchant'])
-          this.router.navigate(['merchant']).then(() => {
-            console.log("trang hien tai la gi", window.location)
-            // window.location.reload();
-            console.log("aaaaaaaaaaaaaa")
+          this.router.navigate(['/merchant']).then(() => {
+            // console.log("trang hien tai la gi", window.location)
+            window.location.reload();
+            // console.log("aaaaaaaaaaaaaa")
           });
         }else {
           this.isLogin = true;

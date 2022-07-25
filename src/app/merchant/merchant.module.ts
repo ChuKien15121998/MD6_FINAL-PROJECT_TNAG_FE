@@ -49,7 +49,6 @@ import {CartDetailRestaurantComponent} from "../homeshow/cart-detail-restaurant/
     ReactiveFormsModule,
     NgxPaginationModule,
     CarouselModule,
-    AppModule,
   ],
   exports: [
     UploadImageComponent

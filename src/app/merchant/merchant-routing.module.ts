@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {FoodListComponent} from "./food-list/food-list.component";
 import {CreateFoodComponent} from "./create-food/create-food.component";
 import {EditMerchantComponent} from "./edit-merchant/edit-merchant.component";
@@ -46,30 +46,30 @@ const routes: Routes = [
       },
       {
         path: "oder-merchant",
-        component: OderMerchantComponent,children:[
+        component: OderMerchantComponent, children: [
           {
             path: '',
-            component: OrderMerchantWaitConfirmComponent,children:[
+            component: OrderMerchantWaitConfirmComponent, children: [
               {
-                path:'order-merchant-detail',
+                path: 'order-merchant-detail',
                 component: OrderMerchantDetailComponent,
               }
             ]
           },
           {
-            path:'order-merchant-completed',
-            component: OrderMerchantCompletedComponent,children:[
+            path: 'order-merchant-completed',
+            component: OrderMerchantCompletedComponent, children: [
               {
-                path:'order-merchant-detail',
+                path: 'order-merchant-detail',
                 component: OrderMerchantDetailComponent,
               }
             ]
           },
           {
             path: 'order-merchant-cancel',
-            component: OrderMerchantCancelComponent,children:[
+            component: OrderMerchantCancelComponent, children: [
               {
-                path:'order-merchant-detail',
+                path: 'order-merchant-detail',
                 component: OrderMerchantDetailComponent,
               }
             ]
@@ -84,4 +84,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class MerchantRoutingModule { }
+export class MerchantRoutingModule {
+}

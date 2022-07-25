@@ -29,10 +29,10 @@
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a *ngIf="(isLogin&&isUser&&!isMerchant)||(!isLogin)" routerLink="showlist-restaurant" class="nav-link">Nhà hàng <span class="sr-only"></span></a>
+          <a *ngIf="(!isCheckAdmin)||(isMerchant&&!isUser)" routerLink="showlist-restaurant" class="nav-link">Nhà hàng <span class="sr-only"></span></a>
         </li>
         <li class="nav-item">
-          <a *ngIf="(isLogin&&isUser&&!isMerchant)||(!isLogin)" routerLink="showlist-food" class="nav-link" >Món ăn <span class="sr-only"></span></a>
+          <a *ngIf="(!isCheckAdmin)||(isMerchant&&!isUser)" routerLink="showlist-food" class="nav-link" >Món ăn <span class="sr-only"></span></a>
         </li>
       </ul>
     </div>
@@ -63,12 +63,12 @@
           <a *ngIf="!isLogin" class="nav-link" routerLink="register-customer">Đăng ký <span class="sr-only">(current)</span></a>
         </li>
       </ul>
-          <a *ngIf="isLogin&&isUser&&!isMerchant"  class="docs-button" aria-label="Angular Material">
+          <a  routerLink="user" *ngIf="(isLogin&&isUser&&!isMerchant)||(isLogin&&isUser&&isMerchant)"  class="docs-button" aria-label="Angular Material">
             <span>{{name}}</span></a>
           <a routerLink="user" >
-            <img *ngIf="isLogin&&isUser&&!isMerchant" class="navbar-brand" alt="osahan" style="border-radius: 50%" width="50px" height="50px" src="{{avatar}}">
+            <img *ngIf="(isLogin&&isUser&&!isMerchant)||(isLogin&&isUser&&isMerchant)" class="navbar-brand" alt="osahan" style="border-radius: 50%" width="50px" height="50px" src="{{avatar}}">
            </a>
-        <div  *ngIf="(isLogin&&isUser&&!isMerchant&&!isCheckAdmin)" class="nav-item dropdown dropdown-cart">
+        <div  *ngIf="(isLogin&&isUser&&!isMerchant&&!isCheckAdmin)||(isLogin&&isUser&&isMerchant&&!isCheckAdmin)" class="nav-item dropdown dropdown-cart">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
              aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-shopping-basket"></i> Giỏ hàng
