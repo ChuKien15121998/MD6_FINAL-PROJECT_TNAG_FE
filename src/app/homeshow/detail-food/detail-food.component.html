@@ -1,0 +1,169 @@
+<section class="restaurant-detailed-banner">
+  <div class="text-center">
+    <img class="img-fluid cover" src="{{food.merchant.imageBanner}}">
+  </div>
+  <div class="restaurant-detailed-header">
+    <div class="container">
+      <div class="row d-flex align-items-end">
+        <div class="col-md-8">
+          <div class="restaurant-detailed-header-left">
+            <img class="img-fluid mr-3 float-left" alt="osahan" src="{{food.merchant.avatar}}">
+            <h2 class="text-white">{{food.merchant.name}}</h2>
+            <p class="text-white mb-1"><i class="icofont-location-pin"></i> {{food.merchant.address}}
+            </p>
+            <p class="text-white mb-0"><i class="icofont-food-cart"></i>{{food.merchant.phoneNumber}}</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="restaurant-detailed-header-right text-right">
+            <button class="btn btn-success" type="button"><i class="icofont-clock-time"></i> {{food.merchant.openTime}}
+              - {{food.merchant.closeTime}}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="offer-dedicated-nav bg-white border-top-0 shadow-sm">
+  <div class="container">
+    <div class="row">
+      <div routerLink="/detail-restaurant/1" class="col-md-12">
+                    <span class="restaurant-detailed-action-btn float-right">
+                        <button class="btn btn-light btn-sm border-light-btn" type="button"><i
+                          class="icofont-cauli-flower text-success"></i> Xem cửa hàng</button>
+                    </span>
+        <ul class="nav" id="pills-tab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="pills-order-online-tab" data-toggle="pill"
+               href="#pills-order-online" role="tab" aria-controls="pills-order-online"
+               aria-selected="true">Mua hàng</a>
+          </li>
+          <!-- <li class="nav-item">
+              <a class="nav-link" id="pills-reviews-tab" data-toggle="pill" href="#pills-reviews"
+                  role="tab" aria-controls="pills-reviews" aria-selected="false">Đánh giá & Reviews</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="offer-dedicated-body pt-2 pb-2 mt-4 mb-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="offer-dedicated-body-left">
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-order-online" role="tabpanel"
+                 aria-labelledby="pills-order-online-tab">
+              <div id="#menu" class="bg-white rounded shadow-sm p-4 mb-4">
+                <div class="address-map float-right ml-5">
+                  <div class="mapouter">
+                    <img width="300" height="170" class="img-fluid" src="{{food.image}}">
+                  </div>
+                </div>
+                <h5 class="mb-4">{{food.name}}</h5>
+                <p class="mb-3">
+                  <span class="fa fa-location-arrow locationicon"></span>{{food.merchant.address}}
+                </p>
+                <p class="mb-2 text-black"><i class="icofont-phone-circle text-primary mr-2"></i>
+                  {{food.merchant.phoneNumber}}</p>
+                <p class="mb-2 text-black"><i class="icofont-email text-primary mr-2"></i> <a
+                  href="https://thaotrinh.info/cdn-cgi/l/email-protection"
+                  class="__cf_email__"
+                  data-cfemail="97fef6faf8e4f6fff6f9d7f0faf6fefbb9f4f8fa">{{food.price}}</a>
+                </p>
+                <p class="mb-2 text-black"><i class="icofont-clock-time text-primary mr-2"></i>
+                  Today {{food.merchant.openTime}} – {{food.merchant.closeTime}}
+                  <span class="badge badge-success"> OPEN NOW </span>
+                </p>
+                <hr class="clearfix">
+                <p class="text-black mb-0"> {{food.description}}</p>
+                <hr class="clearfix">
+                <div class="owl-theme owl-carousel-five offers-interested-carousel mb-3">
+                  <owl-carousel-o [options]="customOptions">
+                    <ng-template carouselSlide>
+                      <div>
+                        <a>
+                          <img class="img-fluid" src="../../../assets/template/img/list/1.png" alt="">
+                        </a>
+                      </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                      <div>
+                        <a>
+                          <img class="img-fluid" src="../../../assets/template/img/list/2.png" alt="">
+                        </a>
+                      </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                      <div>
+                        <a>
+                          <img class="img-fluid" src="../../../assets/template/img/list/3.png" alt="">
+                        </a>
+                      </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                      <div>
+                        <a>
+                          <img class="img-fluid" src="../../../assets/template/img/list/4.png" alt="">
+                        </a>
+                      </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                      <div>
+                        <a>
+                          <img class="img-fluid" src="../../../assets/template/img/list/5.png" alt="">
+                        </a>
+                      </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                      <div>
+                        <a>
+                          <img class="img-fluid" src="../../../assets/template/img/list/6.png" alt="">
+                        </a>
+                      </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                      <div>
+                        <a>
+                          <img class="img-fluid" src="../../../assets/template/img/list/7.png" alt="">
+                        </a>
+                      </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                      <div>
+                        <a>
+                          <img class="img-fluid" src="../../../assets/template/img/list/8.png" alt="">
+                        </a>
+                      </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                      <div>
+                        <a>
+                          <img class="img-fluid" src="../../../assets/template/img/list/9.png" alt="">
+                        </a>
+                      </div>
+                    </ng-template>
+                  </owl-carousel-o>
+                </div>
+                <div class="border-btn-main mb-4">
+                  <a class="border-btn text-success mr-2"><i
+                    class="icofont-check-circled"></i> Mua ngay</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <app-cart-detail-restaurant></app-cart-detail-restaurant>
+<!--          *ngIf="isLogin&&isUser&&!isMerchant&&!isCheckAdmin"-->
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
