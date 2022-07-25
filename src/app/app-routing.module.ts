@@ -17,6 +17,7 @@ import {ShowlistFoodComponent} from "./homeshow/showlist-food/showlist-food.comp
 import {ShowlistRestaurantComponent} from "./homeshow/showlist-restaurant/showlist-restaurant.component";
 import {DetailMerchantComponent} from "./merchant/detail-merchant/detail-merchant.component";
 import {DetailRestaurantComponent} from "./homeshow/detail-restaurant/detail-restaurant.component";
+import {CommonModule} from "@angular/common";
 
 
 const routes: Routes = [

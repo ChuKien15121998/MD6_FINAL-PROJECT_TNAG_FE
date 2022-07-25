@@ -23,6 +23,7 @@ import { ShowlistRestaurantComponent } from './homeshow/showlist-restaurant/show
 import { DetailRestaurantComponent } from './homeshow/detail-restaurant/detail-restaurant.component';
 import { CartDetailRestaurantComponent } from './homeshow/cart-detail-restaurant/cart-detail-restaurant.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import {DetailFoodComponent} from "./homeshow/detail-food/detail-food.component";
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     MerchantRegisterComponent,
     CustomerRegisterComponent,
     HomeComponent,
+    DetailFoodComponent,
     CustomerLoginComponent,
     MerchantLoginComponent,
     ShowlistFoodComponent,
@@ -50,10 +52,9 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
   ],
-  providers: [httpInterceptorProviders],
-  exports: [
-    CartDetailRestaurantComponent,
+  exports: [CartDetailRestaurantComponent,
   ],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

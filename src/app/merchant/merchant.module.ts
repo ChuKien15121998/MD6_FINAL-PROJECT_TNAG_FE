@@ -35,7 +35,7 @@ import {CartDetailRestaurantComponent} from "../homeshow/cart-detail-restaurant/
     UploadImageComponent,
     EditMerchantBannerComponent,
     EditMerchantAvatarComponent,
-    DetailFoodComponent,
+    // DetailFoodComponent,
     OderMerchantComponent,
     OrderMerchantWaitConfirmComponent,
     OrderMerchantCompletedComponent,

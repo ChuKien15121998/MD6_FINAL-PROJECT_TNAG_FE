@@ -26,6 +26,8 @@ export class MerchantGuardGuard implements CanActivate {
         return false;
       }
     } else {
+      console.log("vào else k lấy được token")
+      console.log(this.tokenService.getToken())
       this.router.navigate(['/merchant-login'])
       return false;
     }

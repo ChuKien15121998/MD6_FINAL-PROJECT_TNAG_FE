@@ -35,10 +35,10 @@ export class NavbarComponent implements OnInit {
         if (JSON.stringify(this.tokenService.getRoles()).includes(this.merchant) && JSON.stringify(this.tokenService.getRoles()).includes(this.user)) {
           this.isMerchant = true;
           this.isUser = true;
-          // console.log("check merchant login hay chua", this.isMerchant)
+          console.log("check merchant login hay chua", this.isMerchant)
         } else { // @ts-ignore
           if (JSON.stringify(this.tokenService.getRoles()).includes(this.merchant)) {
-            // console.log("aaaaaaaaaaaaaa")
+            console.log("aaaaaaaaaaaaaa  - la merchant")
             this.isMerchant = true;
 
           } else {
