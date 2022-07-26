@@ -1,83 +1,59 @@
-
 <div>
   <h4 class="font-weight-bold mt-0 mb-4">Chi tiết giỏ hàng</h4>
   <div>
-    <div class="bg-white card mb-4 order-list shadow-sm">
+    <div *ngFor="let res of listRestaurant, let i = index " class="bg-white card mb-4 order-list shadow-sm">
       <div class="gold-members p-4">
+        <h6 class="mb-2">
+          <a class="text-black"><h4>{{res.name}}</h4>
+          </a>
+        </h6>
+        <br>
         <a>
-          <div class="media">
-            <div class="media-body">
-                  <span class="float-right text-info">Mã đơn hàng<i class="icofont-check-circled text-success"></i></span>
-              <h6 class="mb-2">
-                <a class="text-black">   <h4>Tên nhà hàng</h4>
-                </a>
-              </h6>
-              <div class="form-check">
-                <div>
-                <input
-                  mdbCheckbox
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                />
-                <img src="img/5.jpg"
-                     alt="Generic placeholder image">
-                <div>
-                  <h6 >Chả Nấm Tươi</h6>
-                  <p >150.000 (1kg)</p>
-                </div>
-                </div>      <div>
-                <input
-                  mdbCheckbox
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                />
-                <img src="img/5.jpg"
-                     alt="Generic placeholder image">
-                <div>
-                  <h6 >Chả Nấm Tươi</h6>
-                  <p >150.000 (1kg)</p>
-                </div>
-                </div>      <div>
-                <input
-                  mdbCheckbox
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                />
-                <img src="img/5.jpg"
-                     alt="Generic placeholder image">
-                <div>
-                  <h6 >Chả Nấm Tươi</h6>
-                  <p >150.000 (1kg)</p>
-                </div>
-                </div>
-              </div>
+<!--          <div class="media">-->
+<!--            <div class="media-body">-->
+<!--              <div class="form-check">-->
+<!--                <div>-->
+<!--                  <input mdbCheckbox class="form-check-input" type="checkbox" value=""/>-->
+<!--                  <img src="img/5.jpg" alt="Generic placeholder image">-->
+<!--                  <div>-->
+<!--                    <h6>Chả Nấm Tươi</h6>-->
+<!--                    <p>150.000 (1kg)</p>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                  <input mdbCheckbox class="form-check-input" type="checkbox" value=""/>-->
+<!--                  <img src="img/5.jpg" alt="Generic placeholder image">-->
+<!--                  <div>-->
+<!--                    <h6>Chả Nấm Tươi</h6>-->
+<!--                    <p>150.000 (1kg)</p>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                  <input mdbCheckbox class="form-check-input" type="checkbox" value=""/>-->
+<!--                  <img src="img/5.jpg" alt="Generic placeholder image">-->
+<!--                  <div>-->
+<!--                    <h6>Chả Nấm Tươi</h6>-->
+<!--                    <p>150.000 (1kg)</p>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
 
-<!--              <p class="text-gray mb-1"><i class="icofont-location-arrow"></i>-->
+<!--              <hr>-->
+<!--              <div class="float-right">-->
+<!--                <a class="btn btn-sm btn-primary"><i-->
+<!--                ></i> Mua hàng</a>-->
+<!--              </div>-->
+<!--              <p class="mb-0 text-black text-primary pt-2"><span-->
+<!--                class="text-black font-weight-bold"> Total Paid:</span> $300-->
 <!--              </p>-->
-<!--              <p class="text-gray mb-3"><i class="icofont-list"></i> SOLD-->
-<!--                 <br>-->
-<!--                <i class="fa fa-dollar"></i>-->
-<!--                &lt;!&ndash;                    <i class="material-symbols-outlined ml-2"></i>&ndash;&gt;-->
-<!--                PRICE  VND</p>-->
-<!--              <p class="text-dark">-->
-<!--              </p>-->
-              <hr>
-              <div class="float-right">
-                <a class="btn btn-sm btn-primary"><i
-                ></i> Mua hàng</a>
-              </div>
-              <p class="mb-0 text-black text-primary pt-2"><span
-                class="text-black font-weight-bold"> Total Paid:</span> $300
-              </p>
-            </div>
-          </div>
+<!--            </div>-->
+<!--          </div>-->
+
+          <app-cart-detail-user merchant_id = '{{res.id}}'></app-cart-detail-user>
         </a>
       </div>
     </div>
   </div>
-  <pagination-controls class="btn btn-sm btn-outline-primary" class="myPagination" >
+  <pagination-controls class="btn btn-sm btn-outline-primary" class="myPagination">
   </pagination-controls>
 </div>

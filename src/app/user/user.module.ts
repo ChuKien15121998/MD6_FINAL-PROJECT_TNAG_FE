@@ -10,6 +10,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { ListcartUserComponent } from './listcart-user/listcart-user.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import { OrderUserComponent } from './order-user/order-user.component';
+import { OrderDetailUserComponent } from './order-detail-user/order-detail-user.component';
+import { CartDetailUserComponent } from './cart-detail-user/cart-detail-user.component';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { OrderUserComponent } from './order-user/order-user.component';
     DetailUserComponent,
     ListcartUserComponent,
     OrderUserComponent,
+    OrderDetailUserComponent,
+    CartDetailUserComponent,
   ],
   imports: [
     CommonModule,

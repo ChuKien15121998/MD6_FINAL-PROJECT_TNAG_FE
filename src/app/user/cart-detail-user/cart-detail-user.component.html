@@ -1,0 +1,24 @@
+<div class="media">
+  <div class="media-body">
+    <div *ngFor="let cart of cartDetailByMerchant" class="form-check">
+      <div style="display: inline-block">
+        <input mdbCheckbox class="form-check-input" type="checkbox" value=""/>
+        <img  src="{{cart.food.image}}" style="width: 20px; height: 20px; display: inline-block" alt="Generic placeholder image">
+        <h6>{{cart.food.name}}</h6>
+        <p>{{cart.totalPrice}}</p>
+        <div>
+
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <div class="float-right">
+      <a class="btn btn-sm btn-primary"><i
+      ></i> Mua hàng</a>
+    </div>
+    <p class="mb-0 text-black text-primary pt-2"><span
+      class="text-black font-weight-bold"> Total Paid:</span> $300
+    </p>
+  </div>
+</div>
