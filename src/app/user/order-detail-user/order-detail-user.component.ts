@@ -23,7 +23,7 @@ orderDetailByOrder: any;
   ngOnInit(): void {
     this.orderService.getListOrderDetailByOrder(this.order_id).subscribe((data) => {
       this.orderDetailByOrder = data;
-      console.log("order chi tieets lay ra duoc la gi", this.orderDetailByOrder);
+      // console.log("order chi tieets lay ra duoc la gi", this.orderDetailByOrder);
       for (let i = 0; i < this.orderDetailByOrder.length; i++) {
         this.total += this.orderDetailByOrder[i].price;
       }

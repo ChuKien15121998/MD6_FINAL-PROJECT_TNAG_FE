@@ -13,6 +13,8 @@ import { OrderUserComponent } from './order-user/order-user.component';
 import { OrderDetailUserComponent } from './order-detail-user/order-detail-user.component';
 import { CartDetailUserComponent } from './cart-detail-user/cart-detail-user.component';
 import { PreOrderUserComponent } from '../homeshow/pre-order-user/pre-order-user.component';
+import { EditUserAvatarComponent } from './edit-user-avatar/edit-user-avatar.component';
+import {MerchantModule} from "../merchant/merchant.module";
 
 
 @NgModule({
@@ -24,13 +26,15 @@ import { PreOrderUserComponent } from '../homeshow/pre-order-user/pre-order-user
     OrderUserComponent,
     OrderDetailUserComponent,
     CartDetailUserComponent,
+    EditUserAvatarComponent,
   ],
     imports: [
         CommonModule,
         UserRoutingModule,
         ReactiveFormsModule,
         NgxPaginationModule,
-        FormsModule
-    ]
+        FormsModule,
+        MerchantModule
+    ],
 })
 export class UserModule { }
