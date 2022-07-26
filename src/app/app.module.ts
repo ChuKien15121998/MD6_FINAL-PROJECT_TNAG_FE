@@ -24,6 +24,7 @@ import { DetailRestaurantComponent } from './homeshow/detail-restaurant/detail-r
 import { CartDetailRestaurantComponent } from './homeshow/cart-detail-restaurant/cart-detail-restaurant.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import {DetailFoodComponent} from "./homeshow/detail-food/detail-food.component";
+import {PreOrderUserComponent} from "./homeshow/pre-order-user/pre-order-user.component";
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import {DetailFoodComponent} from "./homeshow/detail-food/detail-food.component"
     ShowlistRestaurantComponent,
     DetailRestaurantComponent,
     CartDetailRestaurantComponent,
+    PreOrderUserComponent,
   ],
   imports: [
     FormsModule,

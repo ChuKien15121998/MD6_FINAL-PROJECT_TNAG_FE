@@ -40,12 +40,13 @@ export class DetailRestaurantComponent implements OnInit {
   count: any;
   cartDetail: any;
   total: any;
-
+  top3_restaurant: any;
   ngOnInit(): void {
     this.restaurant = {
       name: '', phoneNumber: '', avatar: '', imageBanner: '',
       openTime: '',  closeTime: '',  address: '',
     }
+
     this.activateRoute.paramMap.subscribe((paraMap: ParamMap) => {
       this.restaurant_id = paraMap.get('id');
       this.merchantService.findById(this.restaurant_id).subscribe((data) => {
@@ -57,6 +58,11 @@ export class DetailRestaurantComponent implements OnInit {
       })
       this.getCartdetail()
     });
+    console.log("lay id merchant hien tai", this.restaurant_id)
+    this.foodService.listSoldTop3ByMerchant(this.restaurant_id).subscribe((data) => {
+      this.top3_restaurant = data;
+      console.log("lay duoc top 3 ban chay k", this.top3_restaurant)
+    })
 
     if (this.tokenService.getToken()) {
     // console.log("token lay ra", this.tokenService.getRoles())
