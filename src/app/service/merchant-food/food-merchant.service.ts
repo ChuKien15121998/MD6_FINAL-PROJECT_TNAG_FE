@@ -40,4 +40,10 @@ export class FoodMerchantService {
   searchByFoodName(name: string, id: number): Observable<any> {
     return this.httpClient.get(this.API + '/' + id + '/search-by-food-name' + '?name=' + name);
   }
+  listSoldTop8(): Observable<any> {
+    return this.httpClient.get(this.API + '/best-seller')
+  }
+  listNewFood(): Observable<any> {
+    return this.httpClient.get(this.API + '/newest')
+  }
 }
