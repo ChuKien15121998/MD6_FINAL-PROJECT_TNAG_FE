@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {OrderService} from "../../service/order/order.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-order-user',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderUserComponent implements OnInit {
 
-  constructor() { }
+  listOrder: any;
+  p: string | number | undefined;
+  constructor(private httpClient: HttpClient,
+              private orderService: OrderService) { }
 
   ngOnInit(): void {
+    this.showListOrderOfUser();
+  }
+
+  showListOrderOfUser(){
+    this.orderService.showOrderListOfCustomer().subscribe(data => {
+      console.log(data)
+      this.listOrder = data;
+    })
   }
 
 }
