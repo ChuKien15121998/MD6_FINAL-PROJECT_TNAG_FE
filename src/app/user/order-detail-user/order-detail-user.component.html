@@ -1,3 +1,19 @@
+<div  class="gold-members p-4">
+  <a>
+    <div class="media">
+      <div class="media-body">
+        <span class="float-right text-info"># {{order_id}}</span>
+        <h6 class="mb-2">
+          <a class="text-black">   <h5>{{merchant_name}}</h5>
+          </a>
+        </h6>
+        <p class="text-gray mb-1">Địa chỉ: {{merchant_address}}
+        </p>
+        <p class="text-gray mb-1">Tình trạng đơn hàng: {{orderStatus_nameOrderStatus}}
+        </p>
+        <p class="text-gray mb-1">Thời gian đặt hàng: {{order_createAt}}
+        </p>
+        <hr>
 <div class="media">
   <div class="media-body">
     <div *ngFor="let order of orderDetailByOrder" class="form-check">
@@ -6,25 +22,18 @@
         <img  src="{{order.food.image}}" style="width: 50px; height: 50px;" alt="Generic placeholder image">
         <h6 style="margin: 0 10px; display: inline-block">{{order.food.name}}</h6>
         <p style="display: inline-block">{{order.quantity}} x {{order.food.price}} = {{order.price}}</p>
-<!--        <span class="count-number float-right">-->
-<!--                                    <button (click)="decreaseFromCart(cart.food.id)" class="btn btn-outline-secondary  btn-sm left dec"> <i-->
-<!--                                      class="icofont-minus"></i> </button>-->
-<!--                                    <input class="count-number-input" type="text" value="{{cart.quantity}}" readonly="">-->
-<!--                                    <button (click)="increaseFromCart(cart.food.id)" class="btn btn-outline-secondary btn-sm right inc"> <i-->
-<!--                                      class="icofont-plus"></i> </button>-->
-<!--                                </span>-->
-<!--        <a class="border-btn text-success mr-2"> Xóa </a>-->
       </div>
       <br>
     </div>
 
     <hr>
-<!--    <div class="float-right">-->
-<!--      <a class="btn btn-sm btn-primary"><i-->
-<!--      ></i> Mua hàng</a>-->
-<!--    </div>-->
     <p class="mb-0 text-black text-primary pt-2"><span
       class="text-black font-weight-bold"> Tổng tiền thanh toán:</span> {{total}} VND
     </p>
   </div>
+</div>
+<hr>
+</div>
+</div>
+</a>
 </div>
