@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-order-merchant-cancel',
@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order-merchant-cancel.component.css']
 })
 export class OrderMerchantCancelComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
