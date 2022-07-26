@@ -15,20 +15,13 @@ export class OrderUserComponent implements OnInit {
               private orderService: OrderService,
               ) { }
 listOrder: any;
-  listOderStatus: any;
   ngOnInit(): void {
-    // this.getListStatus();
     this.findAllOrderOfCustomer();
   }
   findAllOrderOfCustomer(){
     this.orderService.findAllOrderOfCustomer().subscribe((data) => {
       this.listOrder = data;
       console.log("listoder lay ra", this.listOrder)
-    })
-  }
-  getListStatus(){
-    this.orderService.getListStatus().subscribe((data) => {
-      this.listOderStatus = data;
     })
   }
 

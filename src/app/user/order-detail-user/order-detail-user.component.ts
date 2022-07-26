@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {TokenService} from "../../service/token/token.service";
+import {ActivatedRoute} from "@angular/router";
+import {CartService} from "../../service/cart/cart.service";
+import {OrderService} from "../../service/orders/order.service";
 
 @Component({
   selector: 'app-order-detail-user',
@@ -6,10 +10,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order-detail-user.component.css']
 })
 export class OrderDetailUserComponent implements OnInit {
-
-  constructor() { }
-
+  @Input() order_id: any;
+  constructor(private tokenService: TokenService,
+              private activateRoute: ActivatedRoute,
+              private orderService: OrderService) { }
+orderDetailByOrder: any;
+  total = 0;
   ngOnInit(): void {
+    this.orderService.getListOrderDetailByOrder(this.order_id).subscribe((data) => {
+      this.orderDetailByOrder = data;
+      console.log("order lay ra duoc la gi", this.orderDetailByOrder);
+      for (let i = 0; i < this.orderDetailByOrder.length; i++) {
+        this.total += this.orderDetailByOrder[i].price;
+      }
+    })
   }
 
 }
