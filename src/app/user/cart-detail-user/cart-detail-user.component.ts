@@ -14,11 +14,31 @@ export class CartDetailUserComponent implements OnInit {
               private activateRoute: ActivatedRoute,
               private cartService: CartService) { }
   cartDetailByMerchant: any;
+  // @ts-ignore
+  total = 0;
   ngOnInit(): void {
-    this.cartService.getCartDetailByCartAndMerchant(this.merchant_id).subscribe((data) => {
+    this.getCartDetailByCartAndMerchant(this.merchant_id)
+  }
+  getCartDetailByCartAndMerchant(merchant_id: any){
+    this.cartService.getCartDetailByCartAndMerchant(merchant_id).subscribe((data) => {
       this.cartDetailByMerchant = data;
-      console.log("detail 1 nha hang",this.cartDetailByMerchant)
+      for (let i = 0; i < this.cartDetailByMerchant.length; i++) {
+        // console.log("gia tung gio hang chi tiet",this.cartDetailByMerchant[i].totalPrice)
+        this.total += this.cartDetailByMerchant[i].totalPrice;
+        // console.log("gia tong ", this.total)
+      }
+      // console.log("detail 1 nha hang",this.cartDetailByMerchant)
     });
+  }
+  decreaseFromCart(id: any){
+    this.cartService.decreaseFromCart(id).subscribe((data) => {
+      this.getCartDetailByCartAndMerchant(this.merchant_id)
+    })
+  }
+  increaseFromCart(id: any){
+    this.cartService.increaseFromCart(id).subscribe((data) => {
+      this.getCartDetailByCartAndMerchant(this.merchant_id)
+    })
   }
 
 }
