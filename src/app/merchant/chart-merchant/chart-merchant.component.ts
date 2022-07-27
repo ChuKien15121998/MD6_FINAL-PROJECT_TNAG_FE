@@ -6,43 +6,102 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chart-merchant.component.css']
 })
 export class ChartMerchantComponent implements OnInit {
+  chart: any;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.showChart();
   }
 
-  function () {
-    Highcharts.chart('chart1', {
-      title: {
-        text: 'This is my first chart',
+  /*--------------  bar chart 11 amchart start ------------*/
+
+  showChart() {
+    console.log('vao chart khong?!')
+    // @ts-ignore
+    chart = AmCharts.makeChart("ambarchart4", {
+      "type": "serial",
+      "theme": "light",
+      "marginRight": 70,
+      "dataProvider": [{
+        "country": "USA",
+        "visits": 3025,
+        "color": "#8918FE"
+      }, {
+        "country": "China",
+        "visits": 1882,
+        "color": "#7474F0"
+      }, {
+        "country": "Japan",
+        "visits": 1809,
+        "color": "#C5C5FD"
+      }, {
+        "country": "Germany",
+        "visits": 1322,
+        "color": "#952FFE"
+      }, {
+        "country": "UK",
+        "visits": 1122,
+        "color": "#7474F0"
+      }, {
+        "country": "France",
+        "visits": 1114,
+        "color": "#CBCBFD"
+      }, {
+        "country": "India",
+        "visits": 984,
+        "color": "#FD9C21"
+      }, {
+        "country": "Spain",
+        "visits": 711,
+        "color": "#0D8ECF"
+      }, {
+        "country": "Netherlands",
+        "visits": 665,
+        "color": "#0D52D1"
+      }, {
+        "country": "Russia",
+        "visits": 580,
+        "color": "#2A0CD0"
+      }, {
+        "country": "South Korea",
+        "visits": 443,
+        "color": "#8A0CCF"
+      }, {
+        "country": "Canada",
+        "visits": 441,
+        "color": "#9F43FE"
+      }],
+      "valueAxes": [{
+        "axisAlpha": 0,
+        "position": "left",
+        "title": false
+      }],
+      "startDuration": 1,
+      "graphs": [{
+        "balloonText": "<b>[[category]]: [[value]]</b>",
+        "fillColorsField": "color",
+        "fillAlphas": 0.9,
+        "lineAlpha": 0.2,
+        "type": "column",
+        "valueField": "visits"
+      }],
+      "chartCursor": {
+        "categoryBalloonEnabled": false,
+        "cursorAlpha": 0,
+        "zoomable": false
       },
-      xAxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-          'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      "categoryField": "country",
+      "categoryAxis": {
+        "gridPosition": "start",
+        "labelRotation": 45
       },
-      yAxis: {
-        title: {
-          text: 'Temperature (°C)'
-        },
-        plotLines: [{
-          value: 0,
-          width: 1,
-          color: '#808080'
-        }]
-      },
-      tooltip: {
-        valueSuffix: '°C'
-      },
-      legend: {
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'middle',
-        borderWidth: 0
-      },
-      series: [{
-        data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
-      }]
+      "export": {
+        "enabled": false
+      }
+
     });
-  });
+  }
+
+/*--------------  bar chart 11 amchart END ------------*/
 }

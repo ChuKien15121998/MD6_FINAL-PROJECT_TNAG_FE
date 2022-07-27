@@ -12,6 +12,7 @@ import {OrderMerchantWaitConfirmComponent} from "./order-merchant-wait-confirm/o
 import {OrderMerchantCompletedComponent} from "./order-merchant-completed/order-merchant-completed.component";
 import {OrderMerchantCancelComponent} from "./order-merchant-cancel/order-merchant-cancel.component";
 import {OrderMerchantDetailComponent} from "./order-merchant-detail/order-merchant-detail.component";
+import {ChartMerchantComponent} from "./chart-merchant/chart-merchant.component";
 
 const routes: Routes = [
 
@@ -75,6 +76,10 @@ const routes: Routes = [
             ]
           }
         ]
+      },
+      {
+        path: 'chart-merchant',
+        component: ChartMerchantComponent,
       }
     ]
   },
