@@ -7,13 +7,11 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5">
-              <h3 class="login-heading mb-4">Wellcome back!</h3>
+              <h3 class="login-heading mb-4">Đăng nhập đi nào, bụng đói rồi!</h3>
               <form class="form-register" #f="ngForm" (ngSubmit)="f.form.valid && ngSubmit()" novalidate>
-                <ng-container *ngIf="f.submitted">
+                <ng-container *ngIf="isLogin">
                   <p class="text-danger">{{status}}</p>
                 </ng-container>
-
-
                 <div class="form-label-group">
                   <input name="username" [(ngModel)]="form.username" [formControl]="emailFormControl" type="email" id="inputEmail" class="form-control"
                          placeholder="Email" required>
@@ -29,8 +27,8 @@
                   <label for="inputPassword">Mật khẩu</label>
                   <ng-container *ngIf="(password.touched || f.submitted) && password.invalid">
                     <p *ngIf="password.hasError('required')" class="text-danger">Vui lòng điền mật khẩu!</p>
-                    <p *ngIf="password.hasError('minlength')" class="text-danger">Mật khẩu phải từ 6-10 kí tự!</p>
-                    <p *ngIf="password.hasError('maxlength')" class="text-danger">Mật khẩu phải từ 6-10 kí tự!</p>
+<!--                    <p *ngIf="password.hasError('minlength')" class="text-danger">Mật khẩu phải từ 6-10 kí tự!</p>-->
+<!--                    <p *ngIf="password.hasError('maxlength')" class="text-danger">Mật khẩu phải từ 6-10 kí tự!</p>-->
                   </ng-container>
                 </div>
                 <button class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Đăng nhập</button>

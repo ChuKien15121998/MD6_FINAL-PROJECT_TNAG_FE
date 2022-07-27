@@ -40,7 +40,6 @@ export class CustomerLoginComponent implements OnInit {
     console.log("co submit duoc signin form k", this.signInForm)
 
     this.authService.signInCustomer(this.signInForm).subscribe(data => {
-      // console.log("signin form tra ve gi", data)
       if (data.token != undefined) {
         this.tokenService.setToken(data.token);
         this.tokenService.setName(data.name);
@@ -52,15 +51,12 @@ export class CustomerLoginComponent implements OnInit {
           });
         }else {
           this.router.navigate(['']).then(() => {
-            // console.log("login vao nhu nao", window.location, data)
             window.location.reload();
           });
         }
-
-
       } else {
         this.isLogin = true;
-        this.status = 'Login Failed! Please try again!'
+        this.status = 'Đăng nhập không thành công! Mật khẩu hoặc tên đăng nhập không đúng!'
       }
     })
   }
