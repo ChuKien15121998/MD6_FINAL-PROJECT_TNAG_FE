@@ -90,6 +90,8 @@ this.form.value.image = $event;
       this.mess = "Thêm món không thành công"
     })
     console.log('check obj --------==>> ', this.obj)
+    console.log('list sau khi create====',this.foodMerchantService.findAll());
+    location.reload()
   }
 
 

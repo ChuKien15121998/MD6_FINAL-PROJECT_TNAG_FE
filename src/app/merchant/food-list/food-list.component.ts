@@ -28,6 +28,7 @@ export class FoodListComponent implements OnInit {
   ngOnInit(): void {
     this.findAllMerchant();
     this.findAllByMerchant();
+    // location.reload();
   }
 
   checkMerchant() {
@@ -42,7 +43,7 @@ export class FoodListComponent implements OnInit {
     this.merchantService.getCurrentMerchant().subscribe((data) => {
       this.merchant = data;
       console.log('check listMerchant ------>> ', data)
-
+// location.reload()
     })
   }
 
