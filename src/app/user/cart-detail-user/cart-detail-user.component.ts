@@ -50,11 +50,9 @@ export class CartDetailUserComponent implements OnInit {
     for (let i = 0; i < this.cartDetailByMerchant.length; i++) {
       // @ts-ignore
       if (document.getElementById("cart-detail-user-"+this.cartDetailByMerchant[i].id).checked){
-        // console.log("lay ra tung cart", this.cartDetailByMerchant[i]);
         this.cartDetailDTO.push(this.cartDetailByMerchant[i])
       }
         console.log("co tao duoc list cartdetail k", this.cartDetailDTO)
-      // console.log("kieu json", JSON.parse(this.cartDetailDTO))
       }
     // @ts-ignore
     this.orderService.createOrder(this.merchant_id,{"cartDetails": this.cartDetailDTO}).subscribe((data) => {
@@ -62,8 +60,11 @@ export class CartDetailUserComponent implements OnInit {
       window.location.reload();
     })
   }
-  //
-  // deleteFromCart(id) {
-  //
-  // }
+
+  deleteFromCart(id: any) {
+    this.cartService.deleteCartDetailById(id).subscribe((data) => {
+      this.getCartDetailByCartAndMerchant(this.merchant_id)
+      window.location.reload();
+    })
+  }
 }

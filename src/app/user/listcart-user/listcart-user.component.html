@@ -1,7 +1,7 @@
 <div>
   <h4 class="font-weight-bold mt-0 mb-4">Chi tiết giỏ hàng</h4>
   <div *ngIf="listRestaurant!=null" >
-    <div *ngFor="let res of listRestaurant, let i = index " class="bg-white card mb-4 order-list shadow-sm">
+    <div *ngFor="let res of listRestaurant | paginate: {itemsPerPage: 5, currentPage: p}, let i = index " class="bg-white card mb-4 order-list shadow-sm">
 <!--      <div class="gold-members p-4">-->
 <!--        <h6 class="mb-2">-->
 <!--          <a class="text-black"><h4>{{res.name}}</h4>-->
@@ -15,6 +15,6 @@
 <!--      </div>-->
     </div>
   </div>
-  <pagination-controls class="btn btn-sm btn-outline-primary" class="myPagination">
+  <pagination-controls class="btn btn-sm btn-outline-primary" class="myPagination" (pageChange)="p = $event">
   </pagination-controls>
 </div>

@@ -23,6 +23,7 @@ export class ListcartUserComponent implements OnInit {
   // @ts-ignore
   cartDetailByMerchant: any[];
   total: any;
+  p: any;
   ngOnInit(): void {
     this.cartService.getListMerchantInCart().subscribe((data) => {
       this.listRestaurant = data;

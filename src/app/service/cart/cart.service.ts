@@ -36,4 +36,7 @@ export class CartService {
   getCartDetailById(cart_id: any): Observable<any> {
     return this.httpClient.get('http://localhost:8080/cartdetails/' + cart_id);
   }
+  deleteCartDetailById(cart_id: any): Observable<any> {
+    return this.httpClient.delete('http://localhost:8080/cartdetails/' + cart_id);
+  }
 }
