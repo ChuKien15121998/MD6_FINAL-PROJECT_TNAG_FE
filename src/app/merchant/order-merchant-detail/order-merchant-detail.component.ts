@@ -28,5 +28,4 @@ export class OrderMerchantDetailComponent implements OnInit {
       }
     })
   }
-
 }

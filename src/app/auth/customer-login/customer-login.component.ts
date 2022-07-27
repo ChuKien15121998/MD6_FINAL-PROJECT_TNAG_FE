@@ -11,7 +11,7 @@ import {FormControl, Validators} from "@angular/forms";
   styleUrls: ['./customer-login.component.css']
 })
 export class CustomerLoginComponent implements OnInit {
-  status = 'Please fill in the form to LOGIN -->';
+  status = 'Điền thông tin để đăng nhập -->';
   form: any = {};
   hide = true;
   isLogin = false;
@@ -37,7 +37,7 @@ export class CustomerLoginComponent implements OnInit {
       this.form.username,
       this.form.password
     )
-    console.log("co submit duoc signin form k", this.signInForm)
+    // console.log("co submit duoc signin form k", this.signInForm)
 
     this.authService.signInCustomer(this.signInForm).subscribe(data => {
       if (data.token != undefined) {

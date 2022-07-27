@@ -22,7 +22,7 @@ export class CreateFoodComponent implements OnInit {
     description: new FormControl('', [Validators.required]),
     price: new FormControl('', [Validators.required]),
     priceDiscount: new FormControl('', [Validators.required]),
-    foodCategoryId: new FormControl('',[Validators.required, Validators.min(1),Validators.max(4)]),
+    foodCategoryId: new FormControl('', [Validators.required, Validators.min(1), Validators.max(4)]),
     image: new FormControl(''),
   })
 
@@ -30,19 +30,24 @@ export class CreateFoodComponent implements OnInit {
               private foodMerchantService: FoodMerchantService,
               private foodCategoryService: FoodCategoryService) {
   }
-  get name(){
+
+  get name() {
     return this.form.get('name');
   }
-  get description(){
+
+  get description() {
     return this.form.get('description');
   }
-  get price(){
+
+  get price() {
     return this.form.get('price');
   }
-  get priceDiscount(){
+
+  get priceDiscount() {
     return this.form.get('priceDiscount');
   }
-  get foodCategoryId(){
+
+  get foodCategoryId() {
     return this.form.get('foodCategoryId');
   }
 
@@ -59,7 +64,7 @@ export class CreateFoodComponent implements OnInit {
       // }
       this.listCategory = data;
       // console.log('check list category ----------->> ', this.listCategory);
-    this.maxCategory = this.listCategory[this.listCategory.size -1].id;
+      this.maxCategory = this.listCategory[this.listCategory.size - 1].id;
       console.log("max id category", this.maxCategory)
     })
 
@@ -67,7 +72,7 @@ export class CreateFoodComponent implements OnInit {
 
   // @ts-ignore
   uploadImage($event) {
-this.form.value.image = $event;
+    this.form.value.image = $event;
   }
 
   createFood() {
@@ -90,6 +95,17 @@ this.form.value.image = $event;
       this.mess = "Thêm món không thành công"
     })
     console.log('check obj --------==>> ', this.obj)
+    console.log('list sau khi create====', this.foodMerchantService.findAll());
+    // location.reload()
+    // this.form.value.name = '',
+    //   this.form.value.description = '',
+    //   this.form.value.price = '',
+    //   this.form.value.priceDiscount = '',
+    //
+    //   this.form.value.foodCategoryId = ''
+    // this.form.value.image = ''
+    // console.log(this.form)
+
   }
 
 

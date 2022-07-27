@@ -4,6 +4,7 @@ import {FoodMerchantService} from "../../service/merchant-food/food-merchant.ser
 import {MerchantService} from "../../service/merchant/merchant.service";
 import {FormControl, FormGroup } from '@angular/forms';
 
+
 @Component({
   selector: 'app-food-list',
   templateUrl: './food-list.component.html',
@@ -27,6 +28,7 @@ export class FoodListComponent implements OnInit {
   ngOnInit(): void {
     this.findAllMerchant();
     this.findAllByMerchant();
+    // location.reload();
   }
 
   checkMerchant() {
@@ -41,7 +43,7 @@ export class FoodListComponent implements OnInit {
     this.merchantService.getCurrentMerchant().subscribe((data) => {
       this.merchant = data;
       console.log('check listMerchant ------>> ', data)
-
+// location.reload()
     })
   }
 
@@ -55,8 +57,8 @@ export class FoodListComponent implements OnInit {
 
   deleteFood(id: number) {
     this.foodMerchantService.delete(id).subscribe((data) => {
-      console.log('check thang vua xoa ----->', data)
-      console.log('check thu id ----->> ', id)
+      // console.log('check thang vua xoa ----->', data)
+      // console.log('check thu id ----->> ', id)
       this.findAllByMerchant()
     })
     this.findAllByMerchant()

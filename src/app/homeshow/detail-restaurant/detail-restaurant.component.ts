@@ -41,6 +41,7 @@ export class DetailRestaurantComponent implements OnInit {
   cartDetail: any;
   total: any;
   top3_restaurant: any;
+  value: any;
   ngOnInit(): void {
     this.restaurant = {
       name: '', phoneNumber: '', avatar: '', imageBanner: '',
@@ -52,16 +53,14 @@ export class DetailRestaurantComponent implements OnInit {
       this.merchantService.findById(this.restaurant_id).subscribe((data) => {
         this.restaurant = data;
       })
-      this.foodService.findAllByMerchant(this.restaurant_id).subscribe((data) => {
-        this.listFood = data['content'];
-        // console.log("lay ra duoc listfood", data)
-      })
-      this.getCartdetail()
+      this.getCartdetail();
+     this.getFoodList();
+
     });
-    console.log("lay id merchant hien tai", this.restaurant_id)
+    // console.log("lay id merchant hien tai", this.restaurant_id)
     this.foodService.listSoldTop3ByMerchant(this.restaurant_id).subscribe((data) => {
       this.top3_restaurant = data;
-      console.log("lay duoc top 3 ban chay k", this.top3_restaurant)
+      // console.log("lay duoc top 3 ban chay k", this.top3_restaurant)
     })
 
     if (this.tokenService.getToken()) {
@@ -89,6 +88,26 @@ export class DetailRestaurantComponent implements OnInit {
     }
   }
   }
+  getFoodList(){
+    this.foodService.findAllByMerchant(this.restaurant_id).subscribe((data) => {
+      this.listFood = data['content'];
+      // console.log("lay ra duoc listfood", data)
+      for (let j = 0; j < this.cartDetail.length; j++) {
+      for (let i = 0; i < this.listFood.length; i++) {
+
+          if (this.listFood[i].id==this.cartDetail[j].food.id){
+            // console.log("vao if duoc khong",this.listFood[i].id );
+            this.listFood[i].cartQuantity = this.cartDetail[j].quantity;
+            console.log("so luong",this.listFood[i].cartQuantity )
+            console.log("list sau cung", this.listFood[i])
+          }else {
+            this.listFood[i].cartQuantity = 0;
+          }
+        }
+      }
+
+    })
+  }
   getCartdetail(){
     this.cartService.getCartDetailByCartAndMerchant(this.restaurant_id).subscribe((data) => {
       // console.log("cartdetail lay duoc khong",data)
@@ -98,21 +117,25 @@ export class DetailRestaurantComponent implements OnInit {
       for (let i = 0; i < this.cartDetail.length; i++) {
         this.total += this.cartDetail[i].totalPrice;
       }
+      this.getFoodList();
     })
   };
   decreaseFromCart(id: any){
     this.cartService.decreaseFromCart(id).subscribe((data) => {
       this.getCartdetail()
+
     })
   }
   increaseFromCart(id: any){
     this.cartService.increaseFromCart(id).subscribe((data) => {
       this.getCartdetail()
+
     })
   }
   addToCart(food_id: any){
     this.cartService.addToCart(food_id).subscribe((data) => {
-      this.getCartdetail()
+      this.getCartdetail();
+
     })
   }
 

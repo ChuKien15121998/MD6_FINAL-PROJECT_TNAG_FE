@@ -39,26 +39,26 @@
               <div class="media">
                 <img class="mr-4" src="{{item.image}}" alt="Generic placeholder image">
                 <div class="media-body">
-                  <span class="float-right text-info">Giao hàng từ thứ 2 đến thứ 6 | {{merchant.openTime}}
-                    AM - {{merchant.closeTime}} PM <i class="icofont-check-circled text-success"></i></span>
+                  <span class="float-right text-info">Giao hàng từ thứ 2 đến thứ 6 | {{merchant.openTime.substring(0,5)}}
+                     - {{merchant.closeTime.substring(0, 5)}}  <i class="icofont-check-circled text-success"></i></span>
                   <h6 class="mb-2">
-                    <a href="detail.html" class="text-black">{{item.name}}
-                    </a>
+                    <span class="text-black">{{item.name}}
+                    </span>
                   </h6>
                   <p class="text-gray mb-1"><i class="icofont-location-arrow"></i> {{merchant.address}}
                   </p>
-                  <p class="text-gray mb-3"><i class="icofont-list"></i> ĐÃ BÁN
+                  <p class="text-gray mb-3"><i class="icofont-list"></i> ĐÃ BÁN:
                     {{item.sold}} <br>
                     <i class="fa fa-dollar"></i>
 <!--                    <i class="material-symbols-outlined ml-2"></i>-->
-                    GIÁ {{item.price}} vnđ</p>
+                    GIÁ: {{item.price | currency: 'VND':''}} VND</p>
                   <p class="text-dark">{{item.description}}
                   </p>
                   <hr>
                   <div class="float-right">
-                    <a class="btn btn-sm btn-outline-primary" routerLink="edit-food/{{item.id}}"><i
+                    <a class="btn btn-sm btn-primary" routerLink="edit-food/{{item.id}}"><i
                       ></i> SỬA </a>
-                    <a  class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal"><i
+                    <a  class="btn btn-sm btn-outline-primary button-hover" data-toggle="modal" data-target="#exampleModal"><i
                       ></i> XÓA </a>
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -74,7 +74,7 @@
                             Bạn có chắc chắn muốn xóa?!
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy bỏ</button>
                             <a (click)="deleteFood(item.id)" routerLink="/merchant" type="button" class="btn btn-primary" data-dismiss="modal">Xác nhận</a>
                           </div>
                         </div>
