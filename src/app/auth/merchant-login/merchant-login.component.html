@@ -9,11 +9,9 @@
             <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5">
               <h3 class="login-heading mb-4">Wellcome back!</h3>
               <form class="form-register" #f="ngForm" (ngSubmit)="f.form.valid && ngSubmit()" novalidate>
-                <ng-container *ngIf="f.submitted">
+                <ng-container *ngIf="isLogin">
                   <p class="text-danger">{{status}}</p>
                 </ng-container>
-
-
                 <div class="form-label-group">
                   <input name="username" [(ngModel)]="form.username" [formControl]="emailFormControl" type="email" id="inputEmail" class="form-control"
                          placeholder="Email" required>
