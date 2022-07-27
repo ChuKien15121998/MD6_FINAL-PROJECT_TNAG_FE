@@ -34,7 +34,7 @@
 <!--    </form>-->
   </div>
   <div>
-    <div  *ngFor="let order of listOrder" class="bg-white card mb-4 order-list shadow-sm">
+    <div  *ngFor="let order of listOrder| paginate: {itemsPerPage: 5, currentPage: p}" class="bg-white card mb-4 order-list shadow-sm">
               <app-order-detail-user order_id="{{order.id}}" merchant_name="{{order.merchant.name}}" merchant_address="{{order.merchant.address}}"
               orderStatus_nameOrderStatus="{{order.orderStatus.nameOrderStatus}}" order_createAt="{{order.createAt}}"
               ></app-order-detail-user>

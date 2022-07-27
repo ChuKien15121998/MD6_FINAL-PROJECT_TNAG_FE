@@ -5,35 +5,69 @@
   </h6>
   <br>
   <a>
-<div class="media">
-  <div class="media-body">
-    <div *ngFor="let cart of cartDetailByMerchant" class="form-check">
-      <div>
-        <input id="cart-detail-user-{{cart.id}}" class="form-check-input" type="checkbox" value="{{cart}}" [(ngModel)]="cart.checked"/>
-        <img  src="{{cart.food.image}}" style="width: 50px; height: 50px;" alt="Generic placeholder image">
-        <h6 style="margin: 0 10px; display: inline-block">{{cart.food.name}}</h6>
-        <p style="display: inline-block">{{cart.quantity}} x {{cart.food.price}} = {{cart.totalPrice}}</p>
-        <span class="count-number float-right">
-                                    <button (click)="decreaseFromCart(cart.food.id)" class="btn btn-outline-secondary  btn-sm left dec"> <i
-                                      class="icofont-minus"></i> </button>
-                                    <input class="count-number-input" type="text" value="{{cart.quantity}}" readonly="">
-                                    <button (click)="increaseFromCart(cart.food.id)" class="btn btn-outline-secondary btn-sm right inc"> <i
-                                      class="icofont-plus"></i> </button>
-                                </span>
-          <a class="border-btn text-success mr-2"> Xóa </a>
-      </div>
-      <br>
-    </div>
 
+<!--<div class="media">-->
+<!--  <div class="media-body">-->
+<!--    <div *ngFor="let cart of cartDetailByMerchant" class="form-check">-->
+<!--      <div>-->
+<!--        <input id="cart-detail-user-{{cart.id}}" class="form-check-input" type="checkbox" value="{{cart}}" [(ngModel)]="cart.checked"/>-->
+<!--        <img  src="{{cart.food.image}}" style="width: 50px; height: 50px;" alt="Generic placeholder image">-->
+<!--        <h6 style="margin: 0 10px; display: inline-block">{{cart.food.name}}</h6>-->
+<!--        <p style="display: inline-block">{{cart.quantity}} x {{cart.food.price}} = {{cart.totalPrice}}</p>-->
+<!--        <span class="count-number float-right">-->
+<!--                                    <button (click)="decreaseFromCart(cart.food.id)" class="btn btn-outline-secondary  btn-sm left dec"> <i-->
+<!--                                      class="icofont-minus"></i> </button>-->
+<!--                                    <input class="count-number-input" type="text" value="{{cart.quantity}}" readonly="">-->
+<!--                                    <button (click)="increaseFromCart(cart.food.id)" class="btn btn-outline-secondary btn-sm right inc"> <i-->
+<!--                                      class="icofont-plus"></i> </button>-->
+<!--                                </span>-->
+<!--          <a class="border-btn text-success mr-2"> Xóa </a>-->
+<!--      </div>-->
+<!--      <br>-->
+<!--    </div>-->
+
+
+    <div class="row">
+    <div class="col-md-12">
+      <div class="bg-white rounded border shadow-sm mb-4">
+        <div *ngFor="let cart of cartDetailByMerchant" class="menu-list p-3 border-bottom">
+                       <span
+                         class="count-number float-right">
+                                                            <a class="btn btn-outline-secondary btn-sm">Xóa</a>
+                                                        </span>
+          <span class="count-number float-right">
+                                                    <button (click)="decreaseFromCart(cart.food.id)" class="btn btn-outline-secondary  btn-sm left dec"> <i
+                                                      class="icofont-minus"></i> </button>
+            <!--                                                    <input id="food-num-{{food.id}}" class="count-number-input" type="text" value="1">-->
+                                            <input class="count-number-input" type="text" value="{{cart.quantity}}" readonly="">
+                                                    <button (click)="increaseFromCart(cart.food.id)" class="btn btn-outline-secondary btn-sm right inc"> <i
+                                                      class="icofont-plus"></i> </button>
+                                                </span>
+          <div class="media">
+            <input id="cart-detail-user-{{cart.id}}" class="form-check-input" type="checkbox" value="{{cart}}" [(ngModel)]="cart.checked"/>
+            <img class="mr-3 rounded-pill" src="{{cart.food.image}}"
+                 alt="Generic placeholder image">
+            <div class="media-body">
+              <h6 class="mb-1">{{cart.food.name}}</h6>
+              <p class="text-gray mb-0">Số lượng: {{cart.quantity}} = {{cart.totalPrice| currency: 'VND':''}} VND</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
     <hr>
     <div class="float-right">
       <a (click)="createOrder()" class="btn btn-sm btn-primary"><i
       ></i> Mua hàng</a>
     </div>
     <p class="mb-0 text-black text-primary pt-2"><span
-      class="text-black font-weight-bold"> Tổng tiền thanh toán:</span> {{total}} VND
+      class="text-black font-weight-bold"> Tổng tiền thanh toán:</span> {{total| currency: 'VND':''}} VND
     </p>
-  </div>
-</div>
+
 </a>
 </div>
+
+
+
+

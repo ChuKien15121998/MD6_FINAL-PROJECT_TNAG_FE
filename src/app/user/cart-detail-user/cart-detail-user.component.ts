@@ -62,5 +62,8 @@ export class CartDetailUserComponent implements OnInit {
       window.location.reload();
     })
   }
-
+  //
+  // deleteFromCart(id) {
+  //
+  // }
 }
