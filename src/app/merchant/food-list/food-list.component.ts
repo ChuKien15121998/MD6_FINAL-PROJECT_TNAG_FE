@@ -55,8 +55,8 @@ export class FoodListComponent implements OnInit {
 
   deleteFood(id: number) {
     this.foodMerchantService.delete(id).subscribe((data) => {
-      console.log('check thang vua xoa ----->', data)
-      console.log('check thu id ----->> ', id)
+      // console.log('check thang vua xoa ----->', data)
+      // console.log('check thu id ----->> ', id)
       this.findAllByMerchant()
     })
     this.findAllByMerchant()

@@ -70,8 +70,7 @@
                     <div class="list-card-image">
                       <!-- <div class="star position-absolute"><span class="badge badge-success"><i
                                   class="icofont-star"></i> 3.1 (300+)</span></div> -->
-                      <div class="favourite-heart text-danger position-absolute"><a
-                        href="#"><i class="icofont-heart"></i></a></div>
+                      <div class="favourite-heart text-danger position-absolute"><a><i class="icofont-heart"></i></a></div>
                       <div class="member-plan position-absolute"><span
                         class="badge badge-dark">Promoted</span></div>
                       <a>
@@ -88,7 +87,7 @@
 <!--                          class="badge badge-success">5% Giảm</span>-->
                         </a> <span
                           class="float-right">
-                                                            <a class="btn btn-outline-secondary btn-sm">Mua
+                                                            <a (click)="addToCart(res.id)" class="btn btn-outline-secondary btn-sm">Mua
                                                                 ngay</a>
                                                         </span>
                         </p>
@@ -112,7 +111,7 @@
                                                 <span class="count-number float-right">
                                                     <button (click)="decreaseFromCart(food.id)" class="btn btn-outline-secondary  btn-sm left dec"> <i
                                                       class="icofont-minus"></i> </button>
-                                                    <input class="count-number-input" type="text" value="1" readonly="">
+                                                    <input id="food-num-{{food.id}}" class="count-number-input" type="text" value="{{food.cartQuantity}}">
                                                     <button (click)="increaseFromCart(food.id)" class="btn btn-outline-secondary btn-sm right inc"> <i
                                                       class="icofont-plus"></i> </button>
                                                 </span>
