@@ -11,7 +11,7 @@ import {FormControl, Validators} from "@angular/forms";
   styleUrls: ['./customer-login.component.css']
 })
 export class CustomerLoginComponent implements OnInit {
-  status = 'Please fill in the form to LOGIN -->';
+  status = 'Điền thông tin để đăng nhập -->';
   form: any = {};
   hide = true;
   isLogin = false;
@@ -60,7 +60,7 @@ export class CustomerLoginComponent implements OnInit {
 
       } else {
         this.isLogin = true;
-        this.status = 'Login Failed! Please try again!'
+        this.status = 'Đăng nhập không thành công, hãy thử lại!'
       }
     })
   }

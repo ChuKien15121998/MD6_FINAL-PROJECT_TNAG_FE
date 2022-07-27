@@ -19,7 +19,7 @@ export class AuthService {
   private API_SIGNIN_CUSTOMER = environment.API_LOCAL + 'customer/signin';
   private ADDRESS_CATEGORY = environment.API_LOCAL + 'address-category';
   private API_CHANGE_MERCHANT_AVATAR = environment.API_LOCAL + 'merchants/change-avatar';
-  private API_CHANGE_CUSTOMER_AVATAR = environment.API_LOCAL + 'customerschange-avatar';
+  private API_CHANGE_CUSTOMER_AVATAR = environment.API_LOCAL + 'customers/change-avatar';
   private API_CHANGE_MERCHANT_PROFILE = environment.API_LOCAL+'merchants/change-profile';
   private API_CHANGE_CUSTOMER_PROFILE = environment.API_LOCAL+'customers/change-profile';
   private API_GET_CURRENT_CUSTOMER = environment.API_LOCAL+'customers/detail';

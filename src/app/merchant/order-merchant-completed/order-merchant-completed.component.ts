@@ -39,7 +39,7 @@ export class OrderMerchantCompletedComponent implements OnInit {
         console.log('check list sau khi search ---> ', data)
         this.listAcceptedOrder = data;
       }, error => {
-        alert('loi');
+        // alert('loi');
       })
     } else {
       this.orderService.showDeniedOrder().subscribe((data) => {

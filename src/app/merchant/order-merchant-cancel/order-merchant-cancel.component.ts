@@ -40,7 +40,6 @@ export class OrderMerchantCancelComponent implements OnInit {
         console.log('check list sau khi search ---> ', data)
         this.listCanceledOrder = data;
       }, error => {
-        alert('loi');
       })
     } else {
       this.orderService.showDeniedOrder().subscribe((data) => {

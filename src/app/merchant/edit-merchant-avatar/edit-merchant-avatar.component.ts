@@ -30,11 +30,8 @@ export class EditMerchantAvatarComponent implements OnInit {
     this.merchant = {
       name: '', phoneNumber: '', avatar: '', imageBanner: '',
       address: ''
-      , class: {
-        id: "1"
-      }
     }
-    this.getMerchant(1);
+    this.getMerchant();
   }
 
   onUploadAvatar($event: any) {
@@ -42,8 +39,8 @@ export class EditMerchantAvatarComponent implements OnInit {
     document.getElementById("merchant-avatar-edit").hidden = true;
     this.form.avatar = $event;
   }
-  getMerchant(id: any) {
-    this.merchantService.findById(id).subscribe((data) => {
+  getMerchant() {
+    this.merchantService.getCurrentMerchant().subscribe((data) => {
       this.merchant = data;
     })
   }

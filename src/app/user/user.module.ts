@@ -36,8 +36,5 @@ import {MerchantModule} from "../merchant/merchant.module";
         FormsModule,
         MerchantModule
     ],
-  exports: [
-    UploadImageComponent
-  ]
 })
 export class UserModule { }

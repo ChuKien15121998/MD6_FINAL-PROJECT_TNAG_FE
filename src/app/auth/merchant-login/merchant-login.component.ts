@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./merchant-login.component.css']
 })
 export class MerchantLoginComponent implements OnInit {
-  status = 'Điền thôn tin đăng nhập';
+  status = 'Điền thông tin đăng nhập';
   form: any = {};
   hide = true;
   isLogin = false;

@@ -56,7 +56,6 @@ export class OrderMerchantWaitConfirmComponent implements OnInit {
         console.log('check list sau khi search ---> ', data)
         this.listWaitingOrder = data;
       }, error => {
-        alert('loi');
       })
     } else {
       this.orderService.showDeniedOrder().subscribe((data) => {
