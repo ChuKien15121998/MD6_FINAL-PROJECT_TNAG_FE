@@ -13,7 +13,7 @@
                   <p *ngIf="mess" style="color: red">{{mess}}</p>
                 </div>
               </div>
-              <form [formGroup]="form" (submit)="update()">
+              <form [formGroup]="form" >
                 <div hidden class="form-label-group">
                   <input type="text" id="inputId" formControlName = "id" class="form-control"
                          placeholder="">
@@ -54,7 +54,7 @@
                   <app-upload-image (giveURLtoCreate)="editImage($event)"></app-upload-image>
                 </div>
                 <br>
-                <button class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Cập nhật thông tin</button>
+                <button  class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2 " data-toggle="modal" data-target="#exampleModal">Cập nhật thông tin</button>
                 <a routerLink="/merchant" class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Quay lại</a>
                 <!--                <a href="index.html"-->
                 <!--                   class="btn btn-lg btn-outline-primary btn-block btn-customer-login text-uppercase font-weight-bold mb-2">Cập nhật thông tin</a>-->
@@ -70,3 +70,24 @@
   </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cập nhật món ăn</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="color: red">
+        Cập nhật
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+        <a (click)="update()" type="button" class="btn btn-primary" data-dismiss="modal">Xác nhận</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->

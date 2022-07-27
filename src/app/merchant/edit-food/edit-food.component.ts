@@ -74,9 +74,26 @@ this.form.value.image = $event
     console.log("co tao duoc obj khong",this.obj)
     this.foodService.update( this.obj.id,this.obj).subscribe(()=>{
       this.mess = "Sửa thông tin món thành công"
+      // this.resetForm();
     }, error => {
       this.mess = "Sửa thông tin lỗi"
     })
+  }
+
+  resetForm() {
+    this.form.value.name = '',
+      this.form.value.description = '',
+      this.form.value.price = '',
+      this.form.value.priceDiscount = '',
+
+      // this.form.value.foodCategoryId = ''
+      this.form.value.image = ''
+    // @ts-ignore
+    document.getElementById('inputName').innerHTML = '';
+    // @ts-ignore
+    let test: any = document.getElementById('inputName').innerHTML;
+    console.log('check innerHtml ----> ', test)
+    console.log('check form reset ===>> ', this.form)
   }
 
 
