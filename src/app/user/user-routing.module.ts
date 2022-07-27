@@ -5,6 +5,8 @@ import {HomweUserComponent} from "./homwe-user/homwe-user.component";
 import {EditUserComponent} from "./edit-user/edit-user.component";
 import {ListcartUserComponent} from "./listcart-user/listcart-user.component";
 import {OrderUserComponent} from "./order-user/order-user.component";
+import * as path from "path";
+import {EditUserAvatarComponent} from "./edit-user-avatar/edit-user-avatar.component";
 
 const routes: Routes = [
   {path: '',
@@ -18,8 +20,14 @@ const routes: Routes = [
         component: EditUserComponent,
       },
       {
+        path: 'edit-customer-change-avatar',
+        component: EditUserAvatarComponent,
+      },
+      {
         path: 'order-user',
-        component: OrderUserComponent,
+        component: OrderUserComponent, children: [
+          {path: 'user-order-detail', component: OrderUserComponent}
+        ]
       },
     ]
   }

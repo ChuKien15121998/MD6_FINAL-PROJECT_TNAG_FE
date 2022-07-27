@@ -27,4 +27,10 @@ export class CartService {
   getCartDetailByFood(food_id: any): Observable<any>{
     return this.httpClient.get(this.API + '/foods/' +food_id);
   }
+  getListMerchantInCart(): Observable<any>{
+    return this.httpClient.get(this.API+ '/merchants')
+  }
+  getCartDetailById(cart_id: any): Observable<any> {
+    return this.httpClient.get('http://localhost:8080/cartdetails/' + cart_id);
+  }
 }

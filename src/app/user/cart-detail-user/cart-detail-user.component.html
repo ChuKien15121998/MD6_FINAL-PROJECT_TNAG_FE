@@ -1,8 +1,15 @@
+<div class="gold-members p-4">
+  <h6 class="mb-2">
+    <a class="text-black"><h4>{{merchant_name}}</h4>
+    </a>
+  </h6>
+  <br>
+  <a>
 <div class="media">
   <div class="media-body">
     <div *ngFor="let cart of cartDetailByMerchant" class="form-check">
       <div>
-        <input mdbCheckbox class="form-check-input" type="checkbox" value=""/>
+        <input id="cart-detail-user-{{cart.id}}" class="form-check-input" type="checkbox" value="{{cart}}" [(ngModel)]="cart.checked"/>
         <img  src="{{cart.food.image}}" style="width: 50px; height: 50px;" alt="Generic placeholder image">
         <h6 style="margin: 0 10px; display: inline-block">{{cart.food.name}}</h6>
         <p style="display: inline-block">{{cart.quantity}} x {{cart.food.price}} = {{cart.totalPrice}}</p>
@@ -20,11 +27,13 @@
 
     <hr>
     <div class="float-right">
-      <a class="btn btn-sm btn-primary"><i
+      <a (click)="createOrder()" class="btn btn-sm btn-primary"><i
       ></i> Mua hàng</a>
     </div>
     <p class="mb-0 text-black text-primary pt-2"><span
       class="text-black font-weight-bold"> Tổng tiền thanh toán:</span> {{total}} VND
     </p>
   </div>
+</div>
+</a>
 </div>

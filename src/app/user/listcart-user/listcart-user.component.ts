@@ -27,11 +27,11 @@ export class ListcartUserComponent implements OnInit {
     this.cartService.getListMerchantInCart().subscribe((data) => {
       this.listRestaurant = data;
       for (let i = 0; i < this.listRestaurant.length; i++) {
-        // console.log("id nha hang ", this.listRestaurant[i].id)
-      this.cartService.getCartDetailByCartAndMerchant(this.listRestaurant[i].id).subscribe((data) => {
-        const cartDetail: any = data;
+        console.log("id nha hang ", this.listRestaurant[i].id)
+      // this.cartService.getCartDetailByCartAndMerchant(this.listRestaurant[i].id).subscribe((data) => {
+      //   const cartDetail: any = data;
         // console.log("detail 1 nha hang",cartDetail)
-      });
+      // });
       }
     })
   }

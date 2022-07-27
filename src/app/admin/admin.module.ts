@@ -26,7 +26,8 @@ import { HomeAdminComponent } from './home-admin/home-admin.component';
     AdminRoutingModule,
     NgxPaginationModule,
   ],
-  exports: [
-  ]
+    exports: [
+        MerchantManagementComponent
+    ]
 })
 export class AdminModule { }

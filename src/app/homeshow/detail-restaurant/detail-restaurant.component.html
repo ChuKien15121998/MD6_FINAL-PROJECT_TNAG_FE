@@ -41,10 +41,10 @@
                href="#pills-order-online" role="tab" aria-controls="pills-order-online"
                aria-selected="true">Đặt món</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" id="pills-gallery-tab" data-toggle="pill" href="#pills-gallery"
-               role="tab" aria-controls="pills-gallery" aria-selected="false">Thư viện ảnh</a>
-          </li>
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" id="pills-gallery-tab" data-toggle="pill" href="#pills-gallery"-->
+<!--               role="tab" aria-controls="pills-gallery" aria-selected="false">Thư viện ảnh</a>-->
+<!--          </li>-->
           <!--          <li class="nav-item">-->
           <!--            <a class="nav-link" id="pills-reviews-tab" data-toggle="pill" href="#pills-reviews"-->
           <!--               role="tab" aria-controls="pills-reviews" aria-selected="false">Đánh giá & Reviews</a>-->
@@ -64,7 +64,7 @@
                  aria-labelledby="pills-order-online-tab">
               <div id="#menu" class="row">
                 <h5 class="mb-4 mt-3 col-md-12">Bán chạy</h5>
-                <div class="col-md-4 col-sm-6 mb-4">
+                <div class="col-md-4 col-sm-6 mb-4" *ngFor="let res of top3_restaurant">
                   <div
                     class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
                     <div class="list-card-image">
@@ -74,85 +74,22 @@
                         href="#"><i class="icofont-heart"></i></a></div>
                       <div class="member-plan position-absolute"><span
                         class="badge badge-dark">Promoted</span></div>
-                      <a href="#">
-                        <img src="img/list/7.png" class="img-fluid item-img">
+                      <a>
+                        <img src="{{res.image}}"  style="height: 200px;width: 100%" class="img-fluid item-img">
                       </a>
                     </div>
                     <div class="p-3 position-relative">
                       <div class="list-card-body">
-                        <h6 class="mb-1"><a href="#" class="text-black">Gafood - Gà Ủ
-                          Muối</a></h6>
-                        <p class="text-gray mb-2">Bạch Mai</p>
+                        <h6 class="mb-1"><a class="text-black">{{res.name}}</a></h6>
+                        <p class="text-gray mb-2">{{res.merchant.address}}</p>
                         <p class="text-gray time mb-0"><a
-                          class="btn btn-link btn-sm text-black" href="#">30.000 <span
-                          class="badge badge-success">5% Giảm</span></a> <span
+                          class="btn btn-link btn-sm text-black" >{{res.price}}
+<!--                          <span-->
+<!--                          class="badge badge-success">5% Giảm</span>-->
+                        </a> <span
                           class="float-right">
-                                                            <a class="btn btn-outline-secondary btn-sm" href="#">Mua
+                                                            <a class="btn btn-outline-secondary btn-sm">Mua
                                                                 ngay</a>
-                                                        </span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-6 mb-4">
-                  <div
-                    class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
-                    <div class="list-card-image">
-                      <!-- <div class="star position-absolute"><span class="badge badge-success"><i
-                                  class="icofont-star"></i> 3.1 (300+)</span></div> -->
-                      <div class="favourite-heart text-danger position-absolute"><a
-                        href="#"><i class="icofont-heart"></i></a></div>
-                      <div class="member-plan position-absolute"><span
-                        class="badge badge-dark">Promoted</span></div>
-                      <a href="#">
-                        <img src="img/list/8.png" class="img-fluid item-img">
-                      </a>
-                    </div>
-                    <div class="p-3 position-relative">
-                      <div class="list-card-body">
-                        <h6 class="mb-1"><a href="#" class="text-black">Trà Sữa - Đường 18
-                        </a>
-                        </h6>
-                        <p class="text-gray mb-2">P. Mộ Lao, Hà Đông, Hà Nội</p>
-                        <p class="text-gray time mb-0"><a
-                          class="btn btn-link btn-sm text-black" href="#">5.000 <span
-                          class="badge badge-primary">Giảm</span></a> <span
-                          class="float-right">
-                                                            <a class="btn btn-outline-secondary btn-sm" href="#">Mua
-                                                                ngay</a>
-                                                        </span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-6 mb-4">
-                  <div
-                    class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
-                    <div class="list-card-image">
-                      <!-- <div class="star position-absolute"><span class="badge badge-success"><i
-                                  class="icofont-star"></i> 3.1 (300+)</span></div> -->
-                      <div class="favourite-heart text-danger position-absolute"><a
-                        href="#"><i class="icofont-heart"></i></a></div>
-                      <div class="member-plan position-absolute"><span
-                        class="badge badge-dark">Promoted</span></div>
-                      <a href="#">
-                        <img src="img/list/9.png" class="img-fluid item-img">
-                      </a>
-                    </div>
-                    <div class="p-3 position-relative">
-                      <div class="list-card-body">
-                        <h6 class="mb-1"><a href="#" class="text-black">Nem
-                          Chua Rán</a></h6>
-                        <p class="text-gray mb-2">P. Bồ Đề, Long Biên, Hà Nội</p>
-                        <p class="text-gray time mb-0"><a
-                          class="btn btn-link btn-sm text-black" href="#">50.000 <span
-                          class="badge badge-info">Giảm</span></a>
-                          <span
-                            class="float-right">
-                                                            <a class="btn btn-outline-secondary btn-sm" href="#">Mua
-                                                                ngay </a>
                                                         </span>
                         </p>
                       </div>
@@ -193,41 +130,41 @@
               </div>
 
             </div>
-            <div class="tab-pane fade" id="pills-gallery" role="tabpanel"
-                 aria-labelledby="pills-gallery-tab">
-              <div id="gallery" class="bg-white rounded shadow-sm p-4 mb-4">
-                <div class="restaurant-slider-main position-relative homepage-great-deals-carousel">
-                  <div class="owl-carousel owl-theme homepage-ad">
-                    <div class="item">
-                      <img class="img-fluid" src="img/gallery/1.png">
-                    </div>
-                    <div class="item">
-                      <img class="img-fluid" src="img/gallery/2.png">
-                    </div>
-                    <div class="item">
-                      <img class="img-fluid" src="img/gallery/3.png">
-                    </div>
-                    <div class="item">
-                      <img class="img-fluid" src="img/gallery/1.png">
-                    </div>
-                    <div class="item">
-                      <img class="img-fluid" src="img/gallery/2.png">
-                    </div>
-                    <div class="item">
-                      <img class="img-fluid" src="img/gallery/3.png">
-                    </div>
-                  </div>
-                  <div class="position-absolute restaurant-slider-pics bg-dark text-white">2 of 14
-                    Photos
-                  </div>
-                  <div class="position-absolute restaurant-slider-view-all">
-                    <button type="button"
-                            class="btn btn-light bg-white">See all Photos
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+<!--            <div class="tab-pane fade" id="pills-gallery" role="tabpanel"-->
+<!--                 aria-labelledby="pills-gallery-tab">-->
+<!--              <div id="gallery" class="bg-white rounded shadow-sm p-4 mb-4">-->
+<!--                <div class="restaurant-slider-main position-relative homepage-great-deals-carousel">-->
+<!--                  <div class="owl-carousel owl-theme homepage-ad">-->
+<!--                    <div class="item">-->
+<!--                      <img class="img-fluid" src="img/gallery/1.png">-->
+<!--                    </div>-->
+<!--                    <div class="item">-->
+<!--                      <img class="img-fluid" src="img/gallery/2.png">-->
+<!--                    </div>-->
+<!--                    <div class="item">-->
+<!--                      <img class="img-fluid" src="img/gallery/3.png">-->
+<!--                    </div>-->
+<!--                    <div class="item">-->
+<!--                      <img class="img-fluid" src="img/gallery/1.png">-->
+<!--                    </div>-->
+<!--                    <div class="item">-->
+<!--                      <img class="img-fluid" src="img/gallery/2.png">-->
+<!--                    </div>-->
+<!--                    <div class="item">-->
+<!--                      <img class="img-fluid" src="img/gallery/3.png">-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                  <div class="position-absolute restaurant-slider-pics bg-dark text-white">2 of 14-->
+<!--                    Photos-->
+<!--                  </div>-->
+<!--                  <div class="position-absolute restaurant-slider-view-all">-->
+<!--                    <button type="button"-->
+<!--                            class="btn btn-light bg-white">See all Photos-->
+<!--                    </button>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
           </div>
         </div>
       </div>
@@ -267,7 +204,7 @@
             <!-- <p class="seven-color mb-1 text-right">Extra charges may apply</p> -->
             <!--            <p class="text-black mb-0 text-right">Tiết kiệm 30.000 vnđ</p>-->
           </div>
-          <a class="btn btn-success btn-block btn-lg">Thanh toán <i
+          <a routerLink="/user" class="btn btn-success btn-block btn-lg">Đặt hàng ngay <i
             class="icofont-long-arrow-right"></i></a>
         </div>
       </div>
