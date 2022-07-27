@@ -16,8 +16,8 @@
         </div>
         <div class="col-md-4">
           <div class="restaurant-detailed-header-right text-right">
-            <button class="btn btn-success" type="button"><i class="icofont-clock-time"></i> {{food.merchant.openTime}}
-              - {{food.merchant.closeTime}}
+            <button class="btn btn-success" type="button"><i class="icofont-clock-time"></i> {{food.merchant.openTime.substring(0,5)}}
+              - {{food.merchant.closeTime.substring(0,5)}}
             </button>
           </div>
         </div>
@@ -69,10 +69,10 @@
                 <p class="mb-2 text-black"><i class="icofont-phone-circle text-primary mr-2"></i>
                   {{food.merchant.phoneNumber}}</p>
                 <p class="mb-2 text-black"><i class="icofont-dollar text-primary mr-2"></i> <a
-                  data-cfemail="97fef6faf8e4f6fff6f9d7f0faf6fefbb9f4f8fa">{{food.price}}</a>
+                  data-cfemail="97fef6faf8e4f6fff6f9d7f0faf6fefbb9f4f8fa">{{food.price| currency: 'VND':''}} VND</a>
                 </p>
                 <p class="mb-2 text-black"><i class="icofont-clock-time text-primary mr-2"></i>
-                  Hôm nay {{food.merchant.openTime}} – {{food.merchant.closeTime}}
+                  Hôm nay {{food.merchant.openTime.substring(0,5)}} – {{food.merchant.closeTime.substring(0,5)}}
                   <span class="badge badge-success"> Đang mở cửa </span>
                 </p>
                 <hr class="clearfix">
@@ -181,11 +181,11 @@
           <div class="mb-2 bg-white rounded p-2 clearfix">
             <img class="img-fluid float-left" src="assets/template/img/wallet-icon.png">
             <h6 class="font-weight-bold text-right mb-2">Tổng đơn: <span
-              class="text-danger">{{total}}</span> vnđ</h6>
+              class="text-danger">{{total| currency: 'VND':''}}</span> vnđ</h6>
 <!--            <h6 class="font-weight-bold text-right mb-2">Giảm giá: <span-->
 <!--              class="text-danger">0</span> vnđ</h6>-->
             <h6 class="font-weight-bold text-right mb-2">Thanh toán: <span
-              class="text-danger">{{total}}</span> vnđ</h6>
+              class="text-danger">{{total| currency: 'VND':''}}</span> vnđ</h6>
             <!-- <p class="seven-color mb-1 text-right">Extra charges may apply</p> -->
 <!--            <p class="text-black mb-0 text-right">Tiết kiệm 30.000 vnđ</p>-->
           </div>
