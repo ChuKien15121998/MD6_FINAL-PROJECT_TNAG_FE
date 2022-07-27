@@ -12,7 +12,12 @@ export class FoodMerchantService {
 
   constructor(private httpClient: HttpClient) {
   }
-
+  findALlByUser(): Observable<any> {
+    return this.httpClient.get(this.API + '/show-food-by-user');
+  }
+  searchByFoodNameByUser(name: string): Observable<any> {
+    return this.httpClient.get(this.API + '/search-all-food-by-name?name=' + name);
+  }
   findAll(): Observable<any> {
     return this.httpClient.get(this.API + '/merchant');
   }
@@ -52,5 +57,8 @@ export class FoodMerchantService {
   }
   listSoldTop3ByMerchant(merchant_id: any): Observable<any> {
     return this.httpClient.get(this.API + '/merchant/'+ merchant_id+ '/best-seller-top3');
+  }
+  finAllByCategory(id: number): Observable<any> {
+    return this.httpClient.get(this.API + '/category/' + id)
   }
 }
