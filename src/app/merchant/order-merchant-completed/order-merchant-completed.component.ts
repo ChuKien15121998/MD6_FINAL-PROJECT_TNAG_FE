@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {FormControl, FormGroup} from "@angular/forms";
 import {OrderService} from "../../service/orders/order.service";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-order-merchant-completed',

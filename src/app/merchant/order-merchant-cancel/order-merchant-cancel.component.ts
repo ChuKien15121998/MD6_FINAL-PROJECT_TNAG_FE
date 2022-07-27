@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {OrderService} from "../../service/orders/order.service";
 import {databaseInstanceFactory} from "@angular/fire/database/database.module";
 import {FormControl, FormGroup} from "@angular/forms";
-import { OrderService } from 'src/app/service/orders/order.service';
 
 @Component({
   selector: 'app-order-merchant-cancel',

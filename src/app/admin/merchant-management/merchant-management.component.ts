@@ -13,7 +13,6 @@ export class MerchantManagementComponent implements OnInit {
   totalElements: any;
   page: number = 1
   listMerchant: any;
-
   constructor(private httpClient: HttpClient,
               private merchantService: MerchantService) {
   }
@@ -31,6 +30,9 @@ export class MerchantManagementComponent implements OnInit {
 
     })
   }
+
+
+
   changeIsActive(id: any, status: any) {
     // merchant.isActive = !merchant.isActive;
     // console.log(merchant)
