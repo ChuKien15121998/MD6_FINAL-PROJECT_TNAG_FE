@@ -41,7 +41,6 @@ export class DetailRestaurantComponent implements OnInit {
   cartDetail: any;
   total: any;
   top3_restaurant: any;
-  value: any;
   ngOnInit(): void {
     this.restaurant = {
       name: '', phoneNumber: '', avatar: '', imageBanner: '',
@@ -97,9 +96,9 @@ export class DetailRestaurantComponent implements OnInit {
 
           if (this.listFood[i].id==this.cartDetail[j].food.id){
             // console.log("vao if duoc khong",this.listFood[i].id );
-            this.listFood[i].cartQuantity = this.cartDetail[j].quantity;
-            console.log("so luong",this.listFood[i].cartQuantity )
-            console.log("list sau cung", this.listFood[i])
+            // this.listFood[i].cartQuantity = this.cartDetail[j].quantity;
+            // console.log("so luong",this.listFood[i].cartQuantity )
+            // console.log("list sau cung", this.listFood[i])
           }else {
             this.listFood[i].cartQuantity = 0;
           }

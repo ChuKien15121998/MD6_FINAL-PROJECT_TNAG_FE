@@ -10,7 +10,6 @@ export interface Food {
   price?: number;
   priceDiscount?: number;
   recommend?: boolean;
-  cartQuantity?: number;
   sold?: number;
   isDelete?: boolean;
   foodCategory?: FoodCategory;

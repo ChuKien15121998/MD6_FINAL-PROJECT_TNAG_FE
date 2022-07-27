@@ -60,7 +60,7 @@
     <div class="row">
       <div class="col-md-3 col-6">
         <div class="products-box">
-          <a href="listing.html"><img alt=""
+          <a ><img alt=""
                                       src="https://firebasestorage.googleapis.com/v0/b/smartphone-d00d7.appspot.com/o/image-66e95767-220722172048.jpeg?alt=media&token=8db76826-ef5b-497c-b5af-cae92aaecd58"
                                       class="img-fluid rounded"></a>
         </div>
@@ -76,7 +76,7 @@
       </div>
       <div class="col-md-3 col-6">
         <div class="products-box">
-          <a href="listing.html"><img alt=""
+          <a ><img alt=""
                                       src="https://firebasestorage.googleapis.com/v0/b/smartphone-d00d7.appspot.com/o/image-3612afc4-220722174603.jpeg?alt=media&token=353e2fd6-eaad-44cd-824c-322be14cb5fd"
                                       class="img-fluid rounded"></a>
         </div>
@@ -92,7 +92,7 @@
       </div>
       <div class="col-md-3 col-6">
         <div class="products-box">
-          <a href="listing.html"><img alt=""
+          <a ><img alt=""
                                       src="https://firebasestorage.googleapis.com/v0/b/smartphone-d00d7.appspot.com/o/image-e12ce9e6-220406074410.png?alt=media&token=9c5b3e72-c060-4bd0-8f5e-d723b597da79"
                                       class="img-fluid rounded"></a>
         </div>
@@ -108,7 +108,7 @@
       </div>
       <div class="col-md-3 col-6">
         <div class="products-box">
-          <a href="listing.html"><img alt=""
+          <a ><img alt=""
                                       src="https://firebasestorage.googleapis.com/v0/b/smartphone-d00d7.appspot.com/o/image-f90c509c-220724214613.jpeg?alt=media&token=7178e525-d26a-4cc1-8800-3a591893c131"
                                       class="img-fluid rounded"></a>
         </div>
@@ -226,12 +226,13 @@
               <p class="text-gray mb-3 time"><span
                 class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i
                 class="icofont-wall-clock"></i> {{food.merchant.openTime}} - {{food.merchant.closeTime}}</span></p>
-<!--              <span-->
-<!--                class="float-right text-black-50"> Giá: {{food.price}} VND</span>-->
+
             </div>
             <hr>
-            <div class="list-card-badge">
-              <span class="badge badge-success">Giảm</span> <small style="margin-left: 2px">{{food.priceDiscount}} | Sử dụng Coupon TNAG001</small>
+            <div class="list-card-badge" style="text-decoration-color: black !important;">
+              <strong><p
+                class="float-right text-black-200"> Giá: {{food.price| currency: 'VND':''}} VND</p></strong>
+<!--              <span class="badge badge-success">Giảm</span> <small style="margin-left: 2px">{{food.priceDiscount| currency: 'VND':''}} | Sử dụng Coupon TNAG001</small>-->
             </div>
           </div>
         </div>
@@ -240,42 +241,4 @@
     </div>
   </div>
 </section>
-<!--<section class="footer-bottom-search pt-5 pb-5 bg-white">-->
-<!--  <div class="container">-->
-<!--    <div class="row">-->
-<!--      <div class="col-xl-12">-->
-<!--        <p class="text-black">Từ khóa phổ biến</p>-->
-<!--        <div class="search-links">-->
-<!--          <a href="#">Gà rán</a> | <a href="#">Nem chua rán</a> | <a href="#">Pizza</a> | <a-->
-<!--          href="#">Highland</a> | <a href="#">Starbuck</a> | <a href="#">Bánh bèo</a> | <a-->
-<!--          href="#">Tôm alaska</a> | <a href="#">Tôm hoàng đế</a> | <a href="#">Gà rán</a> | <a href="#">Nem chua rán</a> | <a href="#">Pizza</a> | <a-->
-<!--          href="#">Highland</a> | <a href="#">Starbuck</a> | <a href="#">Bánh bèo</a> | <a-->
-<!--          href="#">Tôm alaska</a> | <a href="#">Tôm hoàng đế</a> |<a href="#">Gà rán</a> | <a href="#">Nem chua rán</a> | <a href="#">Pizza</a> | <a-->
-<!--          href="#">Highland</a> | <a href="#">Starbuck</a> | <a href="#">Bánh bèo</a> | <a-->
-<!--          href="#">Tôm alaska</a> | <a href="#">Tôm hoàng đế</a> |<a href="#">Gà rán</a> | <a href="#">Nem chua rán</a> | <a href="#">Pizza</a> | <a-->
-<!--          href="#">Highland</a> | <a href="#">Starbuck</a> | <a href="#">Bánh bèo</a> | <a-->
-<!--          href="#">Tôm alaska</a> | <a href="#">Tôm hoàng đế</a> |<a href="#">Gà rán</a> | <a href="#">Nem chua rán</a> | <a href="#">Pizza</a> | <a-->
-<!--          href="#">Highland</a> | <a href="#">Starbuck</a> | <a href="#">Bánh bèo</a> | <a-->
-<!--          href="#">Tôm alaska</a> | <a href="#">Tôm hoàng đế</a> |<a href="#">Gà rán</a> | <a href="#">Nem chua rán</a> | <a href="#">Pizza</a> | <a-->
-<!--          href="#">Highland</a> | <a href="#">Starbuck</a> | <a href="#">Bánh bèo</a> | <a-->
-<!--          href="#">Tôm alaska</a> | <a href="#">Tôm hoàng đế</a>-->
-<!--        </div>-->
-<!--        <p class="mt-4 text-black">Danh mục món ăn</p>-->
-<!--        <div class="search-links">-->
-<!--          <a href="#">Fast Food</a> | <a href="#">Chinese</a> | <a href="#">Street Food</a> | <a-->
-<!--          href="#">Continental</a> | <a href="#">Mithai</a> | <a href="#">Cafe</a> | <a href="#">South-->
-<!--          Indian</a> | <a href="#">Punjabi Food</a> | <a href="#">Fast Food</a> | <a-->
-<!--          href="#">Chinese</a> | <a href="#">Street Food</a> | <a href="#">Continental</a> | <a-->
-<!--          href="#">Mithai</a> | <a href="#">Cafe</a> | <a href="#">South Indian</a> | <a-->
-<!--          href="#">Punjabi Food</a><a href="#">Fast Food</a> | <a href="#">Chinese</a> | <a-->
-<!--          href="#">Street Food</a> | <a href="#">Continental</a> | <a href="#">Mithai</a> | <a-->
-<!--          href="#">Cafe</a> | <a href="#">South Indian</a> | <a href="#">Punjabi Food</a> | <a-->
-<!--          href="#">Fast Food</a> | <a href="#">Chinese</a> | <a href="#">Street Food</a> | <a-->
-<!--          href="#">Continental</a> | <a href="#">Mithai</a> | <a href="#">Cafe</a> | <a href="#">South-->
-<!--          Indian</a> | <a href="#">Punjabi Food</a>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</section>-->
 

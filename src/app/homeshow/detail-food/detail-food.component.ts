@@ -46,6 +46,10 @@ export class DetailFoodComponent implements OnInit {
     this.foodService.findById(this.food_id).subscribe((data) => {
       this.food = data;
     })
+      this.foodService.getListFoodImage(this.food_id).subscribe((image) => {
+        this.listImage = image;
+        console.log("co lay duoc list anh k", this.listImage)
+      })
       this.getCartdetail()
     });
 

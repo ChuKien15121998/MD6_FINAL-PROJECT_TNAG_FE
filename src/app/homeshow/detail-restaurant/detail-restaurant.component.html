@@ -111,7 +111,8 @@
                                                 <span class="count-number float-right">
                                                     <button (click)="decreaseFromCart(food.id)" class="btn btn-outline-secondary  btn-sm left dec"> <i
                                                       class="icofont-minus"></i> </button>
-                                                    <input id="food-num-{{food.id}}" class="count-number-input" type="text" value="{{food.cartQuantity}}">
+<!--                                                    <input id="food-num-{{food.id}}" class="count-number-input" type="text" value="1">-->
+                                                  <app-cart-detail-restaurant food_id="{{food.id}}"></app-cart-detail-restaurant>
                                                     <button (click)="increaseFromCart(food.id)" class="btn btn-outline-secondary btn-sm right inc"> <i
                                                       class="icofont-plus"></i> </button>
                                                 </span>
