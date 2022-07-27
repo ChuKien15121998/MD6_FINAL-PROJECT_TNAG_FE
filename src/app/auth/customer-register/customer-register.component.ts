@@ -19,7 +19,10 @@ export class CustomerRegisterComponent implements OnInit {
     Validators.required,
     Validators.email
   ]);
-
+  phoneFormControl = new FormControl('', [
+    Validators.required,
+    Validators.pattern(/^\d{9,10}$/)
+  ]);
   listAddressCate : AddressCategory[] = [];
 
   categoryControl = new FormControl('',[

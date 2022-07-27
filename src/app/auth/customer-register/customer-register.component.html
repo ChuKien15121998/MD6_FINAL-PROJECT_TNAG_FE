@@ -21,11 +21,14 @@
                   </ng-container>
                 </div>
                 <div class="form-label-group">
-                  <input name="phone" [(ngModel)]="form.phone" #phone="ngModel" type="text" id="inputPhone" class="form-control"
+                  <input name="phone" [(ngModel)]="form.phone" [formControl]="phoneFormControl" type="text"
+                         id="inputPhone" class="form-control"
                          placeholder="Phone" required>
                   <label for="inputPhone">Số điện thoại</label>
-                  <ng-container *ngIf="(phone.touched || f.submitted) && phone.invalid">
-                    <p *ngIf="phone.hasError('required')" class="text-danger">Vui lòng điền số điện thoại!</p>
+                  <ng-container *ngIf="(phoneFormControl.touched || f.submitted) && phoneFormControl.invalid">
+                    <p *ngIf="phoneFormControl.hasError('required')" class="text-danger">Vui lòng điền số điện
+                      thoại!</p>
+                    <p *ngIf="phoneFormControl.hasError('pattern')" class="text-danger">Sai định dạng số điện thoại!</p>
                   </ng-container>
                 </div>
                 <div class="form-label-group">
