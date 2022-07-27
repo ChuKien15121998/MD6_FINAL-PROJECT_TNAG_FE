@@ -11,7 +11,7 @@
         <form [formGroup]="form">
           <div class="form-label-group">
             <input formControlName="name" type="text" id="ptext3" class="form-control" >
-            <label for="ptext3">Tên món</label>
+            <label for="ptext3" class="text-secondary">Tên món</label>
             <div *ngIf="!name?.valid && name?.touched">
               <div [hidden]="!name?.errors?.['required']">
                 <p style="color: red">Tên món ăn không được để trống</p>
@@ -19,8 +19,9 @@
             </div>
           </div>
           <div class="form-label-group">
-            <input formControlName="description" type="text" id="inputPassword" class="form-control">
-            <label for="inputPassword">Mô tả</label>
+            <span class="text-secondary">Mô tả</span>
+            <textarea formControlName="description" type="text" id="description" class="form-control"></textarea>
+<!--            <label for="description">Mô tả</label>-->
             <div *ngIf="!description?.valid && description?.touched">
               <div [hidden]="!description?.errors?.['required']">
                 <p style="color: red">Mô tả không được để trống</p>
@@ -29,7 +30,7 @@
           </div>
           <div class="form-label-group mb-4">
             <input formControlName="price" type="number" id="ptext" class="form-control">
-            <label for="ptext">Giá</label>
+            <label for="ptext" class="text-secondary">Giá</label>
             <div *ngIf="!price?.valid && price?.touched">
               <div [hidden]="!price?.errors?.['required']">
                 <p style="color: red">Giá không được để trống</p>
@@ -38,7 +39,7 @@
           </div>
           <div class="form-label-group mb-4">
             <input formControlName="priceDiscount" type="number" id="ptext2"  class="form-control">
-            <label for="ptext2">Giá khuyến mại</label>
+            <label for="ptext2" class="text-secondary">Giá khuyến mại</label>
             <div *ngIf="!priceDiscount?.valid && priceDiscount?.touched">
               <div [hidden]="!priceDiscount?.errors?.['required']">
                 <p style="color: red">Giá KM không được để trống</p>
@@ -46,7 +47,7 @@
             </div>
           </div>
           <div class="form-label-group mb-4">
-            <label>Lựa chọn loại món ăn</label> <br><br><br>
+            <label class="text-secondary">Lựa chọn loại món ăn</label> <br><br><br>
             <select formControlName="foodCategoryId" class="form-control">
               <option *ngFor="let itemCategory of listCategory" [value]="itemCategory.id">
                 <p>{{itemCategory.nameCategory}}</p>
@@ -63,7 +64,7 @@
             <app-upload-image (giveURLtoCreate)="uploadImage($event)"></app-upload-image>
           </div>
           <a (click)="createFood()" class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Thêm mới món ăn</a>
-          <a class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2" routerLink="/merchant">Trang chủ</a>
+          <a class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2" routerLink="/merchant">Quay lại</a>
 <!--          <div class="text-center pt-3">-->
 <!--            Bạn đã có tài khoản? <a class="font-weight-bold" href="login.html" >Khởi tạo</a>-->
 <!--          </div>-->

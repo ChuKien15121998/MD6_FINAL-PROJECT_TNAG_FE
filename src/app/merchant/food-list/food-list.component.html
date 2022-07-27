@@ -39,19 +39,19 @@
               <div class="media">
                 <img class="mr-4" src="{{item.image}}" alt="Generic placeholder image">
                 <div class="media-body">
-                  <span class="float-right text-info">Giao hàng từ thứ 2 đến thứ 6 | {{merchant.openTime}}
-                    AM - {{merchant.closeTime}} PM <i class="icofont-check-circled text-success"></i></span>
+                  <span class="float-right text-info">Giao hàng từ thứ 2 đến thứ 6 | {{merchant.openTime.substring(0,5)}}
+                     - {{merchant.closeTime.substring(0, 5)}}  <i class="icofont-check-circled text-success"></i></span>
                   <h6 class="mb-2">
                     <span class="text-black">{{item.name}}
                     </span>
                   </h6>
                   <p class="text-gray mb-1"><i class="icofont-location-arrow"></i> {{merchant.address}}
                   </p>
-                  <p class="text-gray mb-3"><i class="icofont-list"></i> ĐÃ BÁN
+                  <p class="text-gray mb-3"><i class="icofont-list"></i> ĐÃ BÁN:
                     {{item.sold}} <br>
                     <i class="fa fa-dollar"></i>
 <!--                    <i class="material-symbols-outlined ml-2"></i>-->
-                    GIÁ {{item.price}} vnđ</p>
+                    GIÁ: {{item.price}} vnđ</p>
                   <p class="text-dark">{{item.description}}
                   </p>
                   <hr>

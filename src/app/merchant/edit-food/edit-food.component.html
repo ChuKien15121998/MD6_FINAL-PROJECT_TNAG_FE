@@ -25,9 +25,10 @@
                   <label for="inputName">Tên món ăn</label>
                 </div>
                 <div class="form-label-group">
-                  <input type="text" id="phonenumber" formControlName = "description" class="form-control"
-                         placeholder="">
-                  <label for="phonenumber">Mô tả</label>
+                  <span class="text-secondary">Mô tả</span>
+                  <textarea type="text" style="text-align: left" id="phonenumber" formControlName = "description" class="form-control"
+                            placeholder=""> </textarea>
+<!--                  <label for="phonenumber">Mô tả</label>-->
                 </div>
                 <div class="form-label-group mb-4">
                   <input type="number" id="price" formControlName = "price" class="form-control" placeholder="">
@@ -52,8 +53,9 @@
                   </div>
                   <app-upload-image (giveURLtoCreate)="editImage($event)"></app-upload-image>
                 </div>
+                <br>
                 <button class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Cập nhật thông tin</button>
-                <a routerLink="/merchant" class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Trang chủ</a>
+                <a routerLink="/merchant" class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Quay lại</a>
                 <!--                <a href="index.html"-->
                 <!--                   class="btn btn-lg btn-outline-primary btn-block btn-customer-login text-uppercase font-weight-bold mb-2">Cập nhật thông tin</a>-->
                 <div class="text-center pt-3">
