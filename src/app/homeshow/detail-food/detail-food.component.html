@@ -64,7 +64,7 @@
                 </div>
                 <h5 class="mb-4">{{food.name}}</h5>
                 <p class="mb-3">
-                  <span class="fa fa-location-arrow locationicon"></span>{{food.merchant.address}}
+                  <span style="margin-right: 13px" class="fa fa-location-arrow locationicon"></span>{{food.merchant.address}}
                 </p>
                 <p class="mb-2 text-black"><i class="icofont-phone-circle text-primary mr-2"></i>
                   {{food.merchant.phoneNumber}}</p>
@@ -107,13 +107,13 @@
           <div class="bg-white rounded shadow-sm mb-2">
             <div *ngFor="let detail of cartDetail" class="gold-members p-2 border-bottom">
                <span class="count-number float-right">
-                                    <button (click)="decreaseFromCart(detail.food.id)" class="btn btn-outline-secondary  btn-sm left dec"> <i
+                                    <button  (click)="decreaseFromCart(detail.food.id)" class="btn btn-outline-secondary  btn-sm left dec"> <i
                                       class="icofont-minus"></i> </button>
                                     <input class="count-number-input" type="text" value="{{detail.quantity}}" readonly="">
                                     <button (click)="increaseFromCart(detail.food.id)" class="btn btn-outline-secondary btn-sm right inc"> <i
                                       class="icofont-plus"></i> </button>
                                 </span>
-              <p class="text-gray mb-0 float-right ml-2">{{detail.totalPrice| currency: 'VND':''}} VND</p>
+              <p style="margin-right: 5px" class="text-gray mb-0 float-right ml-2">{{detail.totalPrice| currency: 'VND':''}} VND</p>
               <div class="media">
                 <div class="mr-2"><i class="icofont-ui-press text-danger food-item"></i></div>
                 <div class="media-body">
@@ -123,12 +123,12 @@
             </div>
           </div>
           <div class="mb-2 bg-white rounded p-2 clearfix">
-            <img class="img-fluid float-left" src="assets/template/img/wallet-icon.png">
-            <h6 class="font-weight-bold text-right mb-2">Tổng đơn: <span
+<!--            <img class="img-fluid float-left" src="assets/template/img/wallet-icon.png">-->
+            <h6 style="float: left" class="font-weight-bold text-right mb-2">Tổng đơn: <span
               class="text-danger">{{total| currency: 'VND':''}}</span> VND</h6>
 <!--            <h6 class="font-weight-bold text-right mb-2">Giảm giá: <span-->
 <!--              class="text-danger">0</span> vnđ</h6>-->
-            <h6 class="font-weight-bold text-right mb-2">Thanh toán: <span
+            <h6 style="float: left" class="font-weight-bold text-right mb-2">Thanh toán: <span
               class="text-danger">{{total| currency: 'VND':''}}</span> VND</h6>
             <!-- <p class="seven-color mb-1 text-right">Extra charges may apply</p> -->
 <!--            <p class="text-black mb-0 text-right">Tiết kiệm 30.000 vnđ</p>-->
