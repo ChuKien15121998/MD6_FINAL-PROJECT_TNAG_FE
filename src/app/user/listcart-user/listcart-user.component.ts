@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {TokenService} from "../../service/token/token.service";
 import {FoodMerchantService} from "../../service/merchant-food/food-merchant.service";
-import {CartService} from "../../service/cart/cart.service";
 import {MerchantService} from "../../service/merchant/merchant.service";
 import {CartDetail} from "../../model/CartDetail";
+import {CartService} from "../../service/cart/cart.service";
 
 @Component({
   selector: 'app-listcart-user',
