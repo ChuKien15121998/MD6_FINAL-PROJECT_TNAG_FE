@@ -44,13 +44,13 @@
               </div>
               <div class="col-2">
                 <span class="count-number float-right">
-                  <button style="width: 10px" (click)="decreaseFromCart(cart.food.id)" class="btn btn-outline-secondary  btn-sm left dec"> <i class="icofont-minus"></i> </button>
-                    <input class="count-number-input" type="text" value="{{cart.quantity}}" readonly="">
+                  <button (click)="decreaseFromCart(cart.food.id)" class="btn btn-outline-secondary  btn-sm left dec"> <i class="icofont-minus"></i> </button>
+                    <input class="count-number-input cart-detail-btn" type="text" value="{{cart.quantity}}" readonly="">
                   <button (click)="increaseFromCart(cart.food.id)" class="btn btn-outline-secondary btn-sm right inc"> <i class="icofont-plus"></i> </button>
                 </span>
               </div>
               <div class="col-2">
-                <span class="count-number float-right"><a data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-secondary btn-sm">Xóa</a>
+                <span class="count-number float-right"><a data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-secondary btn-sm xoa">Xóa</a>
                 </span>
               </div>
             </div>
