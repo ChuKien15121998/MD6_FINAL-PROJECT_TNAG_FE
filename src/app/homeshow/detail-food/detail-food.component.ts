@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, ParamMap} from "@angular/router";
+import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {FoodMerchantService} from "../../service/merchant-food/food-merchant.service";
 import {OwlOptions} from 'ngx-owl-carousel-o';
 import {TokenService} from "../../service/token/token.service";
@@ -28,7 +28,8 @@ export class DetailFoodComponent implements OnInit {
   constructor(private activateRoute: ActivatedRoute,
               private tokenService: TokenService,
               private foodService: FoodMerchantService,
-              private cartService: CartService
+              private cartService: CartService,
+              private router: Router
   ) { }
   food: any;
   listImage: any;
@@ -100,9 +101,16 @@ export class DetailFoodComponent implements OnInit {
     })
   }
   addToCart(){
-    this.cartService.addToCart(this.food_id).subscribe((data) => {
-      this.getCartdetail()
-    })
+    if (this.isLogin){
+      this.cartService.addToCart(this.food_id).subscribe((data) => {
+        this.getCartdetail()
+      })
+    }
+    else {
+      this.router.navigate(['customer-login']).then(() => {
+        window.location.reload();
+      });
+    }
   }
   customOptions: OwlOptions = {
     loop: true,

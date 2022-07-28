@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TokenService} from "../../service/token/token.service";
-import {ActivatedRoute, ParamMap} from "@angular/router";
+import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {FoodMerchantService} from "../../service/merchant-food/food-merchant.service";
 import {CartService} from "../../service/cart/cart.service";
 import {MerchantService} from "../../service/merchant/merchant.service";
@@ -31,6 +31,7 @@ export class DetailRestaurantComponent implements OnInit {
     private foodService: FoodMerchantService,
     private cartService: CartService,
     private merchantService: MerchantService,
+    private router: Router,
   ) { }
 
   restaurant: any;
@@ -132,10 +133,16 @@ export class DetailRestaurantComponent implements OnInit {
     })
   }
   addToCart(food_id: any){
+    if (this.isLogin){
     this.cartService.addToCart(food_id).subscribe((data) => {
       this.getCartdetail();
-
     })
+    }
+    else {
+      this.router.navigate(['customer-login']).then(() => {
+        window.location.reload();
+      });
+    }
   }
 
 }
