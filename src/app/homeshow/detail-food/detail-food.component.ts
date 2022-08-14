@@ -37,6 +37,7 @@ export class DetailFoodComponent implements OnInit {
   count: any;
   cartDetail: any;
   total: any;
+  merchant_id: any;
   ngOnInit(): void {
     this.food = {
       name: '', image: '', description: '', price: '',

@@ -29,7 +29,7 @@
             </div>
           </div>
           <div class="form-label-group mb-4">
-            <input formControlName="price" type="number" id="ptext" class="form-control">
+            <input  formControlName="price" type="number" id="ptext" class="form-control">
             <label for="ptext" class="text-secondary">Giá</label>
             <div *ngIf="!price?.valid && price?.touched">
               <div [hidden]="!price?.errors?.['required']">

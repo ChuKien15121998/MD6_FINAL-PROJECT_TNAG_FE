@@ -21,8 +21,9 @@ export class CartDetailUserComponent implements OnInit {
   cartDetailDTO: any = [];
   // @ts-ignore
   total = 0;
+  pretotal = 0;
   ngOnInit(): void {
-    this.getCartDetailByCartAndMerchant(this.merchant_id)
+    this.getCartDetailByCartAndMerchant(this.merchant_id);
   }
   getCartDetailByCartAndMerchant(merchant_id: any){
     this.cartService.getCartDetailByCartAndMerchant(merchant_id).subscribe((data) => {
@@ -42,8 +43,10 @@ export class CartDetailUserComponent implements OnInit {
       this.getCartDetailByCartAndMerchant(this.merchant_id)
     })
   }
-  createOrder(){
+
+  getCartDTO(){
     this.cartDetailDTO = [];
+    this.pretotal = 0;
     // this.cartDetailDTO = this.cartDetailByMerchant
     //   .filter((cart: { checked: any; }) => cart.checked)
     //   .map((cart: { value: any; }) => cart.value)
@@ -52,8 +55,15 @@ export class CartDetailUserComponent implements OnInit {
       if (document.getElementById("cart-detail-user-"+this.cartDetailByMerchant[i].id).checked){
         this.cartDetailDTO.push(this.cartDetailByMerchant[i])
       }
-        console.log("co tao duoc list cartdetail k", this.cartDetailDTO)
-      }
+      console.log("co tao duoc list cartdetail k", this.cartDetailDTO)
+    }
+    for (let i = 0; i < this.cartDetailDTO.length; i++) {
+      this.pretotal += this.cartDetailDTO[i].totalPrice;
+      console.log("gia la bn", this.pretotal)
+    }
+  }
+
+  createOrder(){
     // @ts-ignore
     this.orderService.createOrder(this.merchant_id,{"cartDetails": this.cartDetailDTO}).subscribe((data) => {
       this.getCartDetailByCartAndMerchant(this.merchant_id);

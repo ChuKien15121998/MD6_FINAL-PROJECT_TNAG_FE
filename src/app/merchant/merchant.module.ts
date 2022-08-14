@@ -22,6 +22,8 @@ import { OrderMerchantCancelComponent } from './order-merchant-cancel/order-merc
 import { OrderMerchantDetailComponent } from './order-merchant-detail/order-merchant-detail.component';
 import {CarouselModule} from "ngx-owl-carousel-o";
 import {CartDetailRestaurantComponent} from "../homeshow/cart-detail-restaurant/cart-detail-restaurant.component";
+import { ReveneuComponent } from './reveneu/reveneu.component';
+import { ChartsComponent } from './charts/charts.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import {CartDetailRestaurantComponent} from "../homeshow/cart-detail-restaurant/
     OrderMerchantCompletedComponent,
     OrderMerchantCancelComponent,
     OrderMerchantDetailComponent,
+    ReveneuComponent,
+    ChartsComponent,
   ],
   imports: [
     FormsModule,
